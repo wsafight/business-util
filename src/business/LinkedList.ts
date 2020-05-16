@@ -1,0 +1,3 @@
+export class ListNode<T> {
+
+}

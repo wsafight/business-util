@@ -4,6 +4,10 @@
     "module": "esnext",
     "strict": true,
     "esModuleInterop": true,
-    "watch": true
+    "watch": true,
+    "lib": [
+      "dom",
+      "es2019"
+    ]
   }
 }

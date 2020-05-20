@@ -9,10 +9,15 @@
 * 业务型
     * [格式化文件大小](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/formatFileSize.ts)
     * [文件魔术](https://github.com/sindresorhus/file-type)
-    * [四舍五入小数位](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/round.ts)
+    * [小数四舍五入](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/round.ts)
+    * 缓存
+        * LRU (最近最少使用) 
+        * LFU (最不经常使用)
+        * 超时过期
     * 前端深拷贝
     * 树 [TODO]
-    * 复杂树  
+    * 树 
+        * 基础树 
     * promise [TODO]
 
 

@@ -8,7 +8,6 @@ export function compareVersion(v1: string, v2: string) {
   while (v2.length < len) {
     v2Arr.push('0')
   }
-  // eslint-disable-next-line no-plusplus
   for (let i = 0; i < len; i++) {
     const num1 = parseInt(v1Arr[i], 10)
     const num2 = parseInt(v2Arr[i], 10)

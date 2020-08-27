@@ -1,15 +1,10 @@
 {
   "name": "Daily-Algorithm",
   "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
-  "scripts": {
-    "dev": "lite-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "编写基础型算法",
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "typescript": "^3.9.2"
+    "typescript": "^4.0.2"
   }
 }

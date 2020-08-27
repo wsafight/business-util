@@ -35,6 +35,3 @@ function buildTreeOptimize (items: any[]) {
   // 返回树结构
   return treeRoots
 }
-
-buildTree([])
-buildTreeOptimize([])

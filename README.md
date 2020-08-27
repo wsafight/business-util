@@ -26,8 +26,9 @@
     
     
 * 二进制
-    * [交换两个数](https://github.com/wsafight/Daily-Algorithm/blob/master/src/binary/number-of-exchange.ts)
-    * [求二进制数中 1 的个数]()
+    * [交换两个数](https://github.com/wsafight/Daily-Algorithm/blob/master/src/bit-manipulation/number-of-exchange.ts)
+    * [求二进制数中 1 的个数](https://github.com/wsafight/Daily-Algorithm/blob/master/src/bit-manipulation/number-of-one.ts)
+    * [缺失数字](https://github.com/wsafight/Daily-Algorithm/blob/master/src/bit-manipulation/missing-number.ts)
 
 * 排序
     * 冒泡

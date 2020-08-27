@@ -25,11 +25,13 @@
     * promise [TODO]
     
     
-* 二进制
+* 二进制 [https://leetcode-cn.com/tag/bit-manipulation/]
     * [交换两个数](https://github.com/wsafight/Daily-Algorithm/blob/master/src/bit-manipulation/number-of-exchange.ts)
     * [求二进制数中 1 的个数](https://github.com/wsafight/Daily-Algorithm/blob/master/src/bit-manipulation/number-of-one.ts)
     * [缺失数字](https://github.com/wsafight/Daily-Algorithm/blob/master/src/bit-manipulation/missing-number.ts)
-
+    * [数字转 16 进制]()
+    * []
+    
 * 排序
     * 冒泡
     

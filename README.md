@@ -23,7 +23,11 @@
     * 树 
         * [O(n) 构建树](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/build-tree.ts) 
     * promise [TODO]
-
+    
+    
+* 二进制
+    * 交换两个数
+    * 
 
 * 排序
     * 冒泡

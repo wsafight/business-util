@@ -1,13 +1,13 @@
-const buildTree = (treeItems: any[],  id = 0): any[] =>
-  treeItems
+function buildTree(treeItems: any[], id = 0): any[] {
+  return treeItems
     // 找到当前节点所有的孩子
     .filter(item => item.parentId === id)
     // 继续递归找
     .map(item => ({ ...item, children: buildTree(treeItems, item.id) }));
+}
 
 
-
-function buildTreeOptimize (items: any[]) {
+function buildTreeOptimize(items: any[]) {
   // 由业务决定是否需要对 items 深拷贝一次。这里暂时不做
 
   // 把每个子节点保存起来，以便后面插入父节点
@@ -28,7 +28,7 @@ function buildTreeOptimize (items: any[]) {
     item.children = (treeDataByParentId.get(item.id) || [])
     // 当前节点不具备父节点，插入第一层数组中
     if (!item.parentId) {
-      treeRoots.push({item})
+      treeRoots.push({ item })
     }
   })
 

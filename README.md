@@ -27,7 +27,7 @@
     
 * 二进制
     * [交换两个数](https://github.com/wsafight/Daily-Algorithm/blob/master/src/binary/number-of-exchange.ts)
-    * [求二进制数中1的个数]()
+    * [求二进制数中 1 的个数]()
 
 * 排序
     * 冒泡

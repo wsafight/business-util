@@ -31,6 +31,3 @@ export function numberOfExchange3(numbers: number[]) {
   return numbers
 }
 
-
-numberOfExchange([1, 2])
-numberOfExchange2([1, 2])

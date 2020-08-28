@@ -8,3 +8,11 @@ function isPowerOfTwo(n: number): boolean {
   if (n <= 0) return false
   return (n & (n - 1)) === 0
 }
+
+/**
+ * 利用其他函数解决此问题
+ * @param n
+ */
+function isPowerOfTwo2(n: number): boolean {
+  return Number.isInteger(Math.log2(n))
+}

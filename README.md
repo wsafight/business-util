@@ -28,9 +28,11 @@
 * 二进制 [https://leetcode-cn.com/tag/bit-manipulation/]
     * [交换两个数](https://github.com/wsafight/Daily-Algorithm/blob/master/src/bit-manipulation/number-of-exchange.ts)
     * [求二进制数中 1 的个数](https://github.com/wsafight/Daily-Algorithm/blob/master/src/bit-manipulation/number-of-one.ts)
+    * [比较两个二进制数中 1 的个数](https://github.com/wsafight/Daily-Algorithm/blob/master/src/bit-manipulation/diff-number-of-one.ts)
+    * [一个数字是否是 2 的幂](https://github.com/wsafight/Daily-Algorithm/blob/master/src/bit-manipulation/is-power-of-two.ts)
     * [缺失数字](https://github.com/wsafight/Daily-Algorithm/blob/master/src/bit-manipulation/missing-number.ts)
     * [数字转 16 进制]()
-    * []
+    
     
 * 排序
     * 冒泡

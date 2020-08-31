@@ -22,6 +22,7 @@
     * 树 [TODO]
     * 树 
         * [O(n) 构建树](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/build-tree.ts) 
+        * [前缀树](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/trie-tree.ts)
     * promise [TODO]
     
     

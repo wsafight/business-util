@@ -43,6 +43,7 @@
 
 * leetcode
     * 9.palindrome-number 回文数
+    * 38.[外观数列](https://github.com/wsafight/Daily-Algorithm/blob/master/src/leetcode/count-and-say.ts)
 
 * 小程序 (后期可能建立单独项目)
     * 机器人寻路 (未完成)

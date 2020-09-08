@@ -15,6 +15,7 @@
     * [根据对象路径处理对象属性](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/handleObjPropByPath.ts)
     * [项目版本排序](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/compare-version.ts)
     * [快照历史 redo-undo](https://github.com/wsafight/snapshot-history/blob/master/src/index.ts)
+    * [获取两者之间的数据](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/between-two-number.ts)
     * 缓存
         * LRU (最近最少使用) 
         * LFU (最不经常使用)

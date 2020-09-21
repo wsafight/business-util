@@ -43,7 +43,7 @@ export function formatFileSize(fileSize: number, options?: FormatFileSizeOptions
 		unitIndex = units.length - 1
 	}
 
-	fileSize = fileSize / Math.pow(transferBase, unitIndex)
+	fileSize = fileSize / (transferBase ** unitIndex)
 
 	return fileSize.toFixed(options.round) + ' ' + units[unitIndex]
 }

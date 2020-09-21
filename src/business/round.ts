@@ -28,5 +28,5 @@
  * @param precision
  */
 export function round(number: number, precision: number = 2) {
-	return Math.round(+(number + 'e' + precision)) / Math.pow(10, precision)
+	return Math.round(+(number + 'e' + precision)) / (10 ** precision)
 }

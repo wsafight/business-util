@@ -9,7 +9,8 @@
 目录
 
 * 业务型
-    * [格式化文件大小](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/formatFileSize.ts)
+    * [格式化文件大小——基础](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/formatFileSize.ts)
+    * [格式化文件大小——复杂(直接使用 filesize 库)](https://github.com/avoidwork/filesize.js)
     * [文件魔术](https://github.com/sindresorhus/file-type)
     * [小数四舍五入](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/round.ts)
     * [根据对象路径处理对象属性](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/handleObjPropByPath.ts)
@@ -17,7 +18,7 @@
     * [快照历史 redo-undo](https://github.com/wsafight/snapshot-history/blob/master/src/index.ts)
     * [获取两者之间的数据](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/between-two-number.ts)
     * [数字范围增减](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/round-index.ts)
-    * [url 正则功能 (直接使用 path-to-regexp)](https://github.com/pillarjs/path-to-regexp)
+    * [url 正则功能 (直接使用 path-to-regexp, 功能强大)](https://github.com/pillarjs/path-to-regexp)
     * 缓存
         * LRU (最近最少使用) 
         * LFU (最不经常使用)

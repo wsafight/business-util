@@ -11,7 +11,7 @@
 * 业务型
     * [格式化文件大小——基础](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/formatFileSize.ts)
     * [格式化文件大小——复杂(直接使用 filesize 库)](https://github.com/avoidwork/filesize.js)
-    * [文件魔术](https://github.com/sindresorhus/file-type)
+    * [文件魔数(使用 file-type 库)](https://github.com/sindresorhus/file-type)
     * [小数四舍五入](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/round.ts)
     * [根据对象路径处理对象属性](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/handleObjPropByPath.ts)
     * [项目版本排序](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/compare-version.ts)

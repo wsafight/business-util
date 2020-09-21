@@ -19,6 +19,8 @@
     * [获取两者之间的数据](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/between-two-number.ts)
     * [数字范围增减](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/round-index.ts)
     * [url 正则功能 (直接使用 path-to-regexp, 功能强大)](https://github.com/pillarjs/path-to-regexp)
+    * [事件 bus TODO]()
+    * [ip 地址 (直接使用 ip-address)](https://github.com/beaugunderson/ip-address)
     * 缓存
         * LRU (最近最少使用) 
         * LFU (最不经常使用)

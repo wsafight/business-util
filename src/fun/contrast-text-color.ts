@@ -1,5 +1,8 @@
 // http://stackoverflow.com/a/3943023/112731
 // https://codepen.io/znak/pen/aOvMOd
+/**
+ * 根据当前的背景颜色确认适合背景色的文本颜色 (文本仅仅支持黑 和 白)
+ */
 
 const colorByBgColor = new Map()
 
@@ -16,11 +19,10 @@ function convertRGBToHex(rgb: string): string {
 }
 
 /**
- * 根据当前的背景颜色确认适合背景色的文本颜色 (文本仅仅支持黑 和 白)
  * @param backgroundColor 字符串  #FFFBBC | rgb(222,33,44) 均可
  */
 export function contrastTextColor(backgroundColor: string) {
-  //
+  // 均转换为 hex 格式
   const backgroundHexColor = backgroundColor.length > 7 ? convertRGBToHex(backgroundColor) : backgroundColor
 
   if (colorByBgColor.has(backgroundHexColor)) {
@@ -43,7 +45,7 @@ export function contrastTextColor(backgroundColor: string) {
   const g = parseInt(hex.slice(2, 4), 16)
   const b = parseInt(hex.slice(4, 6), 16)
 
-  const textColor = (r * 0.299 + g * 0.587 + b * 0.114) > 186 ? '#000000' : '#FFFFFF'
+  const textColor = (r * 0.299 + g * 0.587 + b * 0.114) > 186 ? '#000' : '#FFF'
   colorByBgColor.set(backgroundHexColor, textColor)
   return textColor
 }

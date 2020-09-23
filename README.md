@@ -9,7 +9,7 @@
 目录
 
 * 有趣的算法
-    * [根据块中背景色生成文本颜色](https://github.com/wsafight/Daily-Algorithm/blob/master/src/fun/contrast-text-color.ts)
+    * [根据背景色生成适合当前背景色的文本颜色](https://github.com/wsafight/Daily-Algorithm/blob/master/src/fun/contrast-text-color.ts)
 
 * 业务型
     * [格式化文件大小——基础](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/formatFileSize.ts)

@@ -7,9 +7,10 @@
 export default function downloadFile(
   urlOrFilename: string,
   content: BlobPart,
-  mime: string) {
+  mime?: string,
+  bom?: string) {
   if (content) {
-    downloadContent(content, urlOrFilename, mime)
+    downloadContent(content, urlOrFilename, mime, bom)
   } else {
     downloadUrl(urlOrFilename)
   }
@@ -34,10 +35,10 @@ function downloadUrl(url: string) {
  * @param content
  * @param mime
  */
-function downloadContent(data: BlobPart,
+function downloadContent(data:  string | ArrayBuffer | ArrayBufferView | Blob,
                          filename: string,
-                         mime: string,
-                         bom?: BlobPart) {
+                         mime?: string,
+                         bom?: string) {
   const blobData = bom ? [bom, data] : [data]
   const blob = new Blob(blobData, {type: mime || 'application/octet-stream'});
   if (typeof window.navigator.msSaveBlob !== 'undefined') {

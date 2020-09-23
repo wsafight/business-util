@@ -8,7 +8,10 @@ const ARRAYTYPE = '[object Array]'
 const OBJECTTYPE = '[object Object]'
 const FUNCTIONTYPE = '[object Function]'
 
-export default function diff(current: Record<string, any>, pre: Record<string, any>) {
+export default function diff(
+	current: Record<string, any>,
+	pre: Record<string, any>
+) {
 	const result = {}
 	syncKeys(current, pre)
 	_diff(current, pre, '', result)

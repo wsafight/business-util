@@ -2,6 +2,7 @@
 // https://codepen.io/znak/pen/aOvMOd
 /**
  * 根据当前的背景颜色确认适合背景色的文本颜色 (文本仅仅支持黑 和 白)
+ * 适用范围: 适用于标签等用户自己定制颜色，文本颜色自适应
  */
 
 const colorByBgColor = new Map()

@@ -39,17 +39,20 @@ function downloadContent(data:  string | ArrayBuffer | ArrayBufferView | Blob,
                          filename: string,
                          mime?: string,
                          bom?: string) {
-
-  // 使用 typeof 避免 IE 11 bug
+  // 如果当前 bom 为 null, IE 11 报错
   const blobData = (typeof bom !== 'undefined') ? [bom, data] : [data]
-  const blob = new Blob(blobData, {type: mime || 'application/octet-stream'});
+  const blob = new Blob(blobData, {
+    // 当前没有指定类型，直接使用任意格式
+    type: mime || 'application/octet-stream'
+  });
 
   // IE9 以上的 IE 浏览器都会报一个 request URI too large 的错误, 直接使用 msSaveBlob
   if (typeof window.navigator.msSaveBlob !== 'undefined') {
     window.navigator.msSaveBlob(blob, filename);
   } else {
-
+    // 兼容 webkitURL
     const blobURL = (window.URL && window.URL.createObjectURL) ? window.URL.createObjectURL(blob) : window.webkitURL.createObjectURL(blob);
+
     const tempLink = document.createElement('a');
     tempLink.style.display = 'none';
     tempLink.href = blobURL;
@@ -66,6 +69,7 @@ function downloadContent(data:  string | ArrayBuffer | ArrayBufferView | Blob,
     // 修复移动端 safari 浏览器下载 bug "webkit blob resource error 1"
     setTimeout(function () {
       document.body.removeChild(tempLink);
+      // 释放 url 对象
       window.URL.revokeObjectURL(blobURL);
     }, 200)
   }

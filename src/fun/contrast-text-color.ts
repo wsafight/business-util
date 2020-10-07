@@ -19,16 +19,22 @@ function convertRGBToHex(rgb: string): string {
   return ("#" + hex(bg[1]) + hex(bg[2]) + hex(bg[3])).toUpperCase();
 }
 
+const CACHE_ERROR = 'error'
+
 /**
  * @param backgroundColor 字符串  #FFFBBC | rgb(222,33,44) 均可
  */
 export function contrastTextColor(backgroundColor: string) {
+  const cacheColor = colorByBgColor.get(backgroundColor)
+  if (cacheColor) {
+    if (cacheColor === CACHE_ERROR) {
+      throw new Error('Invalid background color.' + backgroundColor);
+    }
+    return colorByBgColor.get(backgroundColor)
+  }
+
   // 均转换为 hex 格式
   const backgroundHexColor = backgroundColor.length > 7 ? convertRGBToHex(backgroundColor) : backgroundColor
-
-  if (colorByBgColor.has(backgroundHexColor)) {
-    return colorByBgColor.get(backgroundHexColor)
-  }
 
   let hex = backgroundHexColor
   if (hex.startsWith('#')) {
@@ -39,14 +45,20 @@ export function contrastTextColor(backgroundColor: string) {
   }
 
   if (hex.length !== 6) {
-    throw new Error('Invalid hex color.' + backgroundHexColor);
+    colorByBgColor.set(backgroundColor, CACHE_ERROR)
+    throw new Error('Invalid background color.' + backgroundColor);
   }
 
   const r = parseInt(hex.slice(0, 2), 16)
   const g = parseInt(hex.slice(2, 4), 16)
   const b = parseInt(hex.slice(4, 6), 16)
 
+  if ([r,g,b].some(x => Number.isNaN(x))) {
+    colorByBgColor.set(backgroundColor, CACHE_ERROR)
+    throw new Error('Invalid background color.' + backgroundColor);
+  }
+
   const textColor = (r * 0.299 + g * 0.587 + b * 0.114) > 186 ? '#000' : '#FFF'
-  colorByBgColor.set(backgroundHexColor, textColor)
+  colorByBgColor.set(backgroundColor, textColor)
   return textColor
 }

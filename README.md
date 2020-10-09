@@ -19,7 +19,7 @@
     * [根据对象路径处理对象属性](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/handleObjPropByPath.ts)
     * [项目版本排序](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/compare-version.ts)
     * [快照历史 redo-undo](https://github.com/wsafight/snapshot-history/blob/master/src/index.ts)
-    * [获取两者之间的数据](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/between-two-number.ts)
+    * [获取范围内合适的数据](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/clamp.ts)
     * [数字范围内增减](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/round-index.ts)
     * [url 正则功能 (使用 path-to-regexp, 功能强大)](https://github.com/pillarjs/path-to-regexp)
     * [事件 bus TODO]()

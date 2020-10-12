@@ -1,4 +1,26 @@
-function buildTree(treeItems: any[], id = 0): any[] {
+export interface Item {
+  id?: number;
+  parentId?: number | null;
+  [key: string]: any;
+}
+
+export interface TreeItem extends Item{
+  children: TreeItem[];
+}
+
+export interface Config {
+  id: string;
+  parentId: string;
+  dataField: string | null;
+}
+
+const defaultConfig: Config = {
+  id: 'id',
+  parentId: 'parentId',
+  dataField: 'data',
+};
+
+function buildTree(treeItems: Item[], id = 0): TreeItem[] {
   return treeItems
     // 找到当前节点所有的孩子
     .filter(item => item.parentId === id)
@@ -36,30 +58,7 @@ function buildTreeOptimize(items: any[]) {
   return treeRoots
 }
 
-export interface Item {
-  id?: string;
-  parentId?: string | null;
-  [key: string]: any;
-}
 
-export interface TreeItem {
-  id?: string;
-  parentId?: string | null;
-  [key: string]: Item | any;
-  children: TreeItem[];
-}
-
-export interface Config {
-  id: string;
-  parentId: string;
-  dataField: string | null;
-}
-
-const defaultConfig: Config = {
-  id: 'id',
-  parentId: 'parentId',
-  dataField: 'data',
-};
 
 /**
  * 第三次优化

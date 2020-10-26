@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { throttle } from 'lodash'
 
+/**
+ * 连接 flex 布局
+ */
 interface useFlexCardsProps {
   count: number;
   minWidth: number;

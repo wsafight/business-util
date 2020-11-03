@@ -10,7 +10,8 @@
 
 * 有趣的算法
     * [根据背景色生成适合当前背景色的文本颜色](https://github.com/wsafight/Daily-Algorithm/blob/master/src/fun/contrast-text-color.ts)
-
+    * [lisp 命令风格](https://github.com/wsafight/Daily-Algorithm/blob/master/src/fun/eval-lisp.ts)
+    
 * 业务型
     * [格式化文件大小——基础](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/formatFileSize.ts)
     * [格式化文件大小——复杂(直接使用 filesize 库)](https://github.com/avoidwork/filesize.js)

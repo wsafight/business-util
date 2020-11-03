@@ -1,4 +1,4 @@
-
+// https://stopa.io/post/265
 
 const fns: Record<string, any> = {
   drawLine: '',

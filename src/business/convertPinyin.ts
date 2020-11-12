@@ -1,3 +1,7 @@
+
+// https://zhuanlan.zhihu.com/p/29813596
+// https://zhuanlan.zhihu.com/p/29898502
+
 /**
  * 汉字转拼音，纯浏览器端实现
  * @author huntbao

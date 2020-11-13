@@ -10,19 +10,33 @@
  */
 
 /**
- * 根据路径来获取 对象属性
- * @param obj
- * @param path
+ * 根据路径来获取 对象内部属性
+ * @param obj 对象
+ * @param path 路径 a.b[1].c
  *
  */
 export function getObjPropByPath(obj: Record<string, any>, path: string) {
 	let tempObj = obj
-	const keyArr = path.split('.')
-	let i = 0
+	const keyArr = path.split('.').map(x => x.trim())
+	let i: number = 0
 	for (let len = keyArr.length; i <len - 1; ++i) {
 		let key = keyArr[i]
+		const isFormArray = key.endsWith(']')
+		let index: number = 0
+		if (isFormArray) {
+			const data = key.split('[') ?? []
+			key = data[0] ?? ''
+			index = parseInt(data[1], 10)
+		}
+
 		if (key in tempObj) {
 			tempObj = tempObj[key]
+			if (isFormArray && Array.isArray(tempObj)) {
+				tempObj = tempObj[index]
+				if (!tempObj) {
+					return {}
+				}
+			}
 		} else {
 			return {}
 		}

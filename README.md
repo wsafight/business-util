@@ -39,6 +39,8 @@
         * [O(n) 构建树](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/build-tree.ts) 
         * [前缀树](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/trie-tree.ts)
     * promise [TODO]
+* data structure
+    * [HashTable](https://github.com/wsafight/Daily-Algorithm/blob/master/src/data-structure/HashTable.ts)
     
 * react hooks 
     * [useFlexCards](https://github.com/wsafight/Daily-Algorithm/blob/master/src/hooks/useFlexCards.ts)

@@ -1,5 +1,5 @@
 // 单向链表节点
-class ForwardListNode {
+export class ForwardListNode {
   public key: string;
   public value: any;
   public next: ForwardListNode | null = null
@@ -89,6 +89,4 @@ class HashTable {
     }
     return null
   }
-
-
 }

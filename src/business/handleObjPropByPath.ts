@@ -41,6 +41,9 @@ export function getObjPropByPath(obj: Record<string, any>, path: string) {
 			return {}
 		}
 	}
+	if (!tempObj) {
+		return {}
+	}
 	return  {
 		o: tempObj,
 		k: keyArr[i],

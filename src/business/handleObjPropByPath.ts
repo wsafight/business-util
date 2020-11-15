@@ -21,11 +21,13 @@ export function getObjPropByPath(obj: Record<string, any>, path: string) {
 	let i: number = 0
 	for (let len = keyArr.length; i <len - 1; ++i) {
 		let key = keyArr[i]
+		// 简单判断是否是数组数据，如果 以 ] 结尾的话
 		const isFormArray = key.endsWith(']')
 		let index: number = 0
 		if (isFormArray) {
 			const data = key.split('[') ?? []
 			key = data[0] ?? ''
+			// 对于 parseInt('12]') => 12
 			index = parseInt(data[1], 10)
 		}
 

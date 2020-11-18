@@ -4,10 +4,11 @@ type PromiseState = 'pending' | 'fulfilled' | 'rejected'
  * 微任务
  */
 export const nextTick = (function () {
-  const callbacks = []
+  let callbacks: any[] = []
   let pending = false
-  let timerFunc
-  function nextTickHandler () {
+  let timerFunc: any
+
+  function nextTickHandler() {
     pending = false
     var copies = callbacks.slice(0)
     callbacks = []
@@ -15,24 +16,27 @@ export const nextTick = (function () {
       copies[i]()
     }
   }
+
   /* istanbul ignore if */
   if (typeof MutationObserver !== 'undefined') { // 首选 MutationObserver
     var counter = 1
     var observer = new MutationObserver(nextTickHandler) // 声明 MO 和回调函数
-    var textNode = document.createTextNode(counter)
+    var textNode = document.createTextNode('' + counter)
     observer.observe(textNode, { // 监听 textNode 这个文本节点
       characterData: true // 一旦文本改变则触发回调函数 nextTickHandler
     })
     timerFunc = function () {
       counter = (counter + 1) % 2 // 每次执行 timeFunc 都会让文本在 1 和 0 间切换
-      textNode.data = counter
+      textNode.data = '' + counter
     }
   } else {
     timerFunc = setTimeout // 如果不支持 MutationObserver, 退选 setTimeout
   }
-  return function (cb, ctx) {
+  return function (cb: any, ctx: any) {
     var func = ctx
-      ? function () { cb.call(ctx) }
+      ? function () {
+        cb.call(ctx)
+      }
       : cb
     callbacks.push(func)
     if (pending) return
@@ -51,22 +55,28 @@ class MyPromise {
 
   constructor(executor: any) {
     const resolve = (value: any) => {
-      if (this.state === 'pending') {
-        this.value = value
-        this.state = 'fulfilled'
-        this.onFulfilledFunc(this.value)
+      if (value instanceof MyPromise) {
+        return value.then(resolve, reject)
       }
+      nextTick(() => {
+        if (this.state === 'pending') {
+          this.value = value
+          this.state = 'fulfilled'
+          this.onFulfilledFunc(this.value)
+        }
+      }, this)
     }
     const reject = (reason: any) => {
-      if (this.state === 'pending') {
-        this.reason = reason
-        this.state = 'rejected'
-        this.onRejectedFunc(this.reason)
-      }
+      nextTick(() => {
+        if (this.state === 'pending') {
+          this.reason = reason
+          this.state = 'rejected'
+          this.onRejectedFunc(this.reason)
+        }
+      }, this)
     }
     executor(resolve, reject)
   }
-
 
 
   then(onFulfilled: any, onRejected: any) {

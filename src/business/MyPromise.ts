@@ -115,7 +115,12 @@ class MyPromise {
         }
       }, this)
     }
-    executor(resolve, reject)
+    try {
+      executor(resolve, reject)
+    } catch (e) {
+      reject(e)
+    }
+
   }
 
 

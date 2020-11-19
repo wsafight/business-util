@@ -85,8 +85,8 @@ class MyPromise {
   private state: PromiseState = 'pending'
   private value: any = null;
   private reason: any = null;
-  private onFulfilledFunc = Function.prototype;
-  private onRejectedFunc = Function.prototype;
+  private onFulfilledArray: any[] = [];
+  private onRejectedArray: any[] = [];
 
 
   constructor(executor: any) {
@@ -98,7 +98,9 @@ class MyPromise {
         if (this.state === 'pending') {
           this.value = value
           this.state = 'fulfilled'
-          this.onFulfilledFunc(this.value)
+          this.onFulfilledArray.forEach(func => {
+            func(value)
+          })
         }
       }, this)
     }
@@ -107,7 +109,9 @@ class MyPromise {
         if (this.state === 'pending') {
           this.reason = reason
           this.state = 'rejected'
-          this.onRejectedFunc(this.reason)
+          this.onRejectedArray.forEach(func => {
+            func(reason)
+          })
         }
       }, this)
     }
@@ -128,8 +132,8 @@ class MyPromise {
     }
 
     if (this.state === 'pending') {
-      this.onFulfilledFunc = onFulfilled
-      this.onRejectedFunc = onRejected
+      this.onFulfilledArray.push(onFulfilled)
+      this.onRejectedArray.push(onRejected)
     }
 
   }

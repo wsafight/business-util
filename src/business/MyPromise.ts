@@ -1,3 +1,5 @@
+import validate = WebAssembly.validate;
+
 type PromiseState = 'pending' | 'fulfilled' | 'rejected'
 
 /**
@@ -124,6 +126,49 @@ class MyPromise {
 
   }
 
+  static resolve(value: any) {
+    return new MyPromise((resolve: any) => resolve(value))
+  }
+
+  static reject(value: any) {
+    return new MyPromise((resolve: any, reject: any) => reject(value))
+  }
+
+  static all(promises: MyPromise[]) {
+    return new MyPromise((resolve: any, reject: any) => {
+      try {
+        const length = promises.length
+        const resultArray = new Array(length)
+        let count = 0
+        for (let i = 0; i < length; i++) {
+          promises[i].then((data: any) => {
+            count++
+            resultArray[i] = data
+            if (count === length) {
+              resolve(resultArray)
+            }
+
+          }, reject)
+        }
+      } catch (e) {
+        reject(e)
+      }
+    })
+  }
+
+  static race(promises: MyPromise[]) {
+    return new MyPromise((resolve: any, reject: any) => {
+      try {
+        const length = promises.length
+        for (let i = 0; i < length; i++) {
+          promises[i].then(resolve, reject)
+        }
+      } catch (e) {
+        reject(e)
+      }
+    })
+  }
+
 
   then(onFulfilled: any, onRejected: any) {
     const resolvePromise = (promise2: any, result: any, resolve: any, reject: any) => {
@@ -181,6 +226,10 @@ class MyPromise {
     }
 
 
+    onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : (data: any) => data
+    onRejected = typeof onRejected === 'function' ? onRejected : (error: any) => {
+      throw error
+    }
     let promise2: MyPromise
     if (this.state === 'fulfilled') {
       return promise2 = new MyPromise((resolve: any, reject: any) => {
@@ -230,4 +279,10 @@ class MyPromise {
     }
 
   }
+
+  catch(catchFunc: any) {
+    return this.then(null, catchFunc)
+  }
+
+
 }

@@ -123,22 +123,58 @@ class MyPromise {
 
   }
 
+  resolvePromise = (promise2: any, result: any, resolve: any, reject: any) => {
+
+  }
 
   then(onFulfilled: any, onRejected: any) {
-    onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : (data: any) => data
-    onRejected = typeof onRejected === 'function' ? onRejected : (error: any) => {
-      throw error
-    }
+
+    let promise2: MyPromise
     if (this.state === 'fulfilled') {
-      onFulfilled(this.value)
+      return promise2 = new MyPromise((resolve: any, reject: any) => {
+        nextTick(() => {
+          try {
+            const result = onFulfilled(this.value)
+            this.resolvePromise(promise2, result, resolve,reject)
+          } catch (e) {
+            reject(e)
+          }
+        }, this)
+      })
     }
     if (this.state === 'rejected') {
-      onRejected(this.reason)
+      return promise2 = new MyPromise((resolve: any, reject: any) => {
+        nextTick(() => {
+          try {
+            const result = onRejected(this.value)
+            this.resolvePromise(promise2, result, resolve,reject)
+          } catch (e) {
+            reject(e)
+          }
+        }, this)
+      })
     }
 
     if (this.state === 'pending') {
-      this.onFulfilledArray.push(onFulfilled)
-      this.onRejectedArray.push(onRejected)
+      return promise2 = new MyPromise((resolve: any, reject: any) => {
+        this.onFulfilledArray.push(() => {
+          try {
+            const result = onFulfilled(this.value)
+            this.resolvePromise(promise2, result, resolve,reject)
+          } catch (e) {
+            reject(e)
+          }
+        })
+
+        this.onRejectedArray.push(() => {
+          try {
+            const result = onRejected(this.value)
+            this.resolvePromise(promise2, result, resolve,reject)
+          } catch (e) {
+            reject(e)
+          }
+        }, this)
+      })
     }
 
   }

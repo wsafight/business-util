@@ -121,13 +121,65 @@ class MyPromise {
       reject(e)
     }
 
-  }
-
-  resolvePromise = (promise2: any, result: any, resolve: any, reject: any) => {
 
   }
+
 
   then(onFulfilled: any, onRejected: any) {
+    const resolvePromise = (promise2: any, result: any, resolve: any, reject: any) => {
+      if (promise2 === result) {
+        reject(new TypeError('error due to circular reference'))
+      }
+
+      let consumed: boolean = false
+      let thenable
+
+      if (result instanceof MyPromise) {
+        if (result.state === 'pending') {
+          result.then(function (data: any) {
+            resolvePromise(promise2, data, resolve, reject)
+          }, reject)
+        } else {
+          result.then(resolve, reject)
+        }
+        return
+      }
+
+      let isComplexResult = (target: any) => (typeof target === 'function' || typeof target === 'object') && target !== null
+
+      if (isComplexResult(result)) {
+        try {
+          thenable = result.then
+          if (typeof thenable === 'function') {
+            thenable.call(result, function (data: any) {
+              if (consumed) {
+                return
+              }
+              consumed = true
+
+              return resolvePromise(promise2, data, resolve, reject)
+            }, function (error: any) {
+              if (consumed) {
+                return
+              }
+              consumed = true
+              return reject(error)
+            })
+          } else {
+            resolve(result)
+          }
+        } catch (e) {
+          if (consumed) {
+            return;
+          }
+          consumed = true
+          return reject(e)
+        }
+      } else {
+        resolve(result)
+      }
+    }
+
 
     let promise2: MyPromise
     if (this.state === 'fulfilled') {
@@ -135,7 +187,7 @@ class MyPromise {
         nextTick(() => {
           try {
             const result = onFulfilled(this.value)
-            this.resolvePromise(promise2, result, resolve,reject)
+            resolvePromise(promise2, result, resolve, reject)
           } catch (e) {
             reject(e)
           }
@@ -147,7 +199,7 @@ class MyPromise {
         nextTick(() => {
           try {
             const result = onRejected(this.value)
-            this.resolvePromise(promise2, result, resolve,reject)
+            resolvePromise(promise2, result, resolve, reject)
           } catch (e) {
             reject(e)
           }
@@ -160,7 +212,7 @@ class MyPromise {
         this.onFulfilledArray.push(() => {
           try {
             const result = onFulfilled(this.value)
-            this.resolvePromise(promise2, result, resolve,reject)
+            resolvePromise(promise2, result, resolve, reject)
           } catch (e) {
             reject(e)
           }
@@ -169,7 +221,7 @@ class MyPromise {
         this.onRejectedArray.push(() => {
           try {
             const result = onRejected(this.value)
-            this.resolvePromise(promise2, result, resolve,reject)
+            resolvePromise(promise2, result, resolve, reject)
           } catch (e) {
             reject(e)
           }

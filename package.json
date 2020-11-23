@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@types/react": "^16.9.53",
-    "@types/lodash": "^4.14.162"
+    "@types/lodash": "^4.14.162",
+    "cypress": "^5.6.0"
   }
 }

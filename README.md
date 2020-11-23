@@ -29,6 +29,7 @@
     * [ip 地址 (直接使用 ip-address)](https://github.com/beaugunderson/ip-address)
     * [函数柯里化](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/self-curry.ts)
     * [偏函数](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/partial.ts)
+    * [存根](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/stub.ts)
     * 缓存
         * LRU (最近最少使用) 
         * LFU (最不经常使用)

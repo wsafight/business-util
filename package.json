@@ -4,6 +4,9 @@
   "description": "编写基础型算法",
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "cypress:open": "cypress open"
+  },
   "dependencies": {
     "typescript": "^4.0.3",
     "react": "^17.0.1",

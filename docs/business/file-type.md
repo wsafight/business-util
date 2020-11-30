@@ -1,3 +1,5 @@
+# 文件类型检测
+
 通过魔数检测 Buffer/Uint8Array/ArrayBuffer 中的文件类型的算法库
 
 大多数情况下，我们都是通过扩展名来识别一个文件的类型的，比如我们看到一个.txt 结尾的文件我们就知道他是一个纯文本文件。但是，扩展名是可以修改的，那一旦一个文件的扩展名被修改过，那么怎么识别一个文件的类型呢。这就用到了我们提到的“魔数”。
@@ -12,4 +14,4 @@
 
 
 
-代码库在 [文件类型](https://github.com/sindresorhus/file-type) 中
+代码库 [file-type.js](https://github.com/sindresorhus/file-type) 中

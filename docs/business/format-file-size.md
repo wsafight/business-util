@@ -1,6 +1,5 @@
 简单的将文件大小转换为人类可读的字符串,有 1024 和 1000
 
-
 ```ts
 interface FormatFileSizeOptions {
   /** 转换基数， 1024 与 1000 */
@@ -48,6 +47,8 @@ function formatFileSize(fileSize: number, options?: FormatFileSizeOptions) {
   return fileSize.toFixed(options.round) + ' ' + units[unitIndex]
 }
 ```
+
+github代码在 [格式化文件大小](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/formatFileSize.ts) 中
 
 更加复杂的功能可以使用 [filesize](https://github.com/avoidwork/filesize.js) 
  

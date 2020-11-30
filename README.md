@@ -32,6 +32,7 @@
     * [偏函数](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/partial.ts)
     * [存根](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/stub.ts)
     * [数组树过滤](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/array-tree-filter.ts)
+    * [阅读时间](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/reading-time)
     * 缓存
         * LRU (最近最少使用) 
         * LFU (最不经常使用)

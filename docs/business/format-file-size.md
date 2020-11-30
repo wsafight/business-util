@@ -2,14 +2,14 @@
 
 ```ts
 interface FormatFileSizeOptions {
-  /** 转换基数， 1024 与 1000 */
+  /** 转换基数， 1024 与 1000 比特 */
   base: 1024 | 1000;
-  /** 舍入的小数据 */
+  /** 舍入的小数位数 */
   round: number;
 }
 
 /**
- * 默认配置
+ * 默认配置 
  */
 const DEFAULT_OPTIONS: FormatFileSizeOptions = {
   base: 1024,
@@ -28,16 +28,18 @@ const units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB', 'BB']
  * @param options
  */
 function formatFileSize(fileSize: number, options?: FormatFileSizeOptions) {
-  options = Object.assign({}, DEFAULT_OPTIONS, options)
+  options = {...DEFAULT_OPTIONS, ...options} 
 
   const transferBase = options.base
-
+  
+  // 如果文件大小比当前单位小,直接返回 B 
   if (fileSize < transferBase) {
-    return fileSize + ' B'
+    return `${fileSize} B`
   }
 
   let unitIndex = Math.floor(Math.log(fileSize) / Math.log(transferBase))
 
+  // 如果当前计算出的单位位数非常大，直接取当前设置的最大单位
   if (unitIndex >= units.length) {
     unitIndex = units.length - 1
   }

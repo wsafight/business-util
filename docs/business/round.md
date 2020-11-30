@@ -29,7 +29,7 @@ https://mathjs.org/ 过于庞大，仅仅只用于格式化两位小数太过笨
 /**
  *
  * @param number 数字
- * @param precision
+ * @param precision 小数位数
  */
 function round(number: number, precision: number = 2) {
 	return Math.round(+(number + 'e' + precision)) / (10 ** precision)

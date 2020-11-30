@@ -1,4 +1,4 @@
-# 路由构建
+# url 构造
 
 项目开发中，如果有需求中可以让用户自行配置路由。那么我们往往需要一个可以构建 url 的库。
 
@@ -35,7 +35,7 @@ function getUserPosts(id, limit, offset) {
 
 进入 [url cat文档](https://urlcat.dev/#/)
 
-当然，在路由库中使用的 [path-to-regexp](https://github.com/pillarjs/path-to-regexp) 也有此功能。但 path-to-regexp 过于复杂。
+当然，在各种路由库中使用的 [path-to-regexp](https://github.com/pillarjs/path-to-regexp) 库也有此功能。但此库更适合复杂场景。
 
 
 

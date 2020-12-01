@@ -7,3 +7,5 @@
 * * [版本比对](/business/compare-version.md)
 * * [url 构造](/business/url-cat.md)
 * * [根据数组构建树](/business/build-tree.md)
+
+* * [计算博客阅读时长](/business/reading-time.md)

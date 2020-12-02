@@ -11,3 +11,4 @@
 * * [计算博客阅读时长](/business/reading-time.md)
 * * [根据背景色自适应文本颜色](/business/contrast-text-color.md)
 * * [输入错误提示——模糊集](/business/fuzzy-set.md)
+* * [stub 函数](/business/stub.md)

@@ -15,3 +15,5 @@
 * * [New Function 创建异步函数](/business/new-async-function.md)
 
 * 实用工具
+* * [JSON 的超集 serialize-javascript](/util/serialize-javascript.md)
+* * [数据扁平化 normalizr](/util/normalizr.md)

@@ -2,6 +2,9 @@
 
 可以参考 http://stackoverflow.com/a/8809472
 
+https://css-tricks.com/lots-of-ways-to-use-math-random-in-javascript/
+
+
 在需要生成随机值时，很多人会使用 Math.random()。这个方法在浏览器中是以伪随机数生成器
 （PRNG，PseudoRandom Number Generator）方式实现的。所谓“伪”指的是生成值的过程不是真的随机。
 PRNG 生成的值只是模拟了随机的特性。浏览器的 PRNG 并未使用真正的随机源，只是对一个内部状态

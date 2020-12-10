@@ -23,7 +23,7 @@
     * [获取范围内合适的数据](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/clamp.ts)
     * [数字范围内增减](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/round-index.ts)
     * [url 正则功能 (使用 path-to-regexp, 功能强大)](https://github.com/pillarjs/path-to-regexp)
-    * [事件 bus TODO]()
+    * [事件 bus mitt](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/mitt.ts)
     * [获得扁平的数据键](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/getFlatterObjKeys.ts)
     * [下载文件](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/download-file.ts)
     * [字符串 JSON 增强,可以使用函数等结构 (使用 serialize-javascript)](https://github.com/yahoo/serialize-javascript)

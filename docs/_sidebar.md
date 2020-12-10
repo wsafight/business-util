@@ -17,3 +17,4 @@
 * 实用工具
 * * [JSON 的超集 serialize-javascript](/util/serialize-javascript.md)
 * * [数据扁平化 normalizr](/util/normalizr.md)
+* * [微小的 bus 库 mitt.js](/util/mitt.md)

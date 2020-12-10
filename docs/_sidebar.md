@@ -15,6 +15,7 @@
 * * [New Function 创建异步函数](/business/new-async-function.md)
 
 * 实用工具
+* * [复杂的文件格式化库 filesize](/util/filesize.md)
 * * [JSON 的超集 serialize-javascript](/util/serialize-javascript.md)
 * * [数据扁平化 normalizr](/util/normalizr.md)
 * * [微小的 bus 库 mitt.js](/util/mitt.md)

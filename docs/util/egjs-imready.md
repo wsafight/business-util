@@ -1,6 +1,6 @@
 # 检测图像(视频)加载完成 egjs-imready
 
-[egjs](https://github.com/naver/egjs-imready) 库用于检查容器中的所有图像和视频是否加载完成。
+[egjs-imready](https://github.com/naver/egjs-imready) 库用于检查容器中的所有图像和视频是否加载完成。
 
 ## 使用方法
 

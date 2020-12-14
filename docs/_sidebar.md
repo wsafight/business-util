@@ -20,4 +20,4 @@
 * * [数据扁平化 normalizr](/util/normalizr.md)
 * * [微小的 bus 库 mitt.js](/util/mitt.md)
 * * [检测图像加载完成 egjs-imready](/util/egjs-imready.md)
-* * []
+* * [xss 过滤器 DOMPurify](/util/dom-purify.md)

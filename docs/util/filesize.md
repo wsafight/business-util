@@ -1,6 +1,6 @@
 # 复杂的文件格式化库 filesize
 
-简单的情况可以直接使用 [format-file-size](https://wsafight.github.io/Daily-Algorithm/#/business/format-file-size)
+简单的情况可以直接使用 [format-file-size](../business/format-file-size)
 
 直接使用开源库 filesize
 

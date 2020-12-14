@@ -1,1 +1,1 @@
-[github](https://github.com/wsafight/Daily-Algorithm)
+[github](https://github.com/wsafight/business-util)

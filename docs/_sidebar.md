@@ -24,3 +24,6 @@
 * web 安全
 * * [css 键盘记录器](/security/css-key-logging.md)
 * * [xss 过滤器 DOMPurify](/security/dom-purify.md)
+
+* 性能优化
+* * [利用 gpu 加速数据运算](/performance/gpu.md) 

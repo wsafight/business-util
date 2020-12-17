@@ -27,3 +27,4 @@
 
 * 性能优化
 * * [利用 gpu 加速数据运算](/performance/gpu.md) 
+* * [通过批处理避免布局抖动 fastDom](/performance/fastdom.md)

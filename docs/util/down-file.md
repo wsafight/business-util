@@ -1,3 +1,10 @@
+# 文件下载
+
+从浏览器下载文件是一件很正常的操作。当前代码可以针对路径以及文件流进行下载。
+
+当前代码参考了 [file-download](https://github.com/kennethjiang/js-file-download/blob/master/file-download.js) 库。
+
+```ts
 /**
  * 下载文件
  * @param urlOrFilename
@@ -9,6 +16,7 @@ export default function downloadFile(
   content?: BlobPart,
   mime?: string,
   bom?: string) {
+  // 如果传递第二个参数，走下载流,否则直接请求 url
   if (content) {
     downloadContent(content, urlOrFilename, mime, bom)
   } else {
@@ -74,3 +82,4 @@ function downloadContent(data:  string | ArrayBuffer | ArrayBufferView | Blob,
     }, 200)
   }
 }
+```

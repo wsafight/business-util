@@ -1,8 +1,9 @@
 
 * [前言](/)
-* 业务算法
-* * [格式化文件大小](/business/format-file-size.md)
-* * [文件类型](/business/file-type.md)
+
+* 业务工具
+* * [格式化文件大小(简单版)](/business/format-file-size.md)
+* * [文件格式化库 filesize](/business/filesize.md)
 * * [小数四舍五入](/business/round.md)
 * * [版本比对](/business/compare-version.md)
 * * [url 构造](/business/url-cat.md)
@@ -14,8 +15,11 @@
 * * [stub 函数](/business/stub.md)
 * * [New Function 创建异步函数](/business/new-async-function.md)
 
+* 辅助开发 
+* * [文件类型](/help/file-type.md)
+
+
 * 实用工具
-* * [复杂的文件格式化库 filesize](/util/filesize.md)
 * * [JSON 的超集 serialize-javascript](/util/serialize-javascript.md)
 * * [数据扁平化 normalizr](/util/normalizr.md)
 * * [微小的 bus 库 mitt.js](/util/mitt.md)

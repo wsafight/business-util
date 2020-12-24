@@ -1,4 +1,4 @@
-# 文件大小格式化
+# 文件大小格式化(简单版)
 
 简单的将文件大小转换为人类可读的字符串,有 1024 和 1000 字节配置。
 
@@ -54,4 +54,4 @@ function formatFileSize(fileSize: number, options?: FormatFileSizeOptions) {
 
 github代码在 [格式化文件大小](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/formatFileSize.ts) 中
 
-更加复杂的功能可以使用 [filesize](https://github.com/avoidwork/filesize.js) 开源库，同时该库的解析在 [复杂的文件格式化库 filesize](../util/filesize) 中。
+更加复杂的功能可以使用 [filesize](https://github.com/avoidwork/filesize.js) 开源库，同时该库的解析在 [复杂的文件格式化库 filesize](./filesize) 中。

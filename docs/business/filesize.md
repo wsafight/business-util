@@ -1,4 +1,4 @@
-# 复杂的文件格式化库 filesize
+# 文件格式化库 filesize
 
 简单的情况可以直接使用 [format-file-size](../business/format-file-size)
 

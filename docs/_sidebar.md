@@ -4,8 +4,6 @@
 * 业务工具
 * * [格式化文件大小(简单版)](/business/format-file-size.md)
 * * [文件格式化库 filesize](/business/filesize.md)
-* * [小数四舍五入](/business/round.md)
-* * [版本比对](/business/compare-version.md)
 * * [url 构造](/business/url-cat.md)
 * * [根据数组构建树](/business/build-tree.md)
 * * [树组件查询](/business/array-tree-filter.md)
@@ -16,7 +14,10 @@
 * * [New Function 创建异步函数](/business/new-async-function.md)
 
 * 辅助开发 
-* * [文件类型](/help/file-type.md)
+* * [文件类型检测](/help/file-type.md)
+* * [小数四舍五入](/help/round.md)
+* * [项目版本比对](/business/compare-version.md)
+
 
 
 * 实用工具

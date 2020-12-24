@@ -24,6 +24,8 @@
 
 * 实用工具
 * * [文件下载](/util/down-file.md)
+* * [动态加载脚本](/util/down-script.md)
+* * [动态加载样式](/util/down-style.md)
 * * [JSON 的超集 serialize-javascript](/util/serialize-javascript.md)
 * * [数据扁平化 normalizr](/util/normalizr.md)
 * * [微小的 bus 库 mitt.js](/util/mitt.md)

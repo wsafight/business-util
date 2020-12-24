@@ -1,3 +1,10 @@
+# js 脚本动态加载
+
+针对于项目来说，往往一些代码不需要在首屏加载。
+
+对于现代浏览器来说，我们不需要用这些机制，直接使用 import 即可。
+
+```ts
 /**
  * 串行加载指定的脚本
  * 串行加载[异步]逐个加载，每个加载完成后加载下一个
@@ -7,14 +14,13 @@
  * @param {Function} callback 成功后回调的函数
  * @return {Array} 所有生成的脚本元素对象数组
  */
-
 function seriesLoadScripts(
   scripts: string | string[],
   options: Record<string, any>,
   callback: () => void
 ) {
   if (typeof (scripts) !== 'object') {
-    scripts = [scripts];
+     scripts = [scripts];
   }
   const HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
   const s: any[] = [];
@@ -49,8 +55,9 @@ function seriesLoadScripts(
   };
   recursiveLoad(0);
 }
+```
 
-
+```ts
 /**
  * 并行加载指定的脚本
  * 并行加载[同步]同时加载，不管上个是否加载完成，直接加载全部
@@ -63,7 +70,7 @@ function seriesLoadScripts(
 
 function parallelLoadScripts(scripts: string[] | string, options: Record<string, any>, callback: () => void) {
   if (typeof (scripts) !== 'object') {
-    scripts = [scripts];
+     scripts = [scripts];
   }
   const HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
   const s: any[] = [];
@@ -94,38 +101,4 @@ function parallelLoadScripts(scripts: string[] | string, options: Record<string,
     HEAD.appendChild(s[i]);
   }
 }
-
-/**
- * 动态添加css
- * @param {String}  url 指定要加载的css地址
- */
-function loadLink(url: string) {
-  const doc = document;
-  const link = doc.createElement("link");
-  link.setAttribute("rel", "stylesheet");
-  link.setAttribute("type", "text/css");
-  link.setAttribute("href", url);
-
-  const heads = doc.getElementsByTagName("head");
-  if (heads.length) {
-    heads[0].appendChild(link);
-  }
-  else {
-    doc.documentElement.appendChild(link);
-  }
-}
-
-/**
- * 动态添加一组css
- * @param {String}  url 指定要加载的css地址
- */
-function loadLinks(urls: string[] | string) {
-  if (typeof (urls) !== 'object') {
-    urls = [urls];
-  }
-  if (urls.length) {
-    urls.forEach(url => {
-      loadLink(url);
-    });
-  }
-}
+```

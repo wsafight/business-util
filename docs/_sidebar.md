@@ -2,6 +2,7 @@
 * [前言](/)
 
 * 业务工具
+* * [货币格式化](/business/currency.md)
 * * [格式化文件大小(简单版)](/business/format-file-size.md)
 * * [文件格式化库 filesize](/business/filesize.md)
 * * [根据数组构建树](/business/build-tree.md)

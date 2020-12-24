@@ -19,6 +19,7 @@
 * * [项目版本比对](/help/compare-version.md)
 * * [url 构造](/help/url-cat.md)
 * * [stub 函数](/help/stub.md)
+* * [生成唯一 id](/help/generateUUID.md)
 
 
 * 实用工具

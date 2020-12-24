@@ -24,6 +24,4 @@ interface CurrencySetting {
 // TODO
 ```
 
-但我们可以直接使用 [accounting.js](http://openexchangerates.github.io/accounting.js/) 或者 [Accounting-js](https://nashdot.github.io/accounting-js/) 库
-
-这时候我们需要代码解决该问题。
+同时我们可以直接使用 [accounting.js](http://openexchangerates.github.io/accounting.js/) 或者 [Accounting-js](https://nashdot.github.io/accounting-js/) 库

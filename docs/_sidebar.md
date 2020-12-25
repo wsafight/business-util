@@ -6,6 +6,7 @@
 * * [格式化文件大小(简单版)](/business/format-file-size.md)
 * * [文件格式化库 filesize](/business/filesize.md)
 * * [根据数组构建树](/business/build-tree.md)
+* * [树形结构数组](/business/tree-structure-array.md)
 * * [树组件查询](/business/array-tree-filter.md)
 * * [计算博客阅读时长](/business/reading-time.md)
 * * [根据背景色自适应文本颜色](/business/contrast-text-color.md)

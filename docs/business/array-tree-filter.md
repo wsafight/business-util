@@ -2,7 +2,7 @@
 
 查询已经生成的树组件数据，以此来进行其他操作。
 
-通过递归转循环提高效率
+通过 BFS 来搜索树的数据
 
 ```ts
 function arrayTreeFilter<T>(

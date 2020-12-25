@@ -98,6 +98,7 @@ export default function mitt(all?: EventHandlerMap): Emitter {
   };
 }
 ```
+注意: 无论是 on 或者 off 时候 绑定的函数 handler 必须是同一个函数。
 
-实际使用时候，我们可以直接进行单播以及广播
+实际使用时候，我们可以直接进行单播以及广播。
 

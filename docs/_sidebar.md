@@ -20,6 +20,7 @@
 * * [url 构造](/help/url-cat.md)
 * * [stub 函数](/help/stub.md)
 * * [生成唯一 id](/help/generateUUID.md)
+* * [微任务延迟调度](/help/next-tick.md)
 
 
 * 实用工具

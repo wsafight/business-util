@@ -36,5 +36,3 @@ const size = filesize.partial({standard: "iec"});
 
 size(265318); // "259.1 KiB"
 ```
-
-源码解析如下：

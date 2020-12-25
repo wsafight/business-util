@@ -12,7 +12,6 @@
 * * [根据背景色自适应文本颜色](/business/contrast-text-color.md)
 * * [输入错误提示——模糊集](/business/fuzzy-set.md)
 
-* * [New Function 创建异步函数](/business/new-async-function.md)
 
 * 辅助开发 
 * * [文件类型检测](/help/file-type.md)
@@ -39,3 +38,6 @@
 * * [动态加载样式](/performance/down-style.md)
 * * [利用 gpu 加速数据运算](/performance/gpu.md) 
 * * [通过批处理避免布局抖动 fastDom](/performance/fastdom.md)
+
+* 语言
+* * [New Function 创建异步函数](/language/new-async-function.md)

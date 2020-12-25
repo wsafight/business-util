@@ -1,10 +1,11 @@
 export interface Item {
   id?: number;
   parentId?: number | null;
+
   [key: string]: any;
 }
 
-export interface TreeItem extends Item{
+export interface TreeItem extends Item {
   children: TreeItem[];
 }
 
@@ -25,7 +26,7 @@ function buildTree(treeItems: Item[], id = 0): TreeItem[] {
     // 找到当前节点所有的孩子
     .filter(item => item.parentId === id)
     // 继续递归找
-    .map(item => ({ ...item, children: buildTree(treeItems, item.id) }));
+    .map(item => ({...item, children: buildTree(treeItems, item.id)}));
 }
 
 
@@ -50,7 +51,7 @@ function buildTreeOptimize(items: any[]) {
     item.children = (treeDataByParentId.get(item.id) || [])
     // 当前节点不具备父节点，插入第一层数组中
     if (!item.parentId) {
-      treeRoots.push({ item })
+      treeRoots.push({item})
     }
   })
 
@@ -59,54 +60,43 @@ function buildTreeOptimize(items: any[]) {
 }
 
 
-
 /**
  * 第三次优化
  */
 export function arrayToTree(items: Item[], config: Partial<Config> = {}): TreeItem[] {
-  const conf: Config = { ...defaultConfig, ...config };
-  // the resulting unflattened tree
+  const conf: Config = {...defaultConfig, ...config};
   const rootItems: TreeItem[] = [];
 
-  // stores all already processed items with ther ids as key so we can easily look them up
-  const lookup: { [id: string]: TreeItem } = {};
+  const lookup: Map<string, TreeItem> = new Map<string, TreeItem>();
 
-  // idea of this loop:
-  // whenever an item has a parent, but the parent is not yet in the lookup object, we store a preliminary parent
-  // in the lookup object and fill it with the data of the parent later
-  // if an item has no parentId, add it as a root element to rootItems
   for (const item of items) {
     const itemId = item[conf.id];
     const parentId = item[conf.parentId];
-    // look whether item already exists in the lookup table
-    if (!Object.prototype.hasOwnProperty.call(lookup, itemId)) {
-      // item is not yet there, so add a preliminary item (its data will be added later)
-      lookup[itemId] = { children: [] };
+
+    let TreeItem = lookup.get(itemId)
+    if (!TreeItem) {
+      TreeItem = {children: []}
+      lookup.set(itemId, TreeItem)
     }
 
     // add the current item's data to the item in the lookup table
     if (conf.dataField) {
-      lookup[itemId][conf.dataField] = item;
+      TreeItem[conf.dataField] = item;
     } else {
-      lookup[itemId] = { ...item, children: lookup[itemId].children };
+      TreeItem = {...item, children: TreeItem.children};
     }
 
-    const TreeItem = lookup[itemId];
-
     if (parentId === null) {
-      // is a root item
       rootItems.push(TreeItem);
     } else {
-      // has a parent
 
-      // look whether the parent already exists in the lookup table
-      if (!Object.prototype.hasOwnProperty.call(lookup, parentId)) {
-        // parent is not yet there, so add a preliminary parent (its data will be added later)
-        lookup[parentId] = { children: [] };
+      let partnerTreeItem = lookup.get(parentId)
+      if (!partnerTreeItem) {
+        partnerTreeItem = {children: []};
+        lookup.set(parentId, partnerTreeItem)
       }
 
-      // add the current item to the parent
-      lookup[parentId].children.push(TreeItem);
+      partnerTreeItem.children.push(TreeItem);
     }
   }
 

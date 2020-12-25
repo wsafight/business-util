@@ -2,30 +2,44 @@
 
 查询已经生成的树组件数据，以此来进行其他操作。
 
-通过 BFS 来搜索树的数据
+通过 BFS 来搜索树的数据。
 
 ```ts
+/** 过滤项配置 */
+interface FilterOptions {
+  /** 子节点对应的名称 */
+  childrenKeyName?: string;
+}
+
+/** 默认配置项目 */
+const DEFAULT_OPTIONS = {
+  childrenKeyName: 'children'
+}
+
+/**
+ * 
+ * @param data 树形数据
+ * @param filterFn 过滤函数
+ * @param options 配置项
+ */
 function arrayTreeFilter<T>(
   data: T[],
   filterFn: (item: T, level: number) => boolean,
-  options?: {
-    childrenKeyName?: string;
-  }
+  options: FilterOptions = {...DEFAULT_OPTIONS}
 ) {
-  options = options || {};
-  options.childrenKeyName = options.childrenKeyName || "children";
-  var children = data || [];
-  var result: T[] = [];
-  var level = 0;
+  let children = data || [];
+  const result: T[] = [];
+  let level = 0;
   do {
-    var foundItem: T = children.filter(function(item) {
+    let foundItem: T = children.filter(function(item) {
       return filterFn(item, level);
     })[0];
     if (!foundItem) {
       break;
     }
     result.push(foundItem);
-    children = (foundItem as any)[options.childrenKeyName] || [];
+    const childrenKeyName = options?.childrenKeyName ?? 'children'
+    children = (foundItem as any)[childrenKeyName] || [];
     level += 1;
   } while (children.length > 0);
   return result;

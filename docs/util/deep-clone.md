@@ -5,6 +5,7 @@
 包括
 
 - 递归深拷贝 (clone)
+
 ```ts
 // 原生兼容 IE6 的 JS 类型检测库
 import { type } from '@jsmini/type';
@@ -50,7 +51,9 @@ export function clone(x: any) {
   return res;
 }
 ```
+
 - JSON 转换深拷贝 (cloneJSON)
+
 ```ts
 // 通过JSON深拷贝
 export function cloneJSON(x: any, errOrDef = true) {
@@ -72,7 +75,9 @@ export function cloneJSON(x: any, errOrDef = true) {
   }
 }
 ```
+
 - 循环深拷贝 (cloneLoop)
+
 ```ts
 import { type } from '@jsmini/type';
 
@@ -162,7 +167,9 @@ export function cloneLoop(x: any) {
   return root;
 }
 ```
+
 - 循环引用深拷贝 (cloneForce)
+
 ```ts
 import { type } from '@jsmini/type';
 
@@ -328,6 +335,7 @@ const clone = await structuralClone(obj);
 ```
 
 - History
+
 ```js
 function structuralClone(obj) {
   const oldState = history.state;
@@ -342,6 +350,7 @@ const clone = structuralClone(obj);
 ```
 
 - Notification
+
 ```js
 function structuralClone(obj) {
   return new Notification('', {data: obj, silent: true}).data;

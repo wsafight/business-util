@@ -1,80 +1,6 @@
-# 专业的深拷贝库
+// import { type } from '@jsmini/type';
 
-[clone](https://github.com/jsmini/clone) 库实现了多种深拷贝的方式，可以直接借助该库实现自己想要的深拷贝功能。
-
-包括
-
-- 递归深拷贝 (clone)
-```ts
-// 原生兼容 IE6 的 JS 类型检测库
-import { type } from '@jsmini/type';
-
-// Object.create(null) 的对象，没有hasOwnProperty方法
-function hasOwnProp(obj: Record<string, any>, key: string) {
-  return Object.prototype.hasOwnProperty.call(obj, key);
-}
-
-function isClone(x: any) {
-  const t = type(x);
-
-  return t === 'object' || t === 'array';
-}
-
-// 递归
-export function clone(x: any) {
-  // 仅对对象和数组进行深拷贝，其他类型，直接返回
-  if (!isClone(x)) {
-    return x;
-  }
-
-  const t = type(x);
-
-  let res: any;
-
-  if (t === 'array') {
-    res = [];
-    for (let i = 0; i < x.length; i++) {
-      // 避免一层死循环 a.b = a
-      res[i] = x[i] === x ? res: clone(x[i]);
-    }
-  } else if (t === 'object') {
-    res = {};
-    for(let key in x) {
-      if (hasOwnProp(x, key)) {
-        // 避免一层死循环 a.b = a
-        res[key] = x[key] === x ? res : clone(x[key]);
-      }
-    }
-  }
-
-  return res;
-}
-```
-- JSON 转换深拷贝 (cloneJSON)
-```ts
-// 通过JSON深拷贝
-export function cloneJSON(x: any, errOrDef = true) {
-  if (!isClone(x)) return x;
-
-  try {
-    return JSON.parse(JSON.stringify(x));
-  } catch(e) {
-    if (errOrDef === true) {
-      throw e;
-    } else {
-      try {
-        // ie8无console
-        console.error('cloneJSON error: ' + e.message);
-        // eslint-disable-next-line no-empty
-      } catch(e) {}
-      return errOrDef;
-    }
-  }
-}
-```
-- 循环深拷贝 (cloneLoop)
-```ts
-import { type } from '@jsmini/type';
+const type = () => '';
 
 // Object.create(null) 的对象，没有hasOwnProperty方法
 function hasOwnProp(obj: Record<string, any>, key: string) {
@@ -87,6 +13,34 @@ function isClone(x: any) {
 
   return t === 'object' || t === 'array';
 }
+
+// 递归
+export function clone(x: Record<string, any>) {
+  if (!isClone(x)) return x;
+
+  const t = type(x);
+
+  let res: any;
+
+  if (t === 'array') {
+    res = [];
+    for (let i = 0; i < x.length; i++) {
+      // 避免一层死循环 a.b = a
+      res[i] = x[i] === x ? res : clone(x[i]);
+    }
+  } else if (t === 'object') {
+    res = {};
+    for (let key in x) {
+      if (hasOwnProp(x, key)) {
+        // 避免一层死循环 a.b = a
+        res[key] = x[key] === x ? res : clone(x[key]);
+      }
+    }
+  }
+
+  return res;
+}
+
 
 export function cloneLoop(x: any) {
   const t = type(x);
@@ -108,7 +62,7 @@ export function cloneLoop(x: any) {
     }
   ];
 
-  while(loopList.length) {
+  while (loopList.length) {
     // 深度优先
     const node = loopList.pop();
     const parent = node.parent;
@@ -138,8 +92,8 @@ export function cloneLoop(x: any) {
           res[i] = data[i];
         }
       }
-    } else if (tt === 'object'){
-      for(let k in data) {
+    } else if (tt === 'object') {
+      for (let k in data) {
         if (hasOwnProp(data, k)) {
           // 避免一层死循环 a.b = a
           if (data[k] === data) {
@@ -161,22 +115,7 @@ export function cloneLoop(x: any) {
 
   return root;
 }
-```
-- 循环引用深拷贝 (cloneForce)
-```ts
-import { type } from '@jsmini/type';
 
-// Object.create(null) 的对象，没有hasOwnProperty方法
-function hasOwnProp(obj: Record<string, any>, key: string) {
-  return Object.prototype.hasOwnProperty.call(obj, key);
-}
-
-// 仅对对象和数组进行深拷贝，其他类型，直接返回
-function isClone(x: any) {
-  const t = type(x);
-
-  return t === 'object' || t === 'array';
-}
 
 const UNIQUE_KEY = 'com.yanhaijing.jsmini.clone' + (new Date).getTime();
 
@@ -303,50 +242,3 @@ export function cloneForce(x: any) {
 
   return root;
 }
-
-```
-
-大家可以直接参考学习 [深拷贝的终极探索](https://yanhaijing.com/javascript/2018/10/10/clone-deep/)
-
-当然，我们可以借助 js 实现深拷贝，同时也可以利用浏览器 API 实现该功能。
-
-如 [JavaScript 深拷贝性能分析](https://justjavac.com/javascript/2018/02/02/deep-copy.html) 中的结构化克隆算法:
-
-- MessageChannel
-
-```js
-function structuralClone(obj) {
-  return new Promise(resolve => {
-    const {port1, port2} = new MessageChannel();
-    port2.onmessage = ev => resolve(ev.data);
-    port1.postMessage(obj);
-  });
-}
-
-const obj = /* ... */ {};
-const clone = await structuralClone(obj);
-```
-
-- History
-```js
-function structuralClone(obj) {
-  const oldState = history.state;
-  history.replaceState(obj, document.title);
-  const copy = history.state;
-  history.replaceState(oldState, document.title);
-  return copy;
-}
-
-const obj = /* ... */ {};
-const clone = structuralClone(obj); 
-```
-
-- Notification
-```js
-function structuralClone(obj) {
-  return new Notification('', {data: obj, silent: true}).data;
-}
-
-const obj = /* ... */ {};
-const clone = structuralClone(obj);
-```

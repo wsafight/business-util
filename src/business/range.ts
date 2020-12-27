@@ -1,0 +1,1 @@
+// https://github.com/florian/range.js/blob/master/lib/range.js

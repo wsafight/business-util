@@ -9,7 +9,7 @@
 * * [计算博客阅读时长](/business/reading-time.md)
 * * [根据背景色自适应文本颜色](/business/contrast-text-color.md)
 * * [输入错误提示——模糊集](/business/fuzzy-set.md)
-
+* * [快速的模糊搜索](/business/fuzzy-search.md)
 
 * 辅助开发 
 * * [文件类型检测](/help/file-type.md)

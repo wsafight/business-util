@@ -42,3 +42,4 @@
 
 * 语言补丁
 * * [New Function 创建异步函数](/language/new-async-function.md)
+* * [取得范围数据](/language/range.md)

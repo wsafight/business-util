@@ -4,7 +4,11 @@
 只要在项目的 </body> 之前加入以下代码，便会得到收益。
 
 ```html
-<script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+<script 
+  src="//instant.page/5.1.0" 
+  type="module" 
+  integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"
+></script>
 ```
 
 instant.page 认为当用户的鼠标停留某个标签 65 毫秒的时候，有两分之一的几率他们会点击那个链接，所以 instant.page 在这个时候开始预加载。

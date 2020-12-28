@@ -40,7 +40,7 @@
 * * [利用 gpu 加速数据运算](/performance/gpu.md) 
 * * [通过批处理避免布局抖动 fastDom](/performance/fastdom.md)
 * * [提高转化率的预请求库 instant.page](/performance/instant-page.md)
-* * [跳过 v8 pre-Parse 优化代码性能库 optimize-js](/performace/optimize-js.md)
+* * [跳过 v8 pre-Parse 优化代码性能库 optimize-js](/performance/optimize-js.md)
 
 * 语言补丁
 * * [New Function 创建异步函数](/language/new-async-function.md)

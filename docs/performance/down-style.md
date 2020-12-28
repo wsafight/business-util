@@ -43,3 +43,5 @@ function loadLinks(urls: string[] | string) {
   }
 }
 ```
+
+<div style="float: right">更新时间: {docsify-updated}</div>

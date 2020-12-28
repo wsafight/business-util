@@ -28,3 +28,5 @@ function fuzzysearch (needle: string, haystack: string) {
   return true;
 }
 ```
+
+<div style="float: right">更新时间: {docsify-updated}</div>

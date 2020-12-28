@@ -33,3 +33,5 @@ HTMLImageElement 的只读属性 complete 是一个布尔值， 表示图片是�
 - 由于错误或者禁用图像，图像未能显示
 
 注意，由于图片可能是异步接收的，所以在脚本运行时 complete 的值可能会发生变化。
+
+<div style="float: right">更新时间: {docsify-updated}</div>

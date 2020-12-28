@@ -36,3 +36,5 @@ const size = filesize.partial({standard: "iec"});
 
 size(265318); // "259.1 KiB"
 ```
+
+<div style="float: right">更新时间: {docsify-updated}</div>

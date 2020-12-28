@@ -102,3 +102,5 @@ function parallelLoadScripts(scripts: string[] | string, options: Record<string,
   }
 }
 ```
+
+<div style="float: right">更新时间: {docsify-updated}</div>

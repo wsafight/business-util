@@ -74,3 +74,5 @@ element.innerHTML = element.innerHTML
 ```
 
 不过该 bug 早在 DOMPurify 2.0.1 被修复。
+
+<div style="float: right">更新时间: {docsify-updated}</div>

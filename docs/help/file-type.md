@@ -15,3 +15,5 @@
 
 
 代码库 [file-type.js](https://github.com/sindresorhus/file-type) 中
+
+<div style="float: right">更新时间: {docsify-updated}</div>

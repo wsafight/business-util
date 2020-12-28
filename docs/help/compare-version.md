@@ -27,5 +27,8 @@ function compareVersion(v1: string, v2: string) {
 }
 ```
 
+<div style="float: right">更新时间: {docsify-updated}</div>
+
+
 
 

@@ -54,3 +54,5 @@ wordsPerMinute: 200
 ```
 
 实际上，对于不同类型，不同深度的博文，以及不同知识程度的读者，往往很难根据字数来判定阅读时长。所以这种数据也仅供参考。
+
+<div style="float: right">更新时间: {docsify-updated}</div>

@@ -37,6 +37,7 @@ function getUserPosts(id, limit, offset) {
 
 当然，在各种路由库中使用的 [path-to-regexp](https://github.com/pillarjs/path-to-regexp) 库也有此功能。但此库更适合复杂场景。
 
+<div style="float: right">更新时间: {docsify-updated}</div>
 
 
 

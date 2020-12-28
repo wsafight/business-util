@@ -232,3 +232,5 @@ function stub<T extends (...arg: unknown[]) => unknown>(...args: unknown[]) {
 
 export default stub
 ```
+
+<div style="float: right">更新时间: {docsify-updated}</div>

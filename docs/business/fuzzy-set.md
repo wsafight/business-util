@@ -565,3 +565,5 @@ class FuzzySet {
 [fuzzyset.js 交互式文档](http://glench.github.io/fuzzyset.js/)
 
 [svelte fuzzymatch](https://github.com/sveltejs/svelte/blob/master/src/compiler/utils/fuzzymatch.ts)
+
+<div style="float: right">更新时间: {docsify-updated}</div>

@@ -102,3 +102,6 @@ export default function mitt(all?: EventHandlerMap): Emitter {
 
 实际使用时候，我们可以直接进行单播以及广播。
 
+<div style="float: right">更新时间: {docsify-updated}</div>
+
+

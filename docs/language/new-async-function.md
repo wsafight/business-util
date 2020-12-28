@@ -13,3 +13,5 @@ foo = new AsyncFunction('x, y, p', 'return x + y + await p')
 
 foo(1,2, Promise.resolve(3)).then(console.log) // 6
 ```
+
+<div style="float: right">更新时间: {docsify-updated}</div>

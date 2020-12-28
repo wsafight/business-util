@@ -48,3 +48,5 @@ func main() {
 	fmt.Println("Complete.")
 }
 ```
+
+<div style="float: right">更新时间: {docsify-updated}</div>

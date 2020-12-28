@@ -39,4 +39,7 @@ function round(number: number, precision: number = 2) {
 }
 ```
 
-通常前端计算不需要那么高的精度，在计算完成直接调用该函数即可
+通常前端计算不需要那么高的精度，在计算完成直接调用该函数即可。
+
+<div style="float: right">更新时间: {docsify-updated}</div>
+

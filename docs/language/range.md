@@ -95,3 +95,5 @@ function range(from: string | number, to?: number | string, step: number = 1) {
   return self;
 }
 ```
+
+<div style="float: right">更新时间: {docsify-updated}</div>

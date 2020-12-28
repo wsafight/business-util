@@ -68,3 +68,5 @@ export const shouldYield = (): boolean => {
 const getTime = () => performance.now()
 
 ```
+
+<div style="float: right">更新时间: {docsify-updated}</div>

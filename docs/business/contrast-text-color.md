@@ -140,3 +140,6 @@ export function contrastTextColor(backgroundColor: string) {
 完整代码可以在代码库中 [转换问题颜色](https://github.com/wsafight/Daily-Algorithm/blob/master/src/fun/contrast-text-color.ts) 中看到。
 
 当然了，如果你不需要严格遵循 W3C 准则，当前代码已经足够使用。但是如果你需要严格遵循你可以参考 http://stackoverflow.com/a/3943023/112731 以及 https://www.w3.org/TR/WCAG20/。
+
+<div style="float: right">更新时间: {docsify-updated}</div>
+

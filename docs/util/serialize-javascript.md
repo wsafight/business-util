@@ -393,3 +393,5 @@ module.exports = function serialize(obj, options) {
   });
 }
 ```
+
+<div style="float: right">更新时间: {docsify-updated}</div>

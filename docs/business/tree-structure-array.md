@@ -9,3 +9,5 @@
 ```
 
 同时，把树形结构转换为数组后可以直接利用虚拟滚动来优化。
+
+<div style="float: right">更新时间: {docsify-updated}</div>

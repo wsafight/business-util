@@ -66,3 +66,5 @@ _.get(object, ['a', '0', 'b', 'c']);
 _.get(object, 'a.b.c', 'default');
 // => 'default'
 ```
+
+<div style="float: right">更新时间: {docsify-updated}</div>

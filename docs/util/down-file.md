@@ -83,3 +83,5 @@ function downloadContent(data:  string | ArrayBuffer | ArrayBufferView | Blob,
   }
 }
 ```
+
+<div style="float: right">更新时间: {docsify-updated}</div>

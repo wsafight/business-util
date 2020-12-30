@@ -1,5 +1,16 @@
 # 微任务延迟调度
 
+通常来说，我们需要尽快执行代码。
+
+```ts
+const nextTick =
+  typeof Promise !== 'undefined'
+    ? Promise.resolve().then.bind(Promise.resolve())
+    : function (a) {
+        window.setTimeout(a, 0);
+      };
+```
+
 ```ts
 import { ITask, ITaskCallback } from './type'
 

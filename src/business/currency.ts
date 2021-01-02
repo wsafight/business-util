@@ -1,45 +1,57 @@
 // https://raw.githubusercontent.com/openexchangerates/accounting.js/master/accounting.js
 
+/** 币种设置 */
 interface CurrencySetting {
+  /** 币种名称 */
   name: string;
+  /** 币种符号 */
   symbol: string;
+  /** 符号位置 */
   symbolPosition: 'before' | 'after';
-  group: string;
-  precision: number;
+  /** 小数点 符号 */
   decimal: string;
+  /** 分组字符串 */
+  group: string;
+  /** 小数点保留位数 */
+  precision: number;
 }
 
+
+/** 分组字符串正则 */
+const groupRegex = /(\d)(?=(\d{3})+\.)/g
+
 class Currency {
-  private setting: CurrencySetting
-  constructor(setting: CurrencySetting) {
-    this.setting = setting
+  /** 币种设置信息 */
+  constructor(private readonly setting: CurrencySetting) {
   }
 
   /**
    * @param value 数值
-   * @param precision 小数点后精确位数
-   * @returns {string} 格式化后的  价格
+   * @param precision 小数点后精确位数(不传递则使用配置)
+   * @returns {string} 格式化后的 价格
    * 例如  -1111.2 => -$1,111.2
    */
-  format(value: number, precision: number) {
+  format(value: number, precision?: number): string {
     precision = this.normalizePrecision(precision)
     value = this.parse(value)
     const isNegative = value < 0
-    value = isNegative ? -value : value
-    let formated = this.toFixed(value, precision).replace(/(\d)(?=(\d{3})+\.)/g, '$1' + this.setting.group)
+    // 获取绝对值
+    value = Math.abs(value)
+    let formatted = this.toFixed(value, precision).replace(groupRegex, '$1' + this.setting.group)
+    // 如果当前的 小数点符号 不是 '.', 就进行修改
     if (this.setting.decimal !== '.') {
-      formated = formated.substring(0, formated.length - precision - 1) + this.setting.decimal + formated.substring(formated.length - precision)
+      formatted = formatted.substring(0, formatted.length - precision - 1) + this.setting.decimal + formatted.substring(formatted.length - precision)
     }
-    return (isNegative ? '-' : '') + (this.setting.symbolPosition === 'before' ? (this.setting.symbol + formated) : (formated + this.setting.symbol))
+    return (isNegative ? '-' : '') + (this.setting.symbolPosition === 'before' ? (this.setting.symbol + formatted) : (formatted + this.setting.symbol))
   }
 
   /**
-   * Implementation of toFixed() that treats floats more like decimals
-   *
-   * Fixes binary rounding issues (eg. (0.615).toFixed(2) === '0.61') that present
-   * problems for accounting- and finance-related software.
+   * 四舍五入数据
+   * @param value 传入数字
+   * @param precision 小数点后精确位数(不传递则使用配置)
+   * @private
    */
-  toFixed(value: number, precision: number) {
+  private toFixed(value: number, precision?: number): string {
     precision = this.normalizePrecision(precision)
     if (!precision && (precision < 0 || precision > 6)) {
       throw new Error('invalid precision \'' + precision + '\'')
@@ -48,7 +60,12 @@ class Currency {
     return value.toFixed(precision)
   }
 
-  normalizePrecision(precision: number | string) {
+  /**
+   * 格式化小数点位数
+   * @param precision 小数点位数
+   * @private
+   */
+  private normalizePrecision(precision: number | string | undefined): number {
     if (typeof (precision) === 'number') {
       return precision
     }
@@ -64,21 +81,17 @@ class Currency {
    * @param value 字符串 或者 number
    * @returns {*}
    */
-  parse(value: number | string) {
+  parse(value: number | string): number {
     value = value || 0
     if (typeof value === 'number') return value
 
-    // 适用于小数点不为 . 的货币类型
-    // 正则 0-9 - 小数点符号
     const regex = new RegExp('[^0-9-' + this.setting.decimal + ']', 'g')
-    const unformatted = parseFloat(
+    const unformatted: number = parseFloat(
       ('' + value)
         .replace(/\((?=\d+)(.*)\)/, '-$1') // replace bracketed values with negatives
         .replace(regex, '')         // strip out any cruft
         .replace(this.setting.decimal, '.')      // make sure decimal point is standard
     )
-
-    // This will fail silently which may cause trouble, let's wait and see:
     return !isNaN(unformatted) ? unformatted : 0
   }
 }

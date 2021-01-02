@@ -13,7 +13,10 @@ function getObjOwnKeys(object: Record<string, any>) {
 }
 
 export class ObjectChanger {
-  private obj: Record<string, any>
+  /**
+   *  当前对象可变
+   * */
+  private readonly obj: Record<string, any>
   private initial: Record<string, any> = {}
   constructor (obj: Record<string, any>) {
     this.obj = obj

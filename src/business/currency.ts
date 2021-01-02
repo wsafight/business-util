@@ -21,7 +21,9 @@ interface CurrencySetting {
 const groupRegex = /(\d)(?=(\d{3})+\.)/g
 
 class Currency {
-  /** 币种设置信息 */
+  /**
+   * @param setting 币种设置信息
+   */
   constructor(private readonly setting: CurrencySetting) {
   }
 
@@ -96,7 +98,10 @@ class Currency {
   }
 }
 
-const DEFAULT_CURRENCY_SETTINGS: Partial<CurrencySetting> = {
+/**
+ * 默认币种配置
+ */
+const DEFAULT_CURRENCY_SETTING: Partial<CurrencySetting> = {
   precision: 2,
   decimal: '.',
   group: ',',
@@ -104,52 +109,53 @@ const DEFAULT_CURRENCY_SETTINGS: Partial<CurrencySetting> = {
 }
 
 export const CURRENCIES: Record<string, CurrencySetting> = {
+  /** RMB */
   CNY: {
-    ...DEFAULT_CURRENCY_SETTINGS,
+    ...DEFAULT_CURRENCY_SETTING,
     name: 'CNY',
     symbol: '¥'
   } as CurrencySetting,
+  /** 美元 */
   USD: {
-    ...DEFAULT_CURRENCY_SETTINGS,
+    ...DEFAULT_CURRENCY_SETTING,
     name: 'USD',
     symbol: '$'
   } as CurrencySetting,
+  /** 欧元 */
   EUR: {
-    ...DEFAULT_CURRENCY_SETTINGS,
+    ...DEFAULT_CURRENCY_SETTING,
     name: 'EUR',
     symbol: '€',
     decimal: ',',
     group: '.',
     symbolPosition: 'after'
   } as CurrencySetting,
-  HKD: {
-    ...DEFAULT_CURRENCY_SETTINGS,
-    name: 'HKD',
-    symbol: 'HK$'
-  } as CurrencySetting,
-  JPY: {
-    ...DEFAULT_CURRENCY_SETTINGS,
-    name: 'JPY',
-    symbol: '円',
-    symbolPosition: 'after'
-  } as CurrencySetting,
-  KRW: {
-    ...DEFAULT_CURRENCY_SETTINGS,
-    name: 'KRW',
-    symbol: '₩',
-    symbolPosition: 'after'
-  } as CurrencySetting,
-  THB: {
-    ...DEFAULT_CURRENCY_SETTINGS,
-    name: 'THB',
-    symbol: '฿'
-  } as CurrencySetting,
+}
+
+/**
+ * 获取币种配置
+ * @param name 币种名称
+ */
+function getCurrencySettings(name: string): CurrencySetting {
+  if (!CURRENCIES[name]) {
+    throw new Error(`not supported currency ${name}`)
+  }
+  return CURRENCIES[name]
 }
 
 
+
+
+/**
+ * 币种缓存
+ */
 const CURRENCY_CACHE = new Map()
 
-export function getCurrency(name: string) {
+/**
+ * 根据名称获取币种类
+ * @param name
+ */
+function getCurrency(name: string) {
   let currency = CURRENCY_CACHE.get(name)
   if (!currency) {
     currency = new Currency(CURRENCIES[name])
@@ -158,9 +164,3 @@ export function getCurrency(name: string) {
   return currency
 }
 
-export function getCurrencySettings(name: string) {
-  if (!CURRENCIES[name]) {
-    throw new Error('not supported currency \'' + name + '\'')
-  }
-  return CURRENCIES[name]
-}

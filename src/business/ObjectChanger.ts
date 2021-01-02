@@ -42,12 +42,14 @@ export class ObjectChanger {
       }
     })
   }
+
   isChanged () {
-    return !this._visitChangedItem()
+    return !this.visitChangedItem()
   }
+
   getChangedObject () {
     const changedObject: Record<string, any> = {}
-    this._visitChangedItem((key, value, reason) => {
+    this.visitChangedItem((key, value, reason) => {
       if (reason === 'modified') {
         changedObject[key] = value
       } else {
@@ -78,7 +80,7 @@ export class ObjectChanger {
    * @returns {boolean} 遍历过程中终止的场合返回false，否则返回true
    * @private
    */
-  _visitChangedItem (visitor?: visitorFun) {
+  private visitChangedItem (visitor?: visitorFun) {
     const checkedKeys: Record<string, any> = {}
     const keys = getObjOwnKeys(this.obj)
     for (let i = 0, len = keys.length; i < len; i++) {

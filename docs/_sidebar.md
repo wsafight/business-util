@@ -50,4 +50,5 @@
 * * 实用数据结构
 * * [前缀树](/data-structure/trie-tree.md)
 * * [hash-table](/data-structure/hash-table.md) 
- 
+* * [优先队列](/data-structure/priority-queue.md)
+* * [跳表](/data-structure/skip-table.md) 

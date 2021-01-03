@@ -29,6 +29,7 @@
 * * [微小的 bus 库 mitt.js](/util/mitt.md)
 * * [检测图像(视频)加载完成 egjs-imready](/util/egjs-imready.md)
 * * [专业的深拷贝库](/util/deep-clone.md)
+* * [前缀树](/util/trie-tree.md)
 
 * web 安全
 * * [css 键盘记录器](/security/css-key-logging.md)

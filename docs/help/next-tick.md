@@ -1,6 +1,6 @@
 # 微任务延迟调度
 
-通常来说，我们需要尽快执行代码。
+针对不同的浏览器而言，我们想要尽快执行异步代码时往往会添加 nextTick 函数。而 nextTick 会直接使用 setTimeout (这样做法并不严谨，因为 setTimeout 属于宏任务，而并非微任务)
 
 ```ts
 const nextTick =
@@ -10,6 +10,11 @@ const nextTick =
         window.setTimeout(a, 0);
       };
 ```
+
+
+为了尽快执行代码，很多 Promise 的实现库用了 MutationObserver 来模仿 nextTick。但不利于
+
+
 
 ```ts
 import { ITask, ITaskCallback } from './type'

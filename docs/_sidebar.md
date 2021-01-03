@@ -47,7 +47,7 @@
 * * [New Function 创建异步函数](/language/new-async-function.md)
 * * [取得范围数据](/language/range.md)
 
-* * 实用数据结构
+* 实用数据结构
 * * [前缀树](/data-structure/trie-tree.md)
 * * [hash-table](/data-structure/hash-table.md) 
 * * [优先队列](/data-structure/priority-queue.md)

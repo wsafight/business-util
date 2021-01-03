@@ -29,7 +29,7 @@
 * * [微小的 bus 库 mitt.js](/util/mitt.md)
 * * [检测图像(视频)加载完成 egjs-imready](/util/egjs-imready.md)
 * * [专业的深拷贝库](/util/deep-clone.md)
-* * [前缀树](/util/trie-tree.md)
+
 
 * web 安全
 * * [css 键盘记录器](/security/css-key-logging.md)
@@ -46,3 +46,8 @@
 * 语言补丁
 * * [New Function 创建异步函数](/language/new-async-function.md)
 * * [取得范围数据](/language/range.md)
+
+* * 实用数据结构
+* * [前缀树](/data-structure/trie-tree.md)
+* * [hash-table](/data-structure/hash-table.md) 
+ 

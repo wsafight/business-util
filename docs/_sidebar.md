@@ -22,6 +22,7 @@
 * * [微任务延迟调度](/help/next-tick.md)
 * * [根据对象路径安全获取对象值](/help/get-value-by-key.md)
 * * [客户端保存生成文件](/help/file-saver.md)
+* * [不变性助手工具](/help/immutability-helper.md)
 
 * 实用工具
 * * [文件下载](/util/down-file.md)

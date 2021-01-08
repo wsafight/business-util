@@ -1,6 +1,6 @@
 # 模糊搜索
 
-微小而快速的模糊搜索库 [fuzzysearch](https://github.com/bevacqua/fuzzysearch)
+微小而快速的 js 模糊搜索库 [fuzzysearch](https://github.com/bevacqua/fuzzysearch)
 
 对于基于轻量级用户输入的过滤数据非常有用。
 

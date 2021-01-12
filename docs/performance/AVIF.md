@@ -59,7 +59,7 @@ fs.readFile("xxx.jpeg", (err, inputBuffer) => {
     .webp({ quality: 50, speed: 1 })
     .toFile("xxx.webp");
 
-  // AVIF 转换
+  // AVIF 转换, 速度很慢
   sharp(inputBuffer)
     .avif({quality: 50, speed: 1})
     .toFile("xxx.avif");

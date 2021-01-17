@@ -6,6 +6,7 @@
 
 这里推荐使用 [Keymage](https://github.com/piranha/keymage) 。
 
+
 ```ts
 // bind on 'a'
 keymage('a', function() { alert("You pressed 'a'"); });
@@ -18,5 +19,9 @@ keymage('ctrl-e', function() { return false; });
 // systems
 keymage('defmod-j', function() { alert("I am fired"); });
 ```
+
+或者
+
+https://github.com/madrobby/keymaster
 
 不过如何设计出让用户用的爽的快捷键则是更加复杂的问题。

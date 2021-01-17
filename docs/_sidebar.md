@@ -60,3 +60,5 @@
 * * [hash-table](/data-structure/hash-table.md) 
 * * [优先队列](/data-structure/priority-queue.md)
 * * [跳表](/data-structure/skip-table.md) 
+
+* 算法

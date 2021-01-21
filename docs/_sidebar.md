@@ -14,6 +14,7 @@
 
 * 用户体验
 * * [组合键提升用户体验](/UX/key-manage.md)
+* * [提升交互体验的 web Observer](/UX/web-observer.md)
 
 * 辅助开发 
 * * [文件类型检测](/help/file-type.md)

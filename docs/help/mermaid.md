@@ -6,6 +6,8 @@
 
 这里我将要使用 [mermaid](https://mermaid-js.github.io/mermaid/#/) 绘制各种图形。
 
+大家可以直接使用 [mermaid-live-editor](https://mermaid-js.github.io/mermaid-live-editor/) 在网页中进行开发转换(本来想自己写一个)。
+
 ## 流程图
 
 流程图自不必说，下图是一个通用的表单填写流程(不包含一些特殊处理):

@@ -17,6 +17,7 @@
 * * [提升交互体验的 web Observer](/UX/web-observer.md)
 
 * 辅助开发 
+* * [开发助力 mermaid 绘制图表](/help/mermaid.md)
 * * [文件类型检测](/help/file-type.md)
 * * [小数四舍五入](/help/round.md)
 * * [项目版本比对](/help/compare-version.md)
@@ -27,7 +28,6 @@
 * * [根据对象路径安全获取对象值](/help/get-value-by-key.md)
 * * [客户端保存生成文件](/help/file-saver.md)
 * * [不变性数据修改辅助类](/help/immutability-helper.md)
-
 
 * 实用工具
 * * [文件下载](/util/down-file.md)

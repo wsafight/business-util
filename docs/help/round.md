@@ -4,13 +4,13 @@
 
 
 
-用 fixed 格式化, toFixed 本身有问题
+用 fixed 格式化， toFixed 本身有问题
 ```
 (11.545).toFixed(2)  =>  "11.54"
 ```
-https://mathjs.org/ 过于庞大，仅仅只用于格式化两位小数太过笨重
+[math](https://mathjs.org) 过于庞大，仅仅只用于格式化两位小数太过笨重
 
-原理 Math.round() 函数返回一个数字四舍五入后最接近的整数。
+原理 Math.round () 函数返回一个数字四舍五入后最接近的整数。
 ```js
   Math.round(3.44444444)
   // => 3

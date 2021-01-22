@@ -6,11 +6,11 @@
 
 这里我将要使用 [mermaid](https://mermaid-js.github.io/mermaid/#/) 绘制各种图形。
 
-大家可以直接使用 [mermaid-live-editor](https://mermaid-js.github.io/mermaid-live-editor/) 在网页中进行开发转换(本来想自己写一个)。
+大家可以直接使用 [mermaid-live-editor](https://mermaid-js.github.io/mermaid-live-editor/) 在网页中进行开发转换 (本来想自己写一个)。
 
 ## 流程图
 
-流程图自不必说，下图是一个通用的表单填写流程(不包含一些特殊处理):
+流程图自不必说，下图是一个通用的表单填写流程 (不包含一些特殊处理):
 
 ```mermaid
 graph TD;
@@ -84,7 +84,7 @@ sequenceDiagram
     开发者服务器->>小程序: 返回业务数据
 ```
 
-不仅如此，我们还可以开发其他类型的图表: 类图、状态图、实体关系图、gantt 图以及其他。大家可以自行学习开发。
+不仅如此，我们还可以开发其他类型的图表： 类图、状态图、实体关系图、gantt 图以及其他。大家可以自行学习开发。
 
 
 

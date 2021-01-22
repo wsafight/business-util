@@ -4,19 +4,19 @@
 
 特点如下:
 
-- 以字符串的方式转换，没有超大数及浮点数等问题(请自行对原数据进行四舍五入等操作)
+- 以字符串的方式转换，没有超大数及浮点数等问题 (请自行对原数据进行四舍五入等操作)
 - 支持科学记数法字符串的转换
 - 支持口语化
-- 支持自定义转换(不论是兆,京还是厘都可以用)
+- 支持自定义转换 (不论是兆，京还是厘都可以用)
 - 对超大数支持用争议少的万万亿代替亿亿
 - 中文数字转回阿拉伯数字
 
 api：
-- encodeS(num,options) 转中文小写
-- encodeB(num,options) 转中文大写
-- toMoney(num,options) 转中文金额
-- decodeS(zh_num) 中文小写转数字
-- decodeB(zh_num) 中文大写转数字
+- encodeS (num,options) 转中文小写
+- encodeB (num,options) 转中文大写
+- toMoney (num,options) 转中文金额
+- decodeS (zh_num) 中文小写转数字
+- decodeB (zh_num) 中文大写转数字
 
 ```ts
 // options.tenMin

@@ -1,6 +1,6 @@
 # 计算文章阅读时长
 
-我们在浏览博客网站时候，博文上方往往会显示阅读时长(xx 分钟)。这个可以参考开源库 [reading-time](https://github.com/ngryman/reading-time/blob/master/lib/reading-time.js
+我们在浏览博客网站时候，博文上方往往会显示阅读时长 (xx 分钟)。这个可以参考开源库 [reading-time](https://github.com/ngryman/reading-time/blob/master/lib/reading-time.js
 )。
 
 ```ts

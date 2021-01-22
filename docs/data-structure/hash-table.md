@@ -1,6 +1,6 @@
 # hash-table
 
-hash 表的数据查询为 O(1)
+hash 表的数据查询为 O (1)
 
 
 首先构建链表

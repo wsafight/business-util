@@ -14,7 +14,7 @@ function getUserPosts(id, blogId, limit, offset) {
 ```
 如您所见，这个最小的示例已经很难阅读。同时也不可能处理上述业务需求。
 
-由于用户配置输入的路由只能是字符串('/users/:id/posts')，我们只能通过字符串去匹配与跳转路由:
+由于用户配置输入的路由只能是字符串 ('/users/:id/posts')，我们只能通过字符串去匹配与跳转路由:
 
 当前 urlcat 库可以直接让你这样使用
 
@@ -31,7 +31,7 @@ function getUserPosts(id, limit, offset) {
 该库处理：
 
 - 转义所有参数
-- 连接所有部件（总是会有一个准确/和?它们之间的字符）
+- 连接所有部件（总是会有一个准确 "/" 和 "?" 它们之间的字符）
 
 进入 [url cat文档](https://urlcat.dev/#/)
 

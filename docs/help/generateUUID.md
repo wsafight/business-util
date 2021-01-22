@@ -5,11 +5,11 @@
 https://css-tricks.com/lots-of-ways-to-use-math-random-in-javascript/
 
 
-在需要生成随机值时，很多人会使用 Math.random()。这个方法在浏览器中是以伪随机数生成器
-（PRNG，PseudoRandom Number Generator）方式实现的。所谓“伪”指的是生成值的过程不是真的随机。
+在需要生成随机值时，很多人会使用 Math.random ()。这个方法在浏览器中是以伪随机数生成器
+（PRNG，PseudoRandom Number Generator）方式实现的。所谓 "伪" 指的是生成值的过程不是真的随机。
 PRNG 生成的值只是模拟了随机的特性。浏览器的 PRNG 并未使用真正的随机源，只是对一个内部状态
-应用了固定的算法。每次调用 Math.random()，这个内部状态都会被一个算法修改，而结果会被转换
-为一个新的随机值。例如，V8 引擎使用了一个名为 xorshift128+的算法来执行这种修改。
+应用了固定的算法。每次调用 Math.random ()，这个内部状态都会被一个算法修改，而结果会被转换
+为一个新的随机值。例如，V8 引擎使用了一个名为 xorshift128+ 的算法来执行这种修改。
 
 
 由于算法本身是固定的，其输入只是之前的状态，因此随机数顺序也是确定的。xorshift128+使用

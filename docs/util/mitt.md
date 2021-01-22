@@ -1,6 +1,6 @@
 # 微小的 bus 库 mitt
 
-mitt.js 开源库仅仅只有 200b,但是完整实现了全局通知的功能。
+mitt.js 开源库仅仅只有 200 b，但是完整实现了全局通知的功能。
 
 
 源码如下:
@@ -98,7 +98,7 @@ export default function mitt(all?: EventHandlerMap): Emitter {
   };
 }
 ```
-注意: 无论是 on 或者 off 时候 绑定的函数 handler 必须是同一个函数。
+注意：无论是 on 或者 off 时候 绑定的函数 handler 必须是同一个函数。
 
 实际使用时候，我们可以直接进行单播以及广播。
 

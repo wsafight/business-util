@@ -54,6 +54,9 @@
 * * [跳过 v8 pre-Parse 优化代码性能库 optimize-js](/performance/optimize-js.md)
 * * [AVIF 图片格式](/performance/AVIF.md)
 
+* 测试
+* * [HTTP 交互库](/test/polly-js.md)
+
 * 语言补丁
 * * [New Function 创建异步函数](/language/new-async-function.md)
 * * [取得范围数据](/language/range.md)

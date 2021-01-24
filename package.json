@@ -9,10 +9,10 @@
   },
   "dependencies": {
     "typescript": "^4.1.3",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.20",
+    "immutability-helper": "^3.1.1"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.165",
-    "cypress": "^6.1.0"
+    "@types/lodash": "^4.14.165"
   }
 }

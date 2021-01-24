@@ -58,52 +58,38 @@ const newData = update(myData, {
 });
 ```
 
-[immutability-helper](https://github.com/kolodny/immutability-helper) 代码简单，仅仅只有 400 行代码，我们可以学习一下:
+[immutability-helper](https://github.com/kolodny/immutability-helper) 代码简单，仅仅只有 400 行代码，我们可以学习一下。
+
+先是工具函数(保留核心,环境判断，错误警告等逻辑去除):
 
 ```ts
-declare let process: any;
-
-function stringifiable(obj: any) {
-  // Safely stringify Object.create(null)
-  /* istanbul ignore next */
-  return typeof obj === 'object' && !('toString' in obj) ?
-    Object.prototype.toString.call(obj).slice(8, -1) :
-    obj;
-}
-
-const isProduction = typeof process === 'object' && process.env.NODE_ENV === 'production';
-export function invariant(condition: boolean, message: () => string) {
-  if (!condition) {
-    /* istanbul ignore next */
-    if (isProduction) {
-      throw new Error('Invariant failed');
-    }
-    throw new Error(message());
-  }
-}
-
+// 提取函数，大量使用时有一定性能优势，且简明(更重要)
 const hasOwnProperty = Object.prototype.hasOwnProperty;
 const splice = Array.prototype.splice;
-
 const toString = Object.prototype.toString;
+
+// 检查类型
 function type<T>(obj: T) {
   return (toString.call(obj) as string).slice(8, -1);
 }
 
-const assign = Object.assign || /* istanbul ignore next */ (<T, S>(target: T, source: S) => {
+// 浅拷贝，使用 Object.assign 
+const assign = Object.assign || /* istanbul ignore next */ (<T, S>(target: T & any, source: S & Record<string, any>) => {
   getAllKeys(source).forEach(key => {
     if (hasOwnProperty.call(source, key)) {
-      target[key] = source[key];
+      target[key] = source[key] ;
     }
   });
   return target as T & S;
 });
 
+// 获取对象 key
 const getAllKeys = typeof Object.getOwnPropertySymbols === 'function'
-  ? obj => Object.keys(obj).concat(Object.getOwnPropertySymbols(obj) as any)
+  ? (obj: Record<string, any>) => Object.keys(obj).concat(Object.getOwnPropertySymbols(obj) as any)
   /* istanbul ignore next */
-  : obj => Object.keys(obj);
+  : (obj: Record<string, any>) => Object.keys(obj);
 
+// 所有数据的浅拷贝
 function copy<T, U, K, V, X>(
   object: T extends ReadonlyArray<U>
     ? ReadonlyArray<U>
@@ -127,96 +113,72 @@ function copy<T, U, K, V, X>(
           : object as T;
 }
 
+```
+
+ 然后是核心代码(同样保留核心) :
+
+```ts
 export class Context {
-  private commands = assign({}, defaultCommands);
-  constructor() {
-    this.update = this.update.bind(this);
-    // Deprecated: update.extend, update.isEquals and update.newContext
-    (this.update as any).extend = this.extend = this.extend.bind(this);
-    (this.update as any).isEquals = (x, y) => x === y;
-    (this.update as any).newContext = () => new Context().update;
-  }
-  get isEquals() {
-    return (this.update as any).isEquals;
-  }
-  set isEquals(value: (x, y) => boolean) {
-    (this.update as any).isEquals = value;
-  }
+  // 导入所有指令
+  private commands: Record<string, any> = assign({}, defaultCommands);
+
+  // 添加扩展指令
   public extend<T>(directive: string, fn: (param: any, old: T) => T) {
     this.commands[directive] = fn;
   }
+  
+  // 功能核心
   public update<T, C extends CustomCommands<object> = never>(
     object: T,
     $spec: Spec<T, C>,
   ): T {
+    // 增强健壮性，如果操作命令是函数,修改为 $apply
     const spec = (typeof $spec === 'function') ? { $apply: $spec } : $spec;
 
-    if (!(Array.isArray(object) && Array.isArray(spec))) {
-      invariant(
-        !Array.isArray(spec),
-        () => `update(): You provided an invalid spec to update(). The spec may ` +
-        `not contain an array except as the value of $set, $push, $unshift, ` +
-        `$splice or any custom command allowing an array value.`,
-      );
-    }
-
-    invariant(
-      typeof spec === 'object' && spec !== null,
-      () => `update(): You provided an invalid spec to update(). The spec and ` +
-      `every included key path must be plain objects containing one of the ` +
-      `following commands: ${Object.keys(this.commands).join(', ')}.`,
-
-    );
-
+    // 数组(数组) 检查，报错
+      
+    // 返回对象(数组) 
     let nextObject = object;
-    getAllKeys(spec).forEach(key => {
+    // 遍历指令
+    getAllKeys(spec).forEach((key: string) => {
+      // 如果指令在指令集中
       if (hasOwnProperty.call(this.commands, key)) {
+        // 性能优化,遍历过程中，如果 object 还是当前之前数据
         const objectWasNextObject = object === nextObject;
-        nextObject = this.commands[key](spec[key], nextObject, spec, object);
+        
+        // 用指令修改对象
+        nextObject = this.commands[key]((spec as any)[key], nextObject, spec, object);
+        
+        // 修改后，两者使用传入函数计算，还是相等的情况下，直接使用之前数据
         if (objectWasNextObject && this.isEquals(nextObject, object)) {
           nextObject = object;
         }
       } else {
-        const nextValueForKey =
-          type(object) === 'Map'
-            ? this.update((object as any as Map<any, any>).get(key), spec[key])
-            : this.update(object[key], spec[key]);
-        const nextObjectValue =
-          type(nextObject) === 'Map'
-              ? (nextObject as any as Map<any, any>).get(key)
-              : nextObject[key];
-        if (!this.isEquals(nextValueForKey, nextObjectValue)
-          || typeof nextValueForKey === 'undefined'
-          && !hasOwnProperty.call(object, key)
-        ) {
-          if (nextObject === object) {
-            nextObject = copy(object as any);
-          }
-          if (type(nextObject) === 'Map') {
-            (nextObject as any as Map<any, any>).set(key, nextValueForKey);
-          } else {
-            nextObject[key] = nextValueForKey;
-          }
-        }
+        // 不在指令集中，做其他操作
+        // 类似于 update(collection, {2: {a: {$splice: [[1, 1, 13, 14]]}}});
+        // 解析对象规则后继续递归调用 update, 不断递归，不断返回
+        // ...
       }
     });
     return nextObject;
   }
 }
+```
 
+最后是通用指令:
+
+```ts
 const defaultCommands = {
   $push(value: any, nextObject: any, spec: any) {
-    invariantPushAndUnshift(nextObject, spec, '$push');
+    // 数组添加，返回 concat 新数组
     return value.length ? nextObject.concat(value) : nextObject;
   },
   $unshift(value: any, nextObject: any, spec: any) {
-    invariantPushAndUnshift(nextObject, spec, '$unshift');
     return value.length ? value.concat(nextObject) : nextObject;
   },
   $splice(value: any, nextObject: any, spec: any, originalObject: any) {
-    invariantSplices(nextObject, spec);
+    // 循环 splice 调用
     value.forEach((args: any) => {
-      invariantSplice(args);
       if (nextObject === originalObject && args.length) {
         nextObject = copy(originalObject);
       }
@@ -225,13 +187,12 @@ const defaultCommands = {
     return nextObject;
   },
   $set(value: any, _nextObject: any, spec: any) {
-    invariantSet(spec);
+    // 直接替换当前数值
     return value;
   },
   $toggle(targets: any, nextObject: any) {
-    invariantSpecArray(targets, '$toggle');
     const nextObjectCopy = targets.length ? copy(nextObject) : nextObject;
-
+    // 当前对象或者数组切换
     targets.forEach((target: any) => {
       nextObjectCopy[target] = !nextObject[target];
     });
@@ -239,7 +200,7 @@ const defaultCommands = {
     return nextObjectCopy;
   },
   $unset(value: any, nextObject: any, _spec: any, originalObject: any) {
-    invariantSpecArray(value, '$unset');
+    // 拷贝后循环删除
     value.forEach((key: any) => {
       if (Object.hasOwnProperty.call(nextObject, key)) {
         if (nextObject === originalObject) {
@@ -251,8 +212,6 @@ const defaultCommands = {
     return nextObject;
   },
   $add(values: any, nextObject: any, _spec: any, originalObject: any) {
-    invariantMapOrSet(nextObject, '$add');
-    invariantSpecArray(values, '$add');
     if (type(nextObject) === 'Map') {
       values.forEach(([key, value]) => {
         if (nextObject === originalObject && nextObject.get(key) !== value) {
@@ -271,8 +230,6 @@ const defaultCommands = {
     return nextObject;
   },
   $remove(value: any, nextObject: any, _spec: any, originalObject: any) {
-    invariantMapOrSet(nextObject, '$remove');
-    invariantSpecArray(value, '$remove');
     value.forEach((key: any) => {
       if (nextObject === originalObject && nextObject.has(key)) {
         nextObject = copy(originalObject);
@@ -282,7 +239,6 @@ const defaultCommands = {
     return nextObject;
   },
   $merge(value: any, nextObject: any, _spec: any, originalObject: any) {
-    invariantMerge(nextObject, value);
     getAllKeys(value).forEach((key: any) => {
       if (value[key] !== nextObject[key]) {
         if (nextObject === originalObject) {
@@ -294,136 +250,12 @@ const defaultCommands = {
     return nextObject;
   },
   $apply(value: any, original: any) {
-    invariantApply(value);
+    // 传入函数，直接调用函数修改
     return value(original);
   },
 };
+```
 
-const defaultContext = new Context();
-export const isEquals = (defaultContext.update as any).isEquals;
-export const extend = defaultContext.extend;
-export default defaultContext.update;
+就这样，作者写了一个简洁而强大的浅拷贝辅助库。
 
-// @ts-ignore
-exports.default.default = module.exports = assign(exports.default, exports);
-
-// invariants
-
-function invariantPushAndUnshift(value: any, spec: any, command: any) {
-  invariant(
-    Array.isArray(value),
-    () => `update(): expected target of ${stringifiable(command)} to be an array; got ${stringifiable(value)}.`,
-  );
-  invariantSpecArray(spec[command], command);
-}
-
-function invariantSpecArray(spec: any, command: any) {
-  invariant(
-    Array.isArray(spec),
-    () => `update(): expected spec of ${stringifiable(command)} to be an array; got ${stringifiable(spec)}. ` +
-    `Did you forget to wrap your parameter in an array?`,
-  );
-}
-
-function invariantSplices(value: any, spec: any) {
-  invariant(
-    Array.isArray(value),
-    () => `Expected $splice target to be an array; got ${stringifiable(value)}`,
-  );
-  invariantSplice(spec.$splice);
-}
-
-function invariantSplice(value: any) {
-  invariant(
-    Array.isArray(value),
-    () => `update(): expected spec of $splice to be an array of arrays; got ${stringifiable(value)}. ` +
-    `Did you forget to wrap your parameters in an array?`,
-  );
-}
-
-function invariantApply(fn: any) {
-  invariant(
-    typeof fn === 'function',
-    () => `update(): expected spec of $apply to be a function; got ${stringifiable(fn)}.`,
-  );
-}
-
-function invariantSet(spec: any) {
-  invariant(
-    Object.keys(spec).length === 1,
-    () => `Cannot have more than one key in an object with $set`,
-  );
-}
-
-function invariantMerge(target: any, specValue: any) {
-  invariant(
-    specValue && typeof specValue === 'object',
-    () => `update(): $merge expects a spec of type 'object'; got ${stringifiable(specValue)}`,
-  );
-  invariant(
-    target && typeof target === 'object',
-    () => `update(): $merge expects a target of type 'object'; got ${stringifiable(target)}`,
-  );
-}
-
-function invariantMapOrSet(target: any, command: any) {
-  const typeOfTarget = type(target);
-  invariant(
-    typeOfTarget === 'Map' || typeOfTarget === 'Set',
-    () => `update(): ${stringifiable(command)} expects a target of type Set or Map; got ${stringifiable(typeOfTarget)}`,
-  );
-}
-
-// Usage with custom commands is as follows:
-//
-//   interface MyCommands {
-//     $foo: string;
-//   }
-//
-//    update<Foo, CustomCommands<MyCommands>>(..., { $foo: "bar" });
-//
-// It is suggested that if you use custom commands frequently, you wrap and re-export a
-// properly-typed version of `update`:
-//
-//   function myUpdate<T>(object: T, spec: Spec<T, CustomCommands<MyCommands>>) {
-//     return update(object, spec);
-//   }
-//
-// See https://github.com/kolodny/immutability-helper/pull/108 for explanation of why this
-// type exists.
-export type CustomCommands<T> = T & { __noInferenceCustomCommandsBrand: any };
-
-export type Spec<T, C extends CustomCommands<object> = never> =
-  | (
-      T extends (Array<infer U> | ReadonlyArray<infer U>) ? ArraySpec<U, C> :
-      T extends (Map<infer K, infer V> | ReadonlyMap<infer K, infer V>) ? MapSpec<K, V, C> :
-      T extends (Set<infer X> | ReadonlySet<infer X>) ? SetSpec<X> :
-      T extends object ? ObjectSpec<T, C> :
-      never
-    )
-  | { $set: T }
-  | { $apply: (v: T) => T }
-  | ((v: T) => T)
-  | (C extends CustomCommands<infer O> ? O : never);
-
-type ArraySpec<T, C extends CustomCommands<object>> =
-  | { $push: ReadonlyArray<T> }
-  | { $unshift: ReadonlyArray<T> }
-  | { $splice: ReadonlyArray<[number, number?] | [number, number, ...T[]]> }
-  | { [index: string]: Spec<T, C> }; // Note that this does not type check properly if index: number.
-
-type MapSpec<K, V, C extends CustomCommands<object>> =
-  | { $add: ReadonlyArray<[K, V]> }
-  | { $remove: ReadonlyArray<K> }
-  | { [key: string]: Spec<V, C> };
-
-type SetSpec<T> =
-  | { $add: ReadonlyArray<T> }
-  | { $remove: ReadonlyArray<T> };
-
-type ObjectSpec<T, C extends CustomCommands<object>> =
-  | { $toggle: ReadonlyArray<keyof T> }
-  | { $unset: ReadonlyArray<keyof T> }
-  | { $merge: Partial<T> }
-  | { [K in keyof T]?: Spec<T[K], C> };
-```   
+<div style="float: right">更新时间: {docsify-updated}</div>

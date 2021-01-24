@@ -258,4 +258,6 @@ const defaultCommands = {
 
 就这样，作者写了一个简洁而强大的浅拷贝辅助库。
 
+大家也可以看看个人总结 [聊聊不可变数据结构](https://github.com/wsafight/personBlog/issues/33)
+
 <div style="float: right">更新时间: {docsify-updated}</div>

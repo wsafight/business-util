@@ -12,6 +12,9 @@
 * * [快速的模糊搜索](/business/fuzzy-search.md)
 * * [阿拉伯数字与中文数字的相互转换](/business/nzh.md)
 
+* 功能扩展
+* * [js 手写生成 pdf](/extends/jspdf.md)
+
 * 用户体验
 * * [组合键提升用户体验](/UX/key-manage.md)
 * * [提升交互体验的 web Observer](/UX/web-observer.md)

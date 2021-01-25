@@ -8,6 +8,8 @@ pdf 无处不在，尤其在电子书领域，相比于 epub，mobi 等格式，
 
 大家可以直接到官网查看其功能，只需要几行简单 js 代码就能生成漂亮的 pdf。
 
+todo [https://github.com/lazypanda10117/docsify-pdf-embed] 添加 pdf 演示
+
 注：该库也使用了 [DOMPurify](https://github.com/cure53/DOMPurify) ,可以看看 [xss 过滤器 DOMPurify](../security/dom-purify.md)
 
 <div style="float: right">更新时间: {docsify-updated}</div>

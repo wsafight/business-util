@@ -41,4 +41,31 @@ function generateUUID() {
 }
 ```
 
+但如果你需要兼容 IE 10 浏览器的话，就无法使用 crypto api。
+
+```ts
+const dec2hex: string[] = [];
+
+for (let i=0; i<=15; i++) {
+  dec2hex[i] = i.toString(16);
+}
+
+export function generateUUID(): string {
+  let uuid: string = '';
+  for (let i=1; i<=36; i++) {
+    if (i===9 || i===14 || i===19 || i===24) {
+      uuid += '-';
+    } else if (i===15) {
+      uuid += 4;
+    } else if (i===20) {
+      uuid += dec2hex[(Math.random()*4|0 + 8)];
+    } else {
+      uuid += dec2hex[(Math.random()*16|0)];
+    }
+  }
+  return uuid;
+}
+```
+
+
 <div style="float: right">更新时间: {docsify-updated}</div>

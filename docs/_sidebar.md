@@ -56,6 +56,7 @@
 * * [提高转化率的预请求库 instant.page](/performance/instant-page.md)
 * * [跳过 v8 pre-Parse 优化代码性能库 optimize-js](/performance/optimize-js.md)
 * * [AVIF 图片格式](/performance/AVIF.md)
+* * [利用 "ts" 编译 WebAssembly](/performance/AssemblyScript.md)
 
 * 测试
 * * [HTTP 交互库](/test/polly-js.md)
@@ -70,5 +71,3 @@
 * * [hash-table](/data-structure/hash-table.md) 
 * * [优先队列](/data-structure/priority-queue.md)
 * * [跳表](/data-structure/skip-table.md) 
-
-* 算法

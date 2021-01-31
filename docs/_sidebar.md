@@ -62,6 +62,7 @@
 
 * 测试
 * * [HTTP 交互库](/test/polly-js.md)
+* * [新的端到端测试框架 cypress](/test/cypress.md)
 
 * 语言补丁
 * * [New Function 创建异步函数](/language/new-async-function.md)

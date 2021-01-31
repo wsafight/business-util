@@ -31,6 +31,7 @@
 * * [根据对象路径安全获取对象值](/help/get-value-by-key.md)
 * * [不变性数据修改辅助类](/help/immutability-helper.md)
 * * [优秀的不可变状态库 immer](/help/immer.md)
+* * [构建工具配置生成器](/help/create-app.md)
 
 * 实用工具
 * * [文件下载](/util/down-file.md)

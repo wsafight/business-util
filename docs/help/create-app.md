@@ -1,4 +1,4 @@
-# 构建工具配置生成器
+# 前端构建工具配置生成器
 
 对于个人项目或者小型项目而言，我们可以使用 [createApp](https://createapp.dev/snowpack) 辅助进行配置构建。
 

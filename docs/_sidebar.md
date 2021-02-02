@@ -19,6 +19,8 @@
 * * [组合键提升用户体验](/UX/key-manage.md)
 * * [提升交互体验的 web Observer](/UX/web-observer.md)
 
+* 开发工具
+
 * 辅助开发 
 * * [开发助力 mermaid 绘制图表](/help/mermaid.md)
 * * [文件类型检测](/help/file-type.md)

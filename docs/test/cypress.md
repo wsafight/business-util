@@ -10,4 +10,9 @@ cypress 具有自动等待的功能(亮点)，不需要在代码中编写 sleep 
 
 学习中，敬请期待。。。
 
+<div style="display: none">
+赛普拉斯执行速度有待商榷
+
+https://blog.checklyhq.com/cypress-vs-selenium-vs-playwright-vs-puppeteer-speed-comparison/
+</div>
 <div style="float: right">更新时间: {docsify-updated}</div>

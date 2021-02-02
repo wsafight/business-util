@@ -26,8 +26,11 @@ RunJS 适合代码段的开发和使用。默认我们就可以直接使用 ts�
 
 ![installed](./runjs-installed.png)
 
-当前编辑器可以迅速的进行代码测试，提供正向反馈，同时也利于 JavaScript 代码的讲解以及教学。   
-    
-    
+RunJs 编辑器可以迅速的进行代码测试，提供正向反馈
+- 新库测试与使用
+- 算法调试
+- JavaScript 代码的讲解以及教学
+
+
 <div style="float: right">更新时间: {docsify-updated}</div>
 

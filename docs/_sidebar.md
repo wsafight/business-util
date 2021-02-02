@@ -20,6 +20,7 @@
 * * [提升交互体验的 web Observer](/UX/web-observer.md)
 
 * 开发工具
+* * [快速调试编辑器 RunJS](/develop-tool/runjs.md)
 
 * 辅助开发 
 * * [开发助力 mermaid 绘制图表](/help/mermaid.md)

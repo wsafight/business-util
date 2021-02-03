@@ -21,6 +21,12 @@ crossorigin 强制浏览器忽略其他源。
 
 integrity 提供 hash 数值。
 
-⚠️ 注意安全！
+如果您在控制台（Ctrl + Shift + K）中找到这样的错误消息，则看起来像是CSP / SOP问题。该网站确定可以从哪些资源加载资源。在这种情况下，无法从附加存储中加载资源。SOP（相同来源策略）是一项安全功能。可以检测到此错误的错误报告已经存在，但是具有最低的优先级（Bugzilla＃1419459）。唯一的解决方案：禁用此网站的LocalCDN
+
+[html 过滤器]
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/filterResponseData
+
+
+玩的开心， ⚠️ 注意安全！
 
 <div style="float: right">更新时间: {docsify-updated}</div>

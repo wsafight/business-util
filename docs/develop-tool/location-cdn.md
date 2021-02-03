@@ -4,27 +4,38 @@
 
 对于加载资源，我们可以借助 cdn 提升。但是如果有开发者还不满意呢？
 
-[LocalCDN](https://www.localcdn.org/) 是浏览器扩展，主要为 Mozilla 的 Firefox 浏览器开发。尽管插件也可用于基于 Chromium 的浏览器，但是有一些基于Chromium的浏览器不支持的功能。
+[LocalCDN](https://www.localcdn.org/) 是浏览器扩展，主要为 Mozilla 的 Firefox 浏览器开发。尽管插件也可用于基于 Chromium 的浏览器，但是有些功能仅在 Firefox 才能使用。
 
-没错，如果我们把很多 cdn 资源放在本地，那么网站的速度将会再次提升(不针对我开发网站，而是我浏览的所有网站)。
+LocalCDN 插件通过劫持注入 cdn 资源以便提升速度。没错，如果我们把很多 cdn 资源放在本地（插件中），那么网站的速度将会再次提升(当前插件不针对个人开发网站，而是浏览的所有使用公用 cdn 的网站)。
 
-LocalCDN 插件通过劫持注入 cdn 资源以便提升速度。
 
-技术实现：
 
-拿到插件后，发现有些网站无法使用？
+第一时间在 Firefox 浏览器安装好插件后，我就尝试加载网站，但很可惜，在某些网站上浏览器显示一片空白。
 
-在大多数情况下，LocalCDN 可以很容易地取代嵌入式框架并提高隐私性。在某些情况下，网站可能会试图通过在 HTML 源代码中设置某些选项来防止这种情况。LocalCDN 先读取 HTML 源代码，然后在浏览器显示时删除这些配置项目。
-删除 crossorigin 和 integrity 属性
+在查询文档后发现，虽然 LocalCDN 可以劫持请求，但是 HTML 源代码中某些选项会禁止这一切。如 
 
-crossorigin 强制浏览器忽略其他源。
+- crossorigin   
+  crossorigin 强制浏览器忽略其他源。
 
-integrity 提供 hash 数值。
+- integrity   
+  integrity 为当前 js 库提供 hash 值来匹配，但插件仅仅提供最新的 cdn，因此该属性也不可使用。
 
-如果您在控制台（Ctrl + Shift + K）中找到这样的错误消息，则看起来像是CSP / SOP问题。该网站确定可以从哪些资源加载资源。在这种情况下，无法从附加存储中加载资源。SOP（相同来源策略）是一项安全功能。可以检测到此错误的错误报告已经存在，但是具有最低的优先级（Bugzilla＃1419459）。唯一的解决方案：禁用此网站的LocalCDN
+这种情况下，我们必须在 script 中去除这两个属性。事实上，有且仅有火狐浏览器支持 [webRequest.filterResponseData](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/filterResponseData) 接口，LocalCDN 通过该接口读取 HTML 源代码，然后在浏览器显示时删除这些属性。
 
-[html 过滤器]
-https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/filterResponseData
+我们只需要在插件中打开 "过滤 HTML 源码" 开关即可。
+
+![filter-show](./location-cdn-filter-open.png)
+
+我们可以在此对比一下是否 html 过滤流程：
+
+![location-cdn](./location-cdn.png)
+
+![location-cdn-filter](./location-cdn-html-filter.png)
+
+
+但在其他浏览器中，是没有办法过滤 HTML 源码的。所以我们能做的是关闭当前网站的插件使用。
+
+![location-cdn-close](./location-cdn-close.png)
 
 
 玩的开心， ⚠️ 注意安全！

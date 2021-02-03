@@ -28,7 +28,11 @@ LocalCDN 插件通过劫持注入 cdn 资源以便提升速度。没错，如果
 
 我们可以在此对比一下是否 html 过滤流程：
 
+没使用 HTML 过滤时候
+
 ![location-cdn](./location-cdn.png)
+
+使用 HTML 过滤时候
 
 ![location-cdn-filter](./location-cdn-html-filter.png)
 

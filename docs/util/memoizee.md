@@ -78,5 +78,4 @@ setTimeout(function() {
 当然，配置如下所示:
 
 
-
 <div style="float: right">更新时间: {docsify-updated}</div>

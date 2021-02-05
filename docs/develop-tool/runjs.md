@@ -6,7 +6,7 @@
 
 在需要快速调试的情况下，我推荐开发工具 [RunJS](https://runjs.app/) 。
 
-RunJS 一个用作 JavaScript 暂存器的桌面应用程序。这是我最喜欢的用于快速调试和测试事物的工具。
+RunJS 一个用作 JavaScript / TypeScript(目前没有提供检查 ts) 暂存器的桌面应用程序。这是我最喜欢的用于快速调试和测试事物的工具。
 
 RunJS 适合代码段的开发和使用。默认我们就可以直接使用 ts，babel。
 

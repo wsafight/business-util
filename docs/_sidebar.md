@@ -46,7 +46,7 @@
 * * [检测图像(视频)加载完成 egjs-imready](/util/egjs-imready.md)
 * * [专业的深拷贝库](/util/deep-clone.md)
 * * [强大的业务缓存库 memoizee](/util/memoizee.md)
-
+* * [强大的异步库 async](/util/async.md)
 
 * web 安全
 * * [使用 HTTPS](/security/HTTPS.md)

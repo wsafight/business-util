@@ -22,6 +22,8 @@
 * 开发工具
 * * [快速调试编辑器 RunJS](/develop-tool/runjs.md)
 * * [LocalCDN 插件提升网站加载速度](/develop-tool/location-cdn.md)
+* * [快速清晰的构建正则表达式](/develop-tool/build-regex.md)
+
 
 * 辅助开发 
 * * [开发助力 mermaid 绘制图表](/help/mermaid.md)

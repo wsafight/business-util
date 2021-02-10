@@ -72,6 +72,7 @@
 
 * 语言补丁
 * * [New Function 创建异步函数](/language/new-async-function.md)
+* * [函数拷贝](/language/clone-funtion.md)
 * * [取得范围数据](/language/range.md)
 
 * 实用数据结构

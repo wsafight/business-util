@@ -13,6 +13,7 @@
     "immutability-helper": "^3.1.1"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.165"
+    "@types/lodash": "^4.14.165",
+    "lint-md": "^0.2.0"
   }
 }

@@ -50,6 +50,7 @@
 * * [强大的业务缓存库 memoizee](/util/memoizee.md)
 * * [强大的异步库 async](/util/async.md)
 * * [启发式缓存库 proxy-memoizee](/util/proxy-memoizee)
+* * [过去（未来）时间格式化](/util/timeage.md)
 
 * web 安全
 * * [使用 HTTPS](/security/HTTPS.md)

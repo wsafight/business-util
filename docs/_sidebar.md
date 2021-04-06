@@ -59,6 +59,7 @@
 * * [csp 内容安全策略](/security/CSP.md)
 
 * 性能优化
+* * [图片压缩服务 tiny-png](/performance/tiny-png.md)  
 * * [动态加载脚本](/performance/down-script.md)
 * * [动态加载样式](/performance/down-style.md)
 * * [利用 gpu 加速数据运算](/performance/gpu.md) 

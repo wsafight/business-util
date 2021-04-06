@@ -39,6 +39,7 @@
 * * [优秀的不可变状态库 immer](/help/immer.md)
 * * [前端构建工具配置生成器](/help/create-app.md)
 * * [利用 XState(有限状态机) 编写易于变更的代码](/help/XState.md)
+* * [复杂任务队列管理工具 better-queue](/help/better-queue.md)
 
 * 实用工具
 * * [文件下载](/util/down-file.md)

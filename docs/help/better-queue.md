@@ -1,6 +1,10 @@
 # 复杂任务队列管理工具 better-queue
 
-[better-queue](https://github.com/diamondio/better-queue) 是一款 node 任务队列管理工具，专门服务于复杂的任务。
+2018 年，我使用 websocket 为 OA 系统添加了推送消息的功能。期中，在系统刚刚登录时候，我会使用 api 获取当前未读的信息展示，此时如果直接调用 Element UI 消息组件会造成大量消息叠加在一起，无法查阅，因此自行书写了一个队列控制。
+
+回头想一想，当年的代码非常的稚嫩，仅仅在内存中存入数据，然后定时取出，不过对于当前场景也够用了。
+
+这一次我想介绍一款不错的队列管理代码库 [better-queue](https://github.com/diamondio/better-queue) ，该库专门服务 node 中复杂的任务的排序与执行。
 
 ## 功能点介绍
 

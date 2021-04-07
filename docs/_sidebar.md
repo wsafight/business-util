@@ -78,6 +78,7 @@
 * * [New Function 创建异步函数](/language/new-async-function.md)
 * * [函数拷贝](/language/clone-funtion.md)
 * * [取得范围数据](/language/range.md)
+* * [通向地狱的 ES1995](/language/es1995.md)
 
 * 实用数据结构
 * * [前缀树](/data-structure/trie-tree.md)

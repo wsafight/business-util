@@ -58,7 +58,7 @@
 * * [css 键盘记录器](/security/css-key-logging.md)
 * * [xss 过滤器 DOMPurify](/security/dom-purify.md)
 * * [csp 内容安全策略](/security/CSP.md)
-
+* * [超级 cookie](/security/super-cookie.md)
 * 性能优化
 * * [图片压缩服务 tiny-png](/performance/tiny-png.md)  
 * * [动态加载脚本](/performance/down-script.md)

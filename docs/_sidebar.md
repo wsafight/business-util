@@ -23,8 +23,8 @@
 * * [快速调试编辑器 RunJS](/develop-tool/runjs.md)
 * * [LocalCDN 插件提升网站加载速度](/develop-tool/location-cdn.md)
 * * [快速清晰的构建正则表达式](/develop-tool/build-regex.md)
-
-
+* * [静态代码分析工具 Understand](/develop-tool/Understand.md)
+    
 * 辅助开发 
 * * [开发助力 mermaid 绘制图表](/help/mermaid.md)
 * * [文件类型检测](/help/file-type.md)
@@ -40,6 +40,7 @@
 * * [前端构建工具配置生成器](/help/create-app.md)
 * * [利用 XState(有限状态机) 编写易于变更的代码](/help/XState.md)
 * * [复杂任务队列管理工具 better-queue](/help/better-queue.md)
+* * [用编程的方式清晰的构建正则表达式](/help/super-expressive.md)
 
 * 实用工具
 * * [文件下载](/util/down-file.md)

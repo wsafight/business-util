@@ -76,11 +76,12 @@
 * * [HTTP 交互库](/test/polly-js.md)
 * * [新的端到端测试框架 cypress](/test/cypress.md)
 
-* 语言补丁
+* js 语言解析
 * * [New Function 创建异步函数](/language/new-async-function.md)
 * * [函数拷贝](/language/clone-funtion.md)
 * * [取得范围数据](/language/range.md)
 * * [通向地狱的 ES1995](/language/es1995.md)
+* * [对比 switch (true) 和 if else 判断](/language/switch-true.md)    
 
 * 实用数据结构
 * * [前缀树](/data-structure/trie-tree.md)

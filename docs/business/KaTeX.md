@@ -19,7 +19,7 @@
 c = \pm\sqrt{a^2 + b^2}
 ```
 
-我们可以在当前 [KaTeX demo](https://wsafight.github.io/business-util/KaTex.html) 页面查看。
+我们可以在当前 [KaTeX demo](https://wsafight.github.io/business-util/KaTeX.html) 页面查看。
 
 我们可以逐步学习 LaTeX 语法，但我们也可以使用 [公式转化工具](https://demo.wiris.com/mathtype/en/developers.php) 来进行导出。
 

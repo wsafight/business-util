@@ -1,6 +1,7 @@
-# KaTex
+# 公式排版 KaTeX
 
-LaTex 是一种基于 TEX 的文档排版系统。
+如果你在做教育方向的前端研发，一定离不开繁杂的公式。我们迫切需要一个排版系统。
 
-TEX 系统是高德纳教授为了排版他的七卷本著作 《计算机程序设计艺术》 而编制的。
-而 Latex 是 Lamport 博士按照自己的姓和 Tex 混合得到。同时这位也是写出了号称分布式计算领域内最难懂的论文“Paxos Made Simple”的那位
+KaTeX 是一个面向浏览器(node 预渲染)的数学排版库。KaTeX 版面设计基于 Donald Knuth 的 TeX。
+
+我们可以在当前 [KaTeX demo](https://wsafight.github.io/business-util/KaTex.html) 页面查看与使用

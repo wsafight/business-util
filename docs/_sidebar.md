@@ -11,6 +11,7 @@
 * * [输入错误提示——模糊集](/business/fuzzy-set.md)
 * * [快速的模糊搜索](/business/fuzzy-search.md)
 * * [阿拉伯数字与中文数字的相互转换](/business/nzh.md)
+* * [公式排版 KaTex](/business/KaTex.md)    
 
 * 功能扩展
 * * [js 手写生成 pdf](/extends/jspdf.md)

@@ -1,4 +1,4 @@
-# LaTex
+# KaTex
 
 LaTex 是一种基于 TEX 的文档排版系统。
 

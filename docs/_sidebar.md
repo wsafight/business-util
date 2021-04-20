@@ -25,6 +25,7 @@
 * * [LocalCDN 插件提升网站加载速度](/develop-tool/location-cdn.md)
 * * [快速清晰的构建正则表达式](/develop-tool/build-regex.md)
 * * [静态代码分析工具 Understand](/develop-tool/Understand.md)
+* * [漂亮的专业排版软件 TeXMacs](/develop-tool/TeXMacs.md)
     
 * 辅助开发 
 * * [开发助力 mermaid 绘制图表](/help/mermaid.md)

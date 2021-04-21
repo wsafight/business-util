@@ -35,6 +35,9 @@
     * [快速清晰的构建正则表达式](https://wsafight.github.io/business-util/#/develop-tool/build-regex)
     * [静态代码分析工具 Understand](https://wsafight.github.io/business-util/#/develop-tool/Understand)
     * [漂亮的专业排版软件 TeXMacs](https://wsafight.github.io/business-util/#/develop-tool/TeXMacs)
+    * [跨平台的音乐播放器 Listen1](https://wsafight.github.io/business-util/#/develop-tool/listen1)
+    * [开发者的边车辅助工具 DevSidecar](https://wsafight.github.io/business-util/#/develop-tool/dev-sidecar)
+
 
 * 辅助开发
     * [开发助力 mermaid 绘制图表](https://wsafight.github.io/business-util/#/help/mermaid)

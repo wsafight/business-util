@@ -6,8 +6,7 @@
 
 记录的工具源自于工作，生活，开源软件，算法网站，以及他人书籍。
 
-当前网址为: https://wsafight.github.iohttps://wsafight.github.io/business-util/#/business-util/#/
-
+当前网址为: https://wsafight.github.io/business-util/#/
 
 * 业务工具
     * [货币格式化](https://wsafight.github.io/business-util/#/business/currency)

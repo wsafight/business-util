@@ -96,7 +96,8 @@
     * [取得范围数据](https://wsafight.github.io/business-util/#/language/range)
     * [通向地狱的 ES1995](https://wsafight.github.io/business-util/#/language/es1995)
     * [对比 switch (true) 和 if else 判断](https://wsafight.github.io/business-util/#/language/switch-true)
-
+    * [奇怪的 parseInt(0.0000005)](https://wsafight.github.io/business-util/#/language/parseInt(0.0000005))
+  
 * 实用数据结构
     * [前缀树](https://wsafight.github.io/business-util/#/data-structure/trie-tree)
     * [并查集](https://wsafight.github.io/business-util/#/data-structure/union-find)

@@ -86,6 +86,7 @@
 * * [取得范围数据](/language/range.md)
 * * [通向地狱的 ES1995](/language/es1995.md)
 * * [对比 switch (true) 和 if else 判断](/language/switch-true.md)    
+* * [奇怪的 parseInt(0.0000005)](/language/parseInt(0.0000005).md)    
 
 * 实用数据结构
 * * [前缀树](/data-structure/trie-tree.md)

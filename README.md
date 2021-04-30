@@ -74,6 +74,7 @@
     * [xss 过滤器 DOMPurify](https://wsafight.github.io/business-util/#/security/dom-purify)
     * [csp 内容安全策略](https://wsafight.github.io/business-util/#/security/CSP)
     * [超级 cookie](https://wsafight.github.io/business-util/#/security/super-cookie)
+    * [防御 ReDoS 攻击](https://wsafight.github.io/business-util/#/security/regexploit)
 
 * 性能优化
     * [图片压缩服务 tiny-png](https://wsafight.github.io/business-util/#/performance/tiny-png)

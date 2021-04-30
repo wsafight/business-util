@@ -45,6 +45,7 @@
 * * [利用 XState(有限状态机) 编写易于变更的代码](/help/XState.md)
 * * [复杂任务队列管理工具 better-queue](/help/better-queue.md)
 * * [用编程的方式清晰的构建正则表达式](/help/super-expressive.md)
+* * [Node.js 轻量级调试器 dbgr](/help/dbgr.md)    
 
 * 实用工具
 * * [文件下载](/util/down-file.md)

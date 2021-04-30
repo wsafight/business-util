@@ -55,7 +55,7 @@
     * [利用 XState(有限状态机) 编写易于变更的代码](https://wsafight.github.io/business-util/#/help/XState)
     * [复杂任务队列管理工具 better-queue](https://wsafight.github.io/business-util/#/help/better-queue)
     * [用编程的方式清晰的构建正则表达式](https://wsafight.github.io/business-util/#/help/super-expressive)
-
+    * [Node.js 轻量级调试器 dbgr](https://wsafight.github.io/business-util/#/help/dbgr)
 * 实用工具
     * [文件下载](https://wsafight.github.io/business-util/#/util/down-file)
     * [JSON 的超集 serialize-javascript](https://wsafight.github.io/business-util/#/util/serialize-javascript)

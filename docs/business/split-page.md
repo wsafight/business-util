@@ -16,9 +16,9 @@ export function getPageDataForSplitPage (dataSource = [], pageNum = 1, pageSize 
 
     const dataCount = dataSource.length
     // 修正 pageNumber, 让其变小
-    const maxPageNumber = Math.floor(dataCount / pageSize) + 1
+    const maxPageNumber = Math.ceil(dataCount / pageSize)
 
-    if (maxPageNumber > pageNum) {
+    if (maxPageNumber < pageNum) {
         pageNum = maxPageNumber
     }
 

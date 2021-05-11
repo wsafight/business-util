@@ -3,10 +3,5 @@
   "version": "1.0.0",
   "description": "记录实用工具",
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-  },
-  "devDependencies": {
-    "lint-md": "^0.2.0"
-  }
+  "license": "ISC"
 }

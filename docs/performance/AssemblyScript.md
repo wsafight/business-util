@@ -4,7 +4,7 @@
 
 WASM 当前目标就是充分发挥硬件能力以达到原生执行效率。如果当前在开发 cpu 密集型任务时候，使用 WASM 无疑能大量提升性能。
 
-但使用 rust 或 go 语言来编写 wasm 太繁琐了（新语法，新工具链），于是我选择了 [AssemblyScript](https://www.assemblyscript.org/) ，它对前端友好切不需要额外学习，所以我可以更专注的编写业务。
+但使用 rust 或 go 语言来编写 wasm 太繁琐了（新语法，新工具链），于是我选择了 [AssemblyScript](https://www.assemblyscript.org/) ，它对前端友好且不需要额外学习，所以我可以更专注的编写业务。
 
 当我们编写 Fibonacci 算法时：
 

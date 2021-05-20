@@ -2,31 +2,31 @@
 
 你是如何开始一个项目呢？是基于当前技术栈提供的脚手架还是从 **npm init** 开始呢？
 
-以前我没得选，必须面向搜索引擎，然后基于 webpack 或 rollup 来一步步构建项目，中间还有很多错误。但现在我只想专注于当前业务，挑选合适的脚手架构建自己的项目模板，之后把大量维护性的工作交给开源作者。
+以前我没得选，必须面向搜索引擎。基于 webpack 或 rollup 来一步步构建项目，在开发过程中还有可能发生很多错误。但现在我只想专注于当前业务，挑选合适的脚手架之后迅速构建自己的项目，这样的话，就可以把大量维护性的工作交给开源作者。
 
 当然，知名的脚手架工具（Vue CLI,Umi，Vite 等）自不必说，这里我推荐几个顺手的工具。
 
 -  [microbundle-crl](https://www.npmjs.com/package/microbundle-crl)  专注于 React 组件的构建
-- [tsdx](https://github.com/formium/tsdx) 专注于 TypeScript  库的构建
-- [crateApp](https://createapp.dev/webpack) 根据当前选项配置生成项目包 (多个基础构建工具 Webpack,Parcel,Snowpack)
+-  [tsdx](https://github.com/formium/tsdx) 专注于 TypeScript  库的构建
+-  [crateApp](https://createapp.dev/webpack) 根据当前选项配置生成项目包 (多个基础构建工具 Webpack,Parcel,Snowpack)
 
-但无论是哪一个样板库和工具，都不能完全符合业务的需求，我们需要基于当前的样板进行修改。比如说在项目中要添加开源协议，修改项目名称，添加不同的依赖。
+但无论是哪一个样板库或者脚手架，都不会完全符合当前业务的需求，开发者需要基于当前的样板进行修改。比如说需要在项目中要添加开源协议，修改项目名称，以及为项目添加不同的依赖。
 
-目前有两个问题：
+从构建来说，目前有两个问题：
 
 - 大量重复性操作
 
-如果生成项目的工作频率很高的话，例如一周写一个业务性组件。虽然每次在项目中要添加开源协议，修改项目名称，添加特定依赖都是一些小活，但多的时候也是一件麻烦的事情。
+如果生成项目的工作频率很高的话，例如一周写一个业务性组件。虽然每次在项目中要添加开源协议，修改项目名称，添加特定依赖都是一些小活，但频率高起来也是一件麻烦的事情。
 
 - 底层依赖无法直接升级
 
-如果我们修改了当前模板，那么脚手架出现破坏性更新时候就无法直接升级（这种问题当然也比较少）。开发过程中当然会记录一些修改。但随着时间的偏移，开发者不会确切知道需要编辑或删除哪些文件才能使升级后的项目正常工作。
+如果开发者修改了当前样板，那么脚手架出现破坏性更新时候就无法直接升级（这种问题当然也比较少）。虽然开发过程中会记录一些修改。但随着时间的偏移，开发者不会确切知道需要编辑或删除哪些文件才能使升级后的项目正常工作。
 
 话不多说，我们来看一看工具 [Preset](https://preset.dev/)  是如何解决这一系列的问题的。
 
 ## 使用 Preset 
 
-首先我们建立一个项目 vite-preset，package.json 如下所示
+首先建立一个项目，以 vite 为例子，package.json 如下所示
 
 ```json
 {
@@ -50,21 +50,21 @@
 }
 ```
 
-然后我们先把使用 vite 构建一个项目，此处作为模板：
+执行下面的操作，我们会的到  my-vue-app 文件。
 
 ```bash
 # npm 6.x
 npm init @vitejs/app my-vue-app --template vue
 ```
 
-然后我把当前命令生成的结果拷贝到根目录下的 templates(即 templates/vite ) 文件夹下。
+拿到了当前命令生成的结果之后我们把当前生成文件拷贝到 vite-preset 根目录下的 templates 中(即 templates/vite ) 文件夹下。
 
-然后我们开始编写命令, preset.ts，此文件对应 package.json 中的 preset": "preset.ts" 
+然后我们通过 preset.ts（对应 package.json 中的 preset": "preset.ts" ） 编写  Preset 命令。
 
 ```ts
 import {Preset, color} from 'apply'
 
-// 当前 Preset 命令的名称，可以自定义
+// 当前编写项目的名称，会在控制台中展示
 Preset.setName('jump-jump vite preset')
 
 // 从 templates/vite 中提取所有文件，并携带以 . 开头的文件 如 .gitignore 等	
@@ -91,18 +91,19 @@ Preset.instruct([
 我们可以来试试效果，我寻找一个合适的文件夹，然后运行指令:
 
 ```bash
+// 解析 vite-preset 项目
 npx apply C:\re-search\vite-preset
 ```
 
 ![image-20210520003237093](C:\Users\wsa\AppData\Roaming\Typora\typora-user-images\image-20210520003237093.png)
 
-vite 模板被解压到当前文件夹下，此时依赖也被替换掉了，当然，我们也可以指定文件夹下安装，如
+之前保存的 vite 样板文件夹被解压到当前文件夹下，此时依赖也被替换掉了，当然，我们也可以指定文件夹下安装，如
 
 ```bash
 npx apply C:\re-search\vite-preset vite-demo
 ```
 
-vite 模板被解压到当前文件夹下的 vite-demo 中去了。
+vite 样板板被解压到当前文件夹下的 vite-demo 文件夹中去了。
 
 我们不但可以使用本地路径，当然，我们也可以使用 github 路径。如：
 
@@ -113,37 +114,33 @@ npx apply git@github.com:useName/projectName.git
 npx apply username/projectName
 ```
 
-
-
-我们看到了实际的效果，实际上我们能够操作的远不止当前展示的，那么我开始逐个解读一下 api。
+目前来看，效果勉强还可以，实际上我们能够操作的远不止上述展示的，那么我开始逐个解读一下 Preset 的各个命令。
 
 ## 玩转 Preset 
 
 ### setName 工程名设置
 
-正如上面展示的图片。 成功后会显示在控制台中。
+正如上面图片展示的那样，该命令设置成功后会显示在控制台中。
 
 ```ts
 Preset.setName('jump-jump preset')
 ```
 
-### setTemplateDirectory 模板目录设置
+### setTemplateDirectory 样板目录设置
 
-上面的命令中我们没有使用该 api，则默认选项为 templates
+此操作会修改提取根路径，不使用则默认选项为 templates。
 
 ```ts
 // 文件提取根路径被改为了 stubs 而不是 templates
 Preset.setTemplateDirectory('stubs');
 ```
 
-
-
 ###  extract 文件夹提取 
 
-此操作允许将文件从预设的模板目录提取到目标目录。在大多数情况下，这个命令已经可以解决绝大部分问题。
+此操作允许将文件从预设的样板目录提取到目标目录。在大多数情况下，这个命令已经可以解决绝大部分问题。
 
 ```ts
-// 当前会提取整个根模板 即 templates 或者 stubs
+// 当前会提取整个根样板 即 templates 或者 stubs
 Preset.extract();
 
 // 当前会提取 templates/vite 文件夹到根目录
@@ -169,14 +166,14 @@ Preset.extract().whenConflict(Preset.isInteractive() ? 'ask' : 'override')
 
 
 // 如果没有此选项，以 .开头的文件(如 .gitignore .vscode) 文件将被忽略。
-// 注意：建议在模板中使用 .dotfile 结尾。 
+// 注意：建议在样板中使用 .dotfile 结尾。 
 // 如： gitignore.dotfile => .gitignore
 Preset.extract().withDots();
 ```
 
 ## editJson 编辑 JSON 文件
 
-使用 editJson  可以覆盖和删除 JSON 文件。
+使用 editJson  可以覆盖和删除 JSON 文件中的内容。
 
 ```TS
 // 编辑 package.json 深度拷贝数据
@@ -195,7 +192,7 @@ Preset.editJson('package.json')
   ]);
 ```
 
-当然，项目提供了简单的控制项 editNodePackages 
+当然，Preset 为 node 项目提供了简单的控制项 editNodePackages 。
 
 ```TS
 Preset.editNodePackages()
@@ -204,18 +201,18 @@ Preset.editNodePackages()
   .remove('bootstrap')
   // 添加 dependencies  
   .add('xxx', '^2.3.0')
+  // 添加 devDependencies
   .addDev('xxx', '^2.3.0')
+  // 添加 peerDependencies
   .addPeer('xxx', '^2.3.0')
   // 设置键值对         
   .set('license', 'MIT')
   .set('author.name', 'jump-jump')
 ```
 
-
-
 ### installDependencies 安装依赖
 
-在搭建项目的同时我们需要安装依赖，通过 installDependencies 完成。
+在搭建项目的同时我们需要安装依赖，这里通过 installDependencies 完成。
 
 ```ts
 // 安装依赖，默认为 node，也支持 PHP
@@ -228,7 +225,7 @@ Preset.installDependencies('php')
 
 ### instruct 引导
 
-这个我们通过配置不同的颜色与标语来一步步引导用户进行下一步操作：
+该命令可以添加标语来一步步引导用户进行下一步操作，还可以添加各种颜色。
 
 ```ts
 import { Preset, color } from `apply`;
@@ -238,15 +235,20 @@ Preset.instruct([
 ]).withHeading("What's next?");
 ```
 
-
-
 ### options 设置配置
 
-如果没有配置变化，那么 Preset 也不会那么好用。
+开发者想要添加多个样板，是否需要开发多个项目呢？答案是否定的，我们通过 options 获取参数即可。
+
+```
+npx apply C:\re-search\vite-preset vite-demo --useEsbuild
+```
+
+当前数据会被设置到 Preset.options 中。
 
 ```TS
-// 默认设置 auth 为 true
+// 默认设置 useEsbuild 为 true
 Preset.option('useEsbuild', true);
+// 默认设置 use 为字符串 esbuild
 Preset.option('use', 'esbuild');
 
 // 如果配置项 useEsbuild 为 ture 解压 templates/esbuild
@@ -276,9 +278,7 @@ Preset.extract((preset) => {
 
 ### input confirm 交互设置
 
-Preset 设置配置项很棒了。但就用户体验来说，通过交互设置则更好。
-
-我们通过输入将数据添加到 Preset.prompt 中。
+Preset 设置配置项很棒。但就用户体验来说，通过交互设置则更好。这样我们无需记忆各个配置项。通过人机交互来输入数据，当前数据会被添加到 Preset.prompt 中。
 
 ```TS
 // 第一个参数将传入 Preset.prompt
@@ -318,7 +318,8 @@ Preset.edit('config/app.php').update((content) => {
 	return content.replace('en_US', 'fr_FR');
 });
 
-// 替换 README.md 文件中的 {{projectName}}
+// 替换 README.md 文件中的字符串 {{ projectName }}
+// {{prejectName}} => prompts.name ?? 'Preset'
 Preset.edit('README.md').replaceVariables(({ prompts }) => ({
 	projectName: prompts.name ?? 'Preset',
 }));
@@ -326,7 +327,7 @@ Preset.edit('README.md').replaceVariables(({ prompts }) => ({
 
 ### execute 执行 bash 命令
 
-如果之前的工具都不能满足你，那么 bash 命令一定可以满足你的需求！！
+如果之前的命令都不能满足你，那只能执行 bash 命令了吧！Preset 也提供了这个功能，结合 hooks 可添加各种参数。
 
 ```TS
 // 利用钩子将数据存储到 context 中
@@ -351,22 +352,43 @@ Preset.execute('php')
 	.withTitle(({ context }) => `Applying ${context.presetName}`);
 ```
 
-## 思考
+## 进一步思考
+
+通过对 Preset 库的学习，我们可以看到 Preset 具备非常不错的设计风格与强大的功能。Preset 没有从底层构建项目，反而是帮助开发者通过一些命令衍生出自己的工具，同时还可以记录开发者绝大部分对于项目的修改。
 
 ### 增量思想
 
-我们应该进一步学习增量思想，在这里「增量」这个概念的对立面是「全量」。增量会根据比对当前与过去之间的差异，只关注差异性。
+在使用 Preset 构建样板的过程中，开发者没有对原本的样板进行修改，这样使得开发者升级原始样本变得非常简单。在构建 Preset 项目过程其实也就是修改样板增量。
 
-增量体现在开发的各个层面： 如前后端交互时候前端只提交变化的数据。
+我们应该进一步在开发中使用增量思想，在这里「增量」这个概念的对立面是「全量」。增量会根据比对当前与过去之间的差异，只关注差异性所带来的影响。
 
-在工程中提升代码检查和打包构建的效率。网盘增量上传。数据库增量备份。rsync 增量修改文件。
+增量有很多实际的意义，我们可以看到：
+
+- 前后端交互时候前端只提交变化的数据
+- rsync 增量同步文件
+- 网盘增量上传文件
+- 数据库增量备份
+- 增量代码检查、构建、打包
 
 ### 链式调用
 
-链式调用是好东西，特别是构建 dsl 时。可能有好东西 
+随着前端框架带来了数据驱动，JQuery 逐渐退出历史舞台（Bootstrap 5 去除了 JQuery）。ES 不断升级也给与用户大量帮助，用户无需自行构建对象进行链式调用了。但这并不意味链式调用不重要。
 
-时序问题  
+因为链式调用可以优雅的记录时序，开发者可以依赖当前调用来进行分析。
 
-灵活保存配置
+大多数工具都会提供不同的配置项。此时我们可以直接传入配置项来使用工具。
 
-复杂且符合逻辑
+如果当前操作有时序性（先后顺序决定最终结果），构建对象进行链式调用则更有效。当然你可以说我们添加一个数组配置来决定顺序。但面对复杂的顺序，优秀的函数命名可以让用户更简单的理解代码。
+
+又如果，我们在面对复杂的图形结构时，构建对象来进行节点的选择与操作一定会更加简单。如果有需求，我们甚至需要根据链式调用来生成 sql 语句。
+
+## 参考资料
+
+[Preset](https://preset.dev/)
+
+[microbundle-crl](https://www.npmjs.com/package/microbundle-crl)
+
+[tsdx](https://github.com/formium/tsdx)
+
+[crateApp](https://createapp.dev/webpack)
+

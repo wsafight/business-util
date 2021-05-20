@@ -171,7 +171,7 @@ Preset.extract().whenConflict(Preset.isInteractive() ? 'ask' : 'override')
 Preset.extract().withDots();
 ```
 
-## editJson 编辑 JSON 文件
+### editJson 编辑 JSON 文件
 
 使用 editJson  可以覆盖和删除 JSON 文件中的内容。
 

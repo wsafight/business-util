@@ -95,7 +95,7 @@ Preset.instruct([
 npx apply C:\re-search\vite-preset
 ```
 
-![image-20210520003237093](C:\Users\wsa\AppData\Roaming\Typora\typora-user-images\image-20210520003237093.png)
+![image-20210520003237093](./Preset.png)
 
 之前保存的 vite 样板文件夹被解压到当前文件夹下，此时依赖也被替换掉了，当然，我们也可以指定文件夹下安装，如
 

@@ -70,8 +70,7 @@
     
 * 性能优化
 * * [图片压缩服务 tiny-png](/performance/tiny-png.md)  
-* * [动态加载脚本](/performance/down-script.md)
-* * [动态加载样式](/performance/down-style.md)
+* * [动态加载脚本与样式](/performance/down-script.md)
 * * [利用 gpu 加速数据运算](/performance/gpu.md) 
 * * [通过批处理避免布局抖动 fastDom](/performance/fastdom.md)
 * * [提高转化率的预请求库 instant.page](/performance/instant-page.md)

@@ -80,8 +80,7 @@
 
 * 性能优化
     * [图片压缩服务 tiny-png](https://wsafight.github.io/business-util/#/performance/tiny-png)
-    * [动态加载脚本](https://wsafight.github.io/business-util/#/performance/down-script)
-    * [动态加载样式](https://wsafight.github.io/business-util/#/performance/down-style)
+    * [动态加载脚本与样式](https://wsafight.github.io/business-util/#/performance/down-script)
     * [利用 gpu 加速数据运算](https://wsafight.github.io/business-util/#/performance/gpu)
     * [通过批处理避免布局抖动 fastDom](https://wsafight.github.io/business-util/#/performance/fastdom)
     * [提高转化率的预请求库 instant.page](https://wsafight.github.io/business-util/#/performance/instant-page)

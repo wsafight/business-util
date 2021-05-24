@@ -89,7 +89,8 @@
 * * [取得范围数据](/language/range.md)
 * * [通向地狱的 ES1995](/language/es1995.md)
 * * [对比 switch (true) 和 if else 判断](/language/switch-true.md)    
-* * [奇怪的 parseInt(0.0000005)](/language/parseInt(0.0000005).md)    
+* * [奇怪的 parseInt(0.0000005)](/language/parseInt(0.0000005).md)
+* * [使用宏扩展 JavaScript 语言](/language/macro.md)    
 
 * 工程化工具
 * * [玩转样板增量构建工具 Preset](/engineering/preset.md)

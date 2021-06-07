@@ -59,7 +59,7 @@ if (resp.ok) {
 函数直接调用了 [node-fetch](https://www.npmjs.com/package/node-fetch) 库
 
 ```js
-export async function fetch(url, init) {
+export function fetch(url, init) {
   if ($.verbose) {
     if (typeof init !== 'undefined') {
       console.log('$', colorize(`fetch ${url}`), init)

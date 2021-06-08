@@ -18,9 +18,136 @@ let name = 'foo bar'
 await $`mkdir /tmp/${name}`
 ```
 
+当我们第一眼看到 $ 时候，我们最先想到什么呢？
+
+```js
+
+```
+
 我们仍旧需要使用 $ 符号添加命令，即 $`command` 来进行命令。
 
-接下来我们对比源码对各个函数进行解析
+接下来我们解析源代码
+
+## 配置项
+对于任何一些项目，我们第一个考虑的就是配置项目。
+
+- shell
+
+  指定使用什么 shell，默认为 bash
+
+- prefix
+
+  命令运行的前缀，默认 set -euo pipefail;
+
+- quote
+
+  指定用于在命令替换期间转义特殊字符的函数，默认为 [shq](https://github.com/mk-pmb/shq-js)
+
+- verbose
+
+  是否详细输出所有的执行命令
+
+
+
+```js
+
+$.verbose = true
+
+try {
+    $.shell = await which('bash')
+    $.prefix = 'set -euo pipefail;'
+} catch (e) {
+    // Bash not found, no prefix.
+    $.prefix = ''
+}
+
+$.quote = shq
+
+// 当前执行文件夹路径，通过 cd 函数修改
+$.cwd = undefined
+
+// 把 $ 导如 global，这样我们可以直接修改 $
+Object.assign(global, {
+    $,
+    // ...
+})
+```
+
+后续我们直接使用 $`cat package.json | grep name`
+
+```js
+export function $(pieces, ...args) {
+  let __from = (new Error().stack.split('at ')[2]).trim()
+  let cmd = pieces[0], i = 0
+  let verbose = $.verbose
+  while (i < args.length) {
+    let s
+    if (Array.isArray(args[i])) {
+      s = args[i].map(x => $.quote(substitute(x))).join(' ')
+    } else {
+      s = $.quote(substitute(args[i]))
+    }
+    cmd += s + pieces[++i]
+  }
+  if (verbose) console.log('$', colorize(cmd))
+  let options = {
+    cwd: $.cwd,
+    shell: typeof $.shell === 'string' ? $.shell : true,
+    windowsHide: true,
+  }
+  let child = spawn($.prefix + cmd, options)
+  let promise = new ProcessPromise((resolve, reject) => {
+    child.on('exit', code => {
+      child.on('close', () => {
+        let output = new ProcessOutput({
+          code, stdout, stderr, combined,
+          message: `${stderr || '\n'}    at ${__from}`
+        });
+        (code === 0 || promise._nothrow ? resolve : reject)(output)
+      })
+    })
+  })
+  if (process.stdin.isTTY) {
+    process.stdin.pipe(child.stdin)
+  }
+  let stdout = '', stderr = '', combined = ''
+  function onStdout(data) {
+    if (verbose) process.stdout.write(data)
+    stdout += data
+    combined += data
+  }
+  function onStderr(data) {
+    if (verbose) process.stderr.write(data)
+    stderr += data
+    combined += data
+  }
+  child.stdout.on('data', onStdout)
+  child.stderr.on('data', onStderr)
+  promise._stop = () => {
+    child.stdout.off('data', onStdout)
+    child.stderr.off('data', onStderr)
+  }
+  promise.child = child
+  return promise
+}
+```
+
+### prefix
+
+该配置指定命令的前缀
+
+```js
+$.prefix = 'set -euo pipefail'
+```
+
+
+### quote
+
+```js
+
+```
+
+## 函数
 
 ### cd
 
@@ -105,4 +232,13 @@ export async function question(query, options) {
 
 ```js
 export const sleep = promisify(setTimeout)
+```
+
+### nothrow
+
+```js
+export function nothrow(promise) {
+  promise._nothrow = true
+  return promise
+}
 ```

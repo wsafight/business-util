@@ -104,6 +104,10 @@
 * 工程化工具
     * [利用增量构建工具 Preset 打造自己的样板库](https://wsafight.github.io/business-util/#/engineering/preset)
     * [依赖库本地调试 yalc](https://wsafight.github.io/business-util/#/engineering/yalc)
+
+* 脚本工具
+    * [使用 JavaScript 语法编写脚本的工具 zx](https://wsafight.github.io/business-util/#/script/zx)
+
 * 实用数据结构
     * [前缀树](https://wsafight.github.io/business-util/#/data-structure/trie-tree)
     * [并查集](https://wsafight.github.io/business-util/#/data-structure/union-find)

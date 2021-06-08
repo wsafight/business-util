@@ -94,7 +94,10 @@
 
 * 工程化工具
 * * [玩转样板增量构建工具 Preset](/engineering/preset.md)
-* * [依赖库本地调试 yalc](/engineering/yalc.md)    
+* * [依赖库本地调试 yalc](/engineering/yalc.md)   
+    
+* 脚本工具
+* * [使用 JavaScript 语法编写脚本的工具 zx](/script/zx.md)
 
 * 实用数据结构
 * * [前缀树](/data-structure/trie-tree.md)

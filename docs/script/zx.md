@@ -1,4 +1,4 @@
-# 使用 JavaScript 编写脚本的工具 zx
+# 使用 JavaScript 语法编写脚本的工具 zx
 
 Bash 很棒，但是对于开发者来说，我们需要学习更多的语法，对于前端构建或者 node 服务来说，用 JavaScript 是个不错的选择。[zx](https://github.com/google/zx) 对 child_process 进行了包装并且提供了合适的默认值。
 
@@ -59,7 +59,8 @@ if (resp.ok) {
 函数直接调用了 [node-fetch](https://www.npmjs.com/package/node-fetch) 库
 
 ```js
-export function fetch(url, init) {
+// Purpose of async keyword here is readability. It makes clear for the reader what this func is async.
+export async function fetch(url, init) {
   if ($.verbose) {
     if (typeof init !== 'undefined') {
       console.log('$', colorize(`fetch ${url}`), init)
@@ -69,4 +70,39 @@ export function fetch(url, init) {
   }
   return nodeFetch(url, init)
 }
+```
+
+### question
+
+问题
+
+```js
+import {createInterface} from 'readline'
+
+export async function question(query, options) {
+  let completer = undefined
+  // 是否是数组  
+  if (Array.isArray(options?.choices)) {
+    completer = function completer(line) {
+      const completions = options.choices
+      const hits = completions.filter((c) => c.startsWith(line))
+      return [hits.length ? hits : completions, line]
+    }
+  }
+  const rl = createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    completer,
+  })
+  const question = (q) => new Promise((resolve) => rl.question(q ?? '', resolve))
+  let answer = await question(query)
+  rl.close()
+  return answer
+}
+```
+
+### sleep
+
+```js
+export const sleep = promisify(setTimeout)
 ```

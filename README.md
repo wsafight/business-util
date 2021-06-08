@@ -107,7 +107,7 @@
 
 * 脚本工具
     * [使用 JavaScript 语法编写脚本的工具 zx](https://wsafight.github.io/business-util/#/script/zx)
-
+    * [通过灭霸脚本学 shell](https://wsafight.github.io/business-util/#/script/thanos_sh)
 * 实用数据结构
     * [前缀树](https://wsafight.github.io/business-util/#/data-structure/trie-tree)
     * [并查集](https://wsafight.github.io/business-util/#/data-structure/union-find)

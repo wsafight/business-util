@@ -46,7 +46,6 @@
 * * [复杂任务队列管理工具 better-queue](/help/better-queue.md)
 * * [用编程的方式清晰的构建正则表达式](/help/super-expressive.md)
 * * [Node.js 轻量级调试器 dbgr](/help/dbgr.md)
-* * [前端分页工具](/help/pagination.md)
 
 * 实用工具
 * * [文件下载](/util/down-file.md)

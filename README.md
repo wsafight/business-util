@@ -32,6 +32,7 @@
 
 * 开发工具
     * [快速调试编辑器 RunJS](https://wsafight.github.io/business-util/#/develop-tool/runjs)
+    * [自动切换故障 CDN 工具](https://wsafight.github.io/business-util/#/develop-tool/freecdn)  
     * [LocalCDN 插件提升网站加载速度](https://wsafight.github.io/business-util/#/develop-tool/location-cdn)
     * [快速清晰的构建正则表达式](https://wsafight.github.io/business-util/#/develop-tool/build-regex)
     * [静态代码分析工具 Understand](https://wsafight.github.io/business-util/#/develop-tool/Understand)

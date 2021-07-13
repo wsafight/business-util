@@ -23,6 +23,7 @@
 
 * 开发工具
 * * [快速调试编辑器 RunJS](/develop-tool/runjs.md)
+* * [自动切换故障 CDN 工具](/develop-tool/freecdn.md)
 * * [LocalCDN 插件提升网站加载速度](/develop-tool/location-cdn.md)
 * * [快速清晰的构建正则表达式](/develop-tool/build-regex.md)
 * * [静态代码分析工具 Understand](/develop-tool/Understand.md)

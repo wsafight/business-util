@@ -21,6 +21,7 @@
     * [快速的模糊搜索](https://wsafight.github.io/business-util/#/business/fuzzy-search)
     * [阿拉伯数字与中文数字的相互转换](https://wsafight.github.io/business-util/#/business/nzh)
     * [公式排版 KaTex](https://wsafight.github.io/business-util/#/business/KaTeX)
+    * [颜色排序算法](https://wsafight.github.io/business-util/#/business/color-sort)
 
 * 功能扩展
     * [js 手写生成 pdf](https://wsafight.github.io/business-util/#/extends/jspdf)

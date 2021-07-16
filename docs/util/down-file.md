@@ -1,9 +1,8 @@
 # 文件下载
 
-从浏览器下载文件是一件很正常的操作。当前代码可以针对路径以及文件流进行下载。
+从浏览器下载文件是一件很正常的操作。我们通常会处理两种情况的文件。一种是服务器发送未生成文件的文件流，另一种是下载已经生成的文件。
 
-当前代码参考了 [file-download](https://github.com/kennethjiang/js-file-download/blob/master/file-download.js) 库。
-
+我们可以通过传入不同的参数来决定哪一种情况的下载。
 ```ts
 /**
  * 下载文件
@@ -23,27 +22,20 @@ export default function downloadFile(
     downloadUrl(urlOrFilename)
   }
 }
+```
 
-function downloadUrl(url: string) {
-  let el: any = document.getElementById('iframeForDownload') as HTMLElement
-  if (!el) {
-    el = document.createElement('iframe')
-    el.id = 'iframeForDownload'
-    el.style.width = 0
-    el.style.height = 0
-    el.style.position = 'absolute'
-    document.body.appendChild(el)
-  }
-  el.src = url
-}
+## 通过文件流下载文件
 
+通过文件流下载的代码使用了 [file-download](https://github.com/kennethjiang/js-file-download/blob/master/file-download.js) 库。该库对各种浏览器进行了兼容。
+
+```ts
 /**
  * https://github.com/kennethjiang/js-file-download/blob/master/file-download.js
  * @param filename
  * @param content
  * @param mime
  */
-function downloadContent(data:  string | ArrayBuffer | ArrayBufferView | Blob,
+function downloadContent(data: string | ArrayBuffer | ArrayBufferView | Blob,
                          filename: string,
                          mime?: string,
                          bom?: string) {
@@ -83,5 +75,44 @@ function downloadContent(data:  string | ArrayBuffer | ArrayBufferView | Blob,
   }
 }
 ```
+
+## 下载已生成文件
+
+早期的文件下载通过 window.open 携带参数打开新的浏览器标签页，通过浏览器来决定如何处理当前文件(展示或者下载)，但是弹出标签页非常影响用户体验。
+
+然后开发者通过创建具有 download 属性的 a 标签进行下载。该方案针对图片等会发生直接跳转且无法实现跨域。
+
+```ts
+const url = 'fileApi/AccountTemplate.xlsx'
+const link = document.createElement('a')
+link.style.display = 'none'
+link.href = url
+link.setAttribute(
+  'download',
+  '导入学生账号模板'
+)
+document.body.appendChild(link)
+link.click()
+```
+
+最佳的方案是 iframe ，因为可以直接无感知下载文件。
+
+```ts
+function downloadUrl(url: string) {
+  let el: any = document.getElementById('iframeForDownload') as HTMLElement
+  if (!el) {
+    el = document.createElement('iframe')
+    el.id = 'iframeForDownload'
+    el.style.width = 0
+    el.style.height = 0
+    el.style.position = 'absolute'
+    document.body.appendChild(el)
+  }
+  el.src = url
+}
+```
+
+但很可惜，出于沙盒安全性考虑，83 版本的 chrome 浏览器默认禁止了 iframe 嵌套页面。所以我们不但需要对当前代码进行修改，还需要对响应头进行修改。
+
 
 <div style="float: right">更新时间: {docsify-updated}</div>

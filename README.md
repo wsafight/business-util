@@ -102,6 +102,7 @@
     * [对比 switch (true) 和 if else 判断](https://wsafight.github.io/business-util/#/language/switch-true)
     * [奇怪的 parseInt(0.0000005)](https://wsafight.github.io/business-util/#/language/parseInt(0.0000005))
     * [使用宏扩展 JavaScript 语言](https://wsafight.github.io/business-util/#/language/macro)
+    * [取消已经发送的请求 AbortController](https://wsafight.github.io/business-util/#/language/AbortController)
 * 工程化工具
     * [利用增量构建工具 Preset 打造自己的样板库](https://wsafight.github.io/business-util/#/engineering/preset)
     * [依赖库本地调试 yalc](https://wsafight.github.io/business-util/#/engineering/yalc)

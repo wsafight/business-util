@@ -108,7 +108,7 @@ function downloadUrl(url: string) {
     el.style.position = 'absolute'
     document.body.appendChild(el)
   }
-  el.src = url
+  el.src = url 
 }
 ```
 

@@ -71,8 +71,6 @@
     * [强大的异步库 async](https://wsafight.github.io/business-util/#/util/async)
     * [启发式缓存库 proxy-memoizee](https://wsafight.github.io/business-util/#/util/proxy-memoizee)
     * [过去（未来）时间格式化](https://wsafight.github.io/business-util/#/util/timeage)
-    * [前端服务库 sigi-framework](https://wsafight.github.io/business-util/#/util/sigi-framework)
-
 
 * web 安全
     * [使用 HTTPS](https://wsafight.github.io/business-util/#/security/HTTPS)

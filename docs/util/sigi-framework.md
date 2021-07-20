@@ -27,7 +27,8 @@ function Counter() {
 ```
 - 类似 vue 风格的 concent
 
-redux, mobx, recoil, zustand, rematch, concent 。
+
+redux, mobx, recoil, zustand, rematch, concent, hox, react-sweet-state 。
 
 目前前端主流的状态管理工具仍旧是函数式，函数式的重点是数据的流动。面向对象则是利用封装，继承，多态来解决关注点分离的问题。
 

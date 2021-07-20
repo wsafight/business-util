@@ -60,6 +60,8 @@
 * * [强大的异步库 async](/util/async.md)
 * * [启发式缓存库 proxy-memoizee](/util/proxy-memoizee)
 * * [过去（未来）时间格式化](/util/timeage.md)
+* * [前端服务库 sigi-framework](util/sigi-framework.md)
+
 
 * web 安全
 * * [使用 HTTPS](/security/HTTPS.md)

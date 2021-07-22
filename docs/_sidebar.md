@@ -59,6 +59,7 @@
 * * [强大的异步库 async](/util/async.md)
 * * [启发式缓存库 proxy-memoizee](/util/proxy-memoizee)
 * * [过去（未来）时间格式化](/util/timeage.md)
+* * [JavaScript 函数响应式开发库 RxJS](/util/rxjs.md)    
 
 
 * web 安全

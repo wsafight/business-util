@@ -22,7 +22,7 @@
 * * [组合键提升用户体验](/UX/key-manage.md)
 * * [提升交互体验的 web Observer](/UX/web-observer.md)
 * * [切换中文简繁字体](/UX/font-east.md)    
-
+* * [使用 gsap 操纵动画序列](/UX/gsap.md)
 * 开发工具
 * * [快速调试编辑器 RunJS](/develop-tool/runjs.md)
 * * [自动切换故障 CDN 工具](/develop-tool/freecdn.md)

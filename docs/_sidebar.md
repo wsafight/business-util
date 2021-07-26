@@ -1,7 +1,7 @@
 
 * 业务工具
-* * [货币格式化](/business/currency.md)
-* * [通过 Dinero 处理货币数据](/business/dinero.md)
+* * [简单货币格式化](/business/currency.md)
+* * [通过 Dinero 和 Intl 处理货币数据](/business/dinero.md)
 * * [格式化文件大小(简单版)](/business/format-file-size.md)
 * * [文件格式化库 filesize](/business/filesize.md)
 * * [根据数组构建树](/business/build-tree.md)

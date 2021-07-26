@@ -9,8 +9,8 @@
 当前网址为: https://wsafight.github.io/business-util/#/
 
 * 业务工具
-    * [货币格式化](https://wsafight.github.io/business-util/#/business/currency)
-    * [通过 Dinero 处理货币数据](https://wsafight.github.io/business-util/#/business/dinero)  
+    * [简单货币格式化](https://wsafight.github.io/business-util/#/business/currency)
+    * [通过 Dinero 和 Intl 处理货币数据](https://wsafight.github.io/business-util/#/business/dinero)  
     * [格式化文件大小(简单版)](https://wsafight.github.io/business-util/#/business/format-file-size)
     * [文件格式化库 filesize](https://wsafight.github.io/business-util/#/business/filesize)
     * [根据数组构建树](https://wsafight.github.io/business-util/#/business/build-tree)

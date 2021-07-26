@@ -29,6 +29,7 @@
 * 用户体验
     * [组合键提升用户体验](https://wsafight.github.io/business-util/#/UX/key-manage)
     * [提升交互体验的 web Observer](https://wsafight.github.io/business-util/#/UX/web-observer)
+    * [切换中文简繁字体](https://wsafight.github.io/business-util/#/UX/font-east)
 
 * 开发工具
     * [快速调试编辑器 RunJS](https://wsafight.github.io/business-util/#/develop-tool/runjs)

@@ -20,6 +20,7 @@
 * 用户体验
 * * [组合键提升用户体验](/UX/key-manage.md)
 * * [提升交互体验的 web Observer](/UX/web-observer.md)
+* * [切换中文简繁字体](/UX/font-east.md)    
 
 * 开发工具
 * * [快速调试编辑器 RunJS](/develop-tool/runjs.md)

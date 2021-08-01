@@ -184,8 +184,6 @@ function getCurrency(name: string) {
 getCurrency('CNY').format(99)
 ```
 
-全部代码在 [货币格式化](https://github.com/wsafight/business-util/blob/master/src/business/currency.ts) 中。
-
 当然，我们可以直接使用 [accounting.js](http://openexchangerates.github.io/accounting.js/) 或者 [Accounting-js](https://nashdot.github.io/accounting-js/) 库
 
 <div style="float: right">更新时间: {docsify-updated}</div>

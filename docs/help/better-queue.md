@@ -18,8 +18,4 @@
 - 检查队列，提供统计信息与数据。
 
 
-## 修改构建
-
-目前我正在使用 ts 进行重构，希望可以服务于 node 以及 deno 多个平台。
-
 <div style="float: right">更新时间: {docsify-updated}</div>

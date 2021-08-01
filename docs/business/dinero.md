@@ -31,3 +31,5 @@ const d = dinero({ amount: 1000, currency: USD });
 intlFormat(d, 'en-US'); // "$10.00"
 intlFormat(d, 'fr-CA'); // "10,00 $ US"
 ```
+
+<div style="float: right">更新时间: {docsify-updated}</div>

@@ -52,8 +52,6 @@ function formatFileSize(fileSize: number, options?: FormatFileSizeOptions) {
 }
 ```
 
-github 代码在 [格式化文件大小](https://github.com/wsafight/Daily-Algorithm/blob/master/src/business/formatFileSize.ts) 中
-
 更加复杂的功能可以使用 [filesize](https://github.com/avoidwork/filesize.js) 开源库，同时该库的解析在 [复杂的文件格式化库 filesize](./filesize) 中。
 
 <div style="float: right">更新时间: {docsify-updated}</div>

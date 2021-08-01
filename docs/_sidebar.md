@@ -82,7 +82,7 @@
 * * [利用 "ts" 编译 WebAssembly](/performance/AssemblyScript.md)
 
 * 测试
-* * [HTTP 交互库](/test/polly-js.md)
+* * [使用 Pollyjs 进行 HTTP 请求测试](/test/polly-js.md)
 * * [新的端到端测试框架 cypress](/test/cypress.md)
 
 * js 语言解析

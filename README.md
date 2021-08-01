@@ -92,7 +92,7 @@
     * [利用 "ts" 编译 WebAssembly](https://wsafight.github.io/business-util/#/performance/AssemblyScript)
 
 * 测试
-    * [HTTP 交互库](https://wsafight.github.io/business-util/#/test/polly-js)
+    * [使用 Pollyjs 进行 HTTP 请求测试](https://wsafight.github.io/business-util/#/test/polly-js)
     * [新的端到端测试框架 cypress](https://wsafight.github.io/business-util/#/test/cypress)
 
 * js 语言解析

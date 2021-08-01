@@ -14,7 +14,6 @@
     * [格式化文件大小(简单版)](https://wsafight.github.io/business-util/#/business/format-file-size)
     * [文件格式化库 filesize](https://wsafight.github.io/business-util/#/business/filesize)
     * [根据数组构建树](https://wsafight.github.io/business-util/#/business/build-tree)
-    * [树形结构数组](https://wsafight.github.io/business-util/#/business/tree-structure-array)
     * [树组件查询](https://wsafight.github.io/business-util/#/business/array-tree-filter)
     * [计算博客阅读时长](https://wsafight.github.io/business-util/#/business/reading-time)
     * [根据背景色自适应文本颜色](https://wsafight.github.io/business-util/#/business/contrast-text-color)

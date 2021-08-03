@@ -25,6 +25,7 @@
 
 * 功能扩展
     * [js 手写生成 pdf](https://wsafight.github.io/business-util/#/extends/jspdf)
+    * [查找解析祖先文件工具 find-up](https://wsafight.github.io/business-util/#/extends/find-up)
 
 * 用户体验
     * [组合键提升用户体验](https://wsafight.github.io/business-util/#/UX/key-manage)

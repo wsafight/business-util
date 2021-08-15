@@ -34,6 +34,8 @@
 * * [跨平台的音乐播放器 Listen1](/develop-tool/listen1.md) 
 * * [开发者的边车辅助工具 DevSidecar](/develop-tool/dev-sidecar.md)    
 
+* 效率工具
+
 * 辅助开发 
 * * [开发助力 mermaid 绘制图表](/help/mermaid.md)
 * * [文件类型检测](/help/file-type.md)

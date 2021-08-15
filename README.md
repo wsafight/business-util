@@ -43,6 +43,7 @@
     * [跨平台的音乐播放器 Listen1](https://wsafight.github.io/business-util/#/develop-tool/listen1)
     * [开发者的边车辅助工具 DevSidecar](https://wsafight.github.io/business-util/#/develop-tool/dev-sidecar)
 
+* 效率工具
 
 * 辅助开发
     * [开发助力 mermaid 绘制图表](https://wsafight.github.io/business-util/#/help/mermaid)

@@ -59,7 +59,7 @@
     * [优秀的不可变状态库 immer](https://wsafight.github.io/business-util/#/help/immer)
     * [前端构建工具配置生成器](https://wsafight.github.io/business-util/#/help/create-app)
     * [利用 XState(有限状态机) 编写易于变更的代码](https://wsafight.github.io/business-util/#/help/XState)
-    * [复杂任务队列管理工具 better-queue](https://wsafight.github.io/business-util/#/help/better-queue)
+    * [使用 better-queue 管理复杂的任务](https://wsafight.github.io/business-util/#/help/better-queue)
     * [用编程的方式清晰的构建正则表达式](https://wsafight.github.io/business-util/#/help/super-expressive)
     * [Node.js 轻量级调试器 dbgr](https://wsafight.github.io/business-util/#/help/dbgr)
   

@@ -79,6 +79,7 @@
     * [JavaScript 函数响应式开发库 RxJS](https://wsafight.github.io/business-util/#/util/timeage)
 
 * web 安全
+    * [使用一行代码发现前端 js 库漏洞](https://wsafight.github.io/business-util/#/security/is-website-vulnerable)
     * [使用 HTTPS](https://wsafight.github.io/business-util/#/security/HTTPS)
     * [css 键盘记录器](https://wsafight.github.io/business-util/#/security/css-key-logging)
     * [xss 过滤器 DOMPurify](https://wsafight.github.io/business-util/#/security/dom-purify)

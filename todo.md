@@ -89,3 +89,12 @@ function hash(word) {
 
 console.log(hash("apple"));
 ```
+
+
+http://jvns.ca/blog/2021/06/08/reasons-why-bugs-might-feel-impossible/
+
+很难复现
+你不太了解整个系统
+很难获得有关该错误的数据
+你的假设之一是错误的
+这个bug真的很复杂

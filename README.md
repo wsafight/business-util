@@ -118,6 +118,7 @@
 * 脚本工具
     * [使用 JavaScript 语法编写脚本的工具 zx](https://wsafight.github.io/business-util/#/script/zx)
     * [通过灭霸脚本学 shell](https://wsafight.github.io/business-util/#/script/thanos_sh)
+    * [使用 corn 实现定时任务](https://wsafight.github.io/business-util/#/script/cron)
 
 * 实用数据结构
     * [前缀树](https://wsafight.github.io/business-util/#/data-structure/trie-tree)

@@ -110,6 +110,7 @@
 * 脚本工具
 * * [使用 JavaScript 语法编写脚本的工具 zx](/script/zx.md)
 * * [通过灭霸脚本学 shell](/script/thanos_sh.md) 
+* * [使用 corn 实现定时任务](/script/cron.md)    
 
 * 实用数据结构
 * * [前缀树](/data-structure/trie-tree.md)

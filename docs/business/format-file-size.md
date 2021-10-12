@@ -54,4 +54,24 @@ function formatFileSize(fileSize: number, options?: FormatFileSizeOptions) {
 
 更加复杂的功能可以使用 [filesize](https://github.com/avoidwork/filesize.js) 开源库，同时该库的解析在 [复杂的文件格式化库 filesize](./filesize) 中。
 
+当然，我也推荐研究一下 [有史以来复制次数最多的 StackOverflow 片段有缺陷！](https://programming.guide/worlds-most-copied-so-snippet.html) 。
+
+```JAVA
+// From: https://programming.guide/worlds-most-copied-so-snippet.html
+public static strictfp String humanReadableByteCount(long bytes, boolean si) {
+    int unit = si ? 1000 : 1024;
+    long absBytes = bytes == Long.MIN_VALUE ? Long.MAX_VALUE : Math.abs(bytes);
+    if (absBytes < unit) return bytes + " B";
+    int exp = (int) (Math.log(absBytes) / Math.log(unit));
+    long th = (long) Math.ceil(Math.pow(unit, exp) * (unit - 0.05));
+    if (exp < 6 && absBytes >= th - ((th & 0xFFF) == 0xD00 ? 51 : 0)) exp++;
+    String pre = (si ? "kMGTPE" : "KMGTPE").charAt(exp - 1) + (si ? "" : "i");
+    if (exp > 4) {
+        bytes /= unit;
+        exp -= 1;
+    }
+    return String.format("%.1f %sB", bytes / Math.pow(unit, exp), pre);
+}
+```
+
 <div style="float: right">更新时间: {docsify-updated}</div>

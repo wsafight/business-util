@@ -107,3 +107,5 @@ https://comby.dev/
 基础设施即代码？ https://github.com/run-x/opta
 
 https://zhuanlan.zhihu.com/p/58622271
+
+https://bart.degoe.de/building-a-full-text-search-engine-150-lines-of-code/

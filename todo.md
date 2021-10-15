@@ -105,3 +105,5 @@ https://comby.dev/
 时序数据库 https://blog.timescale.com/blog/what-the-heck-is-time-series-data-and-why-do-i-need-a-time-series-database-dcf3b1b18563/?utm_source=status-code-weekly-sponsor&utm_medium=email&utm_campaign=status-code-weekly-sponsor-may-2021&utm_content=wth-blog
 
 基础设施即代码？ https://github.com/run-x/opta
+
+https://zhuanlan.zhihu.com/p/58622271

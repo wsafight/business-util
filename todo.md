@@ -109,3 +109,7 @@ https://comby.dev/
 https://zhuanlan.zhihu.com/p/58622271
 
 https://bart.degoe.de/building-a-full-text-search-engine-150-lines-of-code/
+
+```ts
+filename = filename.replace(/[\\/|:*?"><]/g, '_')
+```

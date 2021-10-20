@@ -21,6 +21,7 @@
 * * [查找解析祖先文件工具 find-up](/extends/find-up.md)
 
 * 用户体验
+* * [使用 escape 解决 HTML 空白折叠](/UX/escape.md)  
 * * [组合键提升用户体验](/UX/key-manage.md)
 * * [提升交互体验的 web Observer](/UX/web-observer.md)
 * * [切换中文简繁字体](/UX/font-east.md)    

@@ -29,6 +29,7 @@
     * [查找解析祖先文件工具 find-up](https://wsafight.github.io/business-util/#/extends/find-up)
 
 * 用户体验
+    * [使用 escape 解决 HTML 空白折叠](https://wsafight.github.io/business-util/#/UX/escape)
     * [组合键提升用户体验](https://wsafight.github.io/business-util/#/UX/key-manage)
     * [提升交互体验的 web Observer](https://wsafight.github.io/business-util/#/UX/web-observer)
     * [切换中文简繁字体](https://wsafight.github.io/business-util/#/UX/font-east)

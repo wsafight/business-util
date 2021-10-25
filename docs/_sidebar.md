@@ -54,8 +54,12 @@
 * * [前端构建工具配置生成器](/help/create-app.md)
 * * [利用 XState(有限状态机) 编写易于变更的代码](/help/XState.md)
 * * [使用 better-queue 管理复杂的任务](/help/better-queue.md)
-* * [用编程的方式清晰的构建正则表达式](/help/super-expressive.md)
 * * [Node.js 轻量级调试器 dbgr](/help/dbgr.md)
+    
+* 字符串匹配工具
+* * [用编程的方式清晰的构建正则表达式](/regex/super-expressive.md)
+* * [高度优化的 glob 匹配库 micromatch](/regex/micromatch.md)
+* * [基于数字范围生成高性能正则](/regex/to-regex-range.md)    
 
 * 实用工具
 * * [文件下载](/util/down-file.md)

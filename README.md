@@ -63,9 +63,13 @@
     * [前端构建工具配置生成器](https://wsafight.github.io/business-util/#/help/create-app)
     * [利用 XState(有限状态机) 编写易于变更的代码](https://wsafight.github.io/business-util/#/help/XState)
     * [使用 better-queue 管理复杂的任务](https://wsafight.github.io/business-util/#/help/better-queue)
-    * [用编程的方式清晰的构建正则表达式](https://wsafight.github.io/business-util/#/help/super-expressive)
     * [Node.js 轻量级调试器 dbgr](https://wsafight.github.io/business-util/#/help/dbgr)
-  
+
+* 字符串匹配工具
+    * [用编程的方式清晰的构建正则表达式](https://wsafight.github.io/business-util/#/regex/super-expressive)
+    * [高度优化的 glob 匹配库 micromatch](https://wsafight.github.io/business-util/#/regex/micromatch)
+    * [基于数字范围生成高性能正则](https://wsafight.github.io/business-util/#/regex/to-regex-range)
+
 * 实用工具
     * [文件下载](https://wsafight.github.io/business-util/#/util/down-file)
     * [JSON 的超集 serialize-javascript](https://wsafight.github.io/business-util/#/util/serialize-javascript)

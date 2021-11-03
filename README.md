@@ -69,6 +69,7 @@
     * [用编程的方式清晰的构建正则表达式](https://wsafight.github.io/business-util/#/regex/super-expressive)
     * [高度优化的 glob 匹配库 micromatch](https://wsafight.github.io/business-util/#/regex/micromatch)
     * [基于数字范围生成高性能正则](https://wsafight.github.io/business-util/#/regex/to-regex-range)
+    * [基于字符串生成 DFA 正则表达式](https://wsafight.github.io/business-util/#/regex/regexgen)
 
 * 实用工具
     * [文件下载](https://wsafight.github.io/business-util/#/util/down-file)

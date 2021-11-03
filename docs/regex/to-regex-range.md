@@ -24,3 +24,6 @@ console.log(toRegexRange('-10', '10', { capture: true }));
 ```
 
 
+<div style="float: right">更新时间: {docsify-updated}</div>
+
+

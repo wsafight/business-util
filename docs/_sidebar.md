@@ -84,6 +84,7 @@
 * * [csp 内容安全策略](/security/CSP.md)
 * * [超级 cookie](/security/super-cookie.md)
 * * [防御 ReDoS 攻击](/security/regexploit.md)
+* * [浏览器文件操作](/security/browser-fs-access.md)
     
 * 服务端工具
 * * [node 速率限制器](/server/node-rate-limiter.md)

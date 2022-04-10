@@ -93,6 +93,7 @@
     * [csp 内容安全策略](https://wsafight.github.io/business-util/#/security/CSP)
     * [超级 cookie](https://wsafight.github.io/business-util/#/security/super-cookie)
     * [防御 ReDoS 攻击](https://wsafight.github.io/business-util/#/security/regexploit)
+    * [浏览器文件操作](https://wsafight.github.io/business-util/#/security/browser-fs-access)
 
 * 服务端工具
     * [node 速率限制器](https://wsafight.github.io/business-util/#/server/node-rate-limiter)

@@ -36,14 +36,14 @@
     * [使用 gsap 操纵动画序列](https://wsafight.github.io/business-util/#/UX/gsap)
 
 * 开发工具
-    * [快速调试编辑器 RunJS](https://wsafight.github.io/business-util/#/develop-tool/runjs)
-    * [自动切换故障 CDN 工具](https://wsafight.github.io/business-util/#/develop-tool/freecdn)  
-    * [LocalCDN 插件提升网站加载速度](https://wsafight.github.io/business-util/#/develop-tool/location-cdn)
-    * [快速清晰的构建正则表达式](https://wsafight.github.io/business-util/#/develop-tool/build-regex)
-    * [静态代码分析工具 Understand](https://wsafight.github.io/business-util/#/develop-tool/Understand)
-    * [漂亮的专业排版软件 TeXMacs](https://wsafight.github.io/business-util/#/develop-tool/TeXMacs)
-    * [跨平台的音乐播放器 Listen1](https://wsafight.github.io/business-util/#/develop-tool/listen1)
-    * [开发者的边车辅助工具 DevSidecar](https://wsafight.github.io/business-util/#/develop-tool/dev-sidecar)
+    * [快速调试编辑器 RunJS](https://wsafight.github.io/business-util/#/develop-tools/runjs)
+    * [自动切换故障 CDN 工具](https://wsafight.github.io/business-util/#/develop-tools/freecdn)  
+    * [LocalCDN 插件提升网站加载速度](https://wsafight.github.io/business-util/#/develop-tools/location-cdn)
+    * [快速清晰的构建正则表达式](https://wsafight.github.io/business-util/#/develop-tools/build-regex)
+    * [静态代码分析工具 Understand](https://wsafight.github.io/business-util/#/develop-tools/Understand)
+    * [漂亮的专业排版软件 TeXMacs](https://wsafight.github.io/business-util/#/develop-tools/TeXMacs)
+    * [跨平台的音乐播放器 Listen1](https://wsafight.github.io/business-util/#/develop-tools/listen1)
+    * [开发者的边车辅助工具 DevSidecar](https://wsafight.github.io/business-utils/#/develop-tool/dev-sidecar)
 
 * 效率工具
 

@@ -29,13 +29,13 @@
     
     
 * 开发工具
-* * [快速调试编辑器 RunJS](/develop-tool/runjs.md)
-* * [自动切换故障 CDN 工具](/develop-tool/freecdn.md)
-* * [LocalCDN 插件提升网站加载速度](/develop-tool/location-cdn.md)
-* * [静态代码分析工具 Understand](/develop-tool/Understand.md)
-* * [漂亮的专业排版软件 TeXMacs](/develop-tool/TeXMacs.md)
-* * [跨平台的音乐播放器 Listen1](/develop-tool/listen1.md) 
-* * [开发者的边车辅助工具 DevSidecar](/develop-tool/dev-sidecar.md)    
+* * [快速调试编辑器 RunJS](/develop-tools/runjs.md)
+* * [自动切换故障 CDN 工具](/develop-tools/freecdn.md)
+* * [LocalCDN 插件提升网站加载速度](/develop-tools/location-cdn.md)
+* * [静态代码分析工具 Understand](/develop-tools/Understand.md)
+* * [漂亮的专业排版软件 TeXMacs](/develop-tools/TeXMacs.md)
+* * [跨平台的音乐播放器 Listen1](/develop-tools/listen1.md) 
+* * [开发者的边车辅助工具 DevSidecar](/develop-tools/dev-sidecar.md)    
 
 * 效率工具
 

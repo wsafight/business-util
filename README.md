@@ -80,6 +80,7 @@
     * [检测图像(视频)加载完成 egjs-imready](https://wsafight.github.io/business-util/#/util/egjs-imready)
     * [专业的深拷贝库](https://wsafight.github.io/business-util/#/util/deep-clone)
     * [强大的业务缓存库 memoizee](https://wsafight.github.io/business-util/#/util/memoizee)
+    * [请求限流](https://wsafight.github.io/business-util/#/util/query-limit)
     * [强大的异步库 async](https://wsafight.github.io/business-util/#/util/async)
     * [启发式缓存库 proxy-memoizee](https://wsafight.github.io/business-util/#/util/proxy-memoizee)
     * [过去（未来）时间格式化](https://wsafight.github.io/business-util/#/util/timeage)

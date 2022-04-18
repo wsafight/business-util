@@ -104,6 +104,7 @@
 * * [新的端到端测试框架 cypress](/test/cypress.md)
     
 * 调试
+* * [修改 window 上的变量](/debug/win-char-change.md)
 * * [查找调试 JS 全局变量](/debug/global-check.md)
 
 * js 语言解析

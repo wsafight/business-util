@@ -113,7 +113,8 @@
     * [新的端到端测试框架 cypress](https://wsafight.github.io/business-util/#/test/cypress)
 
 * 调试
-    * [查找调试 JS 全局变量](https://wsafight.github.io/business-util/#/debug/global-check.md)
+    * [修改 window 上的变量](https://wsafight.github.io/business-util/#/debug/win-char-change)
+    * [查找调试 JS 全局变量](https://wsafight.github.io/business-util/#/debug/global-check)
 
 * js 语言解析
     * [New Function 创建异步函数](https://wsafight.github.io/business-util/#/language/new-async-function)

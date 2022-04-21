@@ -41,5 +41,7 @@ function round(number: number, precision: number = 2) {
 
 通常前端计算不需要那么高的精度，在计算完成直接调用该函数即可。
 
+注意该函数会在 number 较小或较大的情况下出现问题，如数字本身就使用了科学计数法。
+
 <div style="float: right">更新时间: {docsify-updated}</div>
 

@@ -139,3 +139,5 @@ https://bart.degoe.de/building-a-full-text-search-engine-150-lines-of-code/
 ```ts
 filename = filename.replace(/[\\/|:*?"><]/g, '_')
 ```
+
+https://zhuanlan.zhihu.com/p/28907384

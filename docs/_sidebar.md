@@ -26,6 +26,7 @@
 * * [提升交互体验的 web Observer](/UX/web-observer.md)
 * * [切换中文简繁字体](/UX/font-east.md)    
 * * [使用 gsap 操纵动画序列](/UX/gsap.md)
+* * [获取汉字拼音首字母](/UX/first-letter.md)
     
     
 * 开发工具

@@ -15,22 +15,60 @@ escape('fred, barney, & pebbles<bbb></bbb>');
 "fred%2C%20barney%2C%20%26%20pebbles%3Cbbb%3E%3C/bbb%3E"
 ```
 
-转换多行代码如下所示
+转换多行代码逻辑代码如下所示
 
 ```ts
 import escape from 'lodash/escape';
 
-export const formatMultilineText = (text: string) => {
-  if (!text || typeof text !== "string" ) {
-    return '';
-  }
-  return text.split(/\r?\n/).map(line => escape(line)
-    // 其他处理
-    .replace()
-  ).join('<br/>');
+export const formatMultilineText = (text: string, fontSize: number = 0.5) => {
+    if (!text || typeof text !== "string") {
+        return '';
+    }
+    return text.split(/\r?\n/).map(line => {
+        // 去除每一行最后的空白并进行转义
+        return escape(line.replace(/\s+$/g, ''))
+            // 转换制表符为多个空格
+            .replace(/\t/g, '        ')
+            // 转换多个空格为 span 避免长度折叠
+            .replace(/\s{2,}/g, (replacement: string) => {
+                return `<span style='display:inline-block;width:${replacement.length * fontSize}em'></span>`
+            })
+        }
+    ).join('<br/>')
 }
 ```
 
+注意: escape 目前的转义变得更加严格，涉及到
+
+|  转义前  | 转义后  |
+|  :----:  | :----:  |
+| \t   | %09 |
+| 空格  | %20 |
+| %  | %25 |
+
+鉴于 % 也会转义 为 %25，所以这里并不需要担心原有文字中会存在 %09 %20 被转义的情况，重新处理为：
+
+```ts
+import escape from 'lodash/escape';
+
+export const formatMultilineText = (text: string, fontSize: number = 0.5) => {
+    if (!text || typeof text !== "string") {
+        return '';
+    }
+    return text.split(/\r?\n/).map(line => {
+        // 去除每一行最后的空白并进行转义
+        return escape(line.replace(/\s+$/g, ''))
+            // 转换制表符为多个空格
+            .replace(/%20/g, ' ')
+            .replace(/%09/g, '        ')
+            // 转换多个空格为 span 避免空白折叠
+            .replace(/\s{2,}/g, (replacement: string) => {
+                return `<span style='display:inline-block;width:${replacement.length * fontSize}em'></span>`
+            })
+        }
+    ).join('<br/>')
+}
+```
 
 
 

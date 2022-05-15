@@ -1,6 +1,7 @@
 # 禁止浏览器进行表单填充
 
-某些情况下，用户需要浏览器不提供填充功能，尤其是登陆界面的密码填充。这时候我们就需要基于表单做一些特殊处理。这是非常麻烦的。而 [disableautofill.js](https://github.com/terrylinooo/disableautofill.js) 提供了这个功能。我们可以这样使用：
+某些情况下，用户需要浏览器不提供填充功能，尤其是登陆界面的密码填充。这时候我们就需要基于表单做一些特殊处理。这是非常麻烦的。
+而 [disableautofill.js](https://github.com/terrylinooo/disableautofill.js) 提供了这个功能。我们可以这样使用：
 
 ```html
 
@@ -58,8 +59,23 @@ daf.init();
 
 - 替换type="password"为type="text"
 - 用星号替换密码文本
-- autocomplete="off"在表单上添加一个属性
+- 在表单上添加一个属性 autocomplete="off"
 - 随机化属性 name 以防止 Google Chrome 记住您填写的内容
 
 这也就意味着，当前界面表现的数据和真实输入的数据不一致。这时候如果我们用的前端框架，需要把表单项作为非受控组件组件。
 
+后续发现了一个更加简单的方式。
+
+- 替换type="password"为type="text" 并且使用字体文件 font-family
+- 在表单上添加一个属性 autocomplete="off"
+
+```css
+@font-face {
+    font-family: "password";
+    src: url(../../assets/css/PasswordEntry.ttf);
+}
+
+.pwd-input {
+    font-family: "password";
+}
+```

@@ -71,8 +71,9 @@ daf.init();
 
 ```css
 @font-face {
-    font-family: "password";
+    /* 该字体只有显示密码的字符 */
     src: url(../../assets/css/PasswordEntry.ttf);
+    font-family: "password";
 }
 
 /* 我们使用 password 字体，这样展示就没有问题了  */
@@ -80,3 +81,5 @@ daf.init();
     font-family: "password";
 }
 ```
+
+对了，事实上，字体文件甚至可以在一定程度上防御爬虫，例如旅游或者电商网站，涉及到金额等信息时候，完全可以通过数字字符集来进行变化处理，例如 json 数据或者 dom 结构上都会展示 1234(此处去除了货币格式)，但事实上，用户实际看到的却是另外的数字（6754）。

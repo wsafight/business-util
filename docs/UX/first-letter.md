@@ -46,4 +46,4 @@ export const getTheFirstLetterForPinyin = (chineseChar = '', useUpperCase = fals
 // => nhsj
 ```
 
-如此，我们可以把首字母数据存储到数据库用于数据库检索(用户只输入拼音首字母是非常简单的)。当然，中文的多音字也会让其发生部分错误如：音乐会变成 “yl”。但是大部分情况下，该方案简单有效。如果涉及到精细的批判可以使用 [pinyin-pro](https://github.com/zh-lx/pinyin-pro)
+如此，我们可以把首字母数据存储到数据库用于数据库检索(用户只输入拼音首字母是非常简单的)。当然，中文的多音字也会让其发生部分错误如：音乐会变成 “yl”。但是大部分情况下，该方案简单有效。如果涉及到多音字以及精细的匹配可以使用 [pinyin-pro](https://github.com/zh-lx/pinyin-pro)

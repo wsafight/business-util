@@ -75,6 +75,7 @@ daf.init();
     src: url(../../assets/css/PasswordEntry.ttf);
 }
 
+/* 我们使用 password 字体，这样展示就没有问题了  */
 .pwd-input {
     font-family: "password";
 }

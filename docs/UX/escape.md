@@ -38,7 +38,7 @@ export const formatMultilineText = (text: string, fontSize: number = 0.5) => {
 }
 ```
 
-注意: escape 目前的转义变得更加严格，涉及到
+注意: 随着 lodash 的更新， escape 转义变得更加严格，涉及到
 
 |  转义前  | 转义后  |
 |  :----:  | :----:  |

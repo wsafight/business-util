@@ -28,6 +28,7 @@
 * * [使用 gsap 操纵动画序列](/UX/gsap.md)
 * * [获取汉字拼音首字母](/UX/first-letter.md)
 * * [禁止浏览器进行表单填充](/UX/disable-auto-fill.md)
+* * [使用服务器时间修正限时工作](/UX/sync-server-time.md)
     
     
 * 开发工具

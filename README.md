@@ -36,6 +36,7 @@
     * [使用 gsap 操纵动画序列](https://wsafight.github.io/business-util/#/UX/gsap)
     * [获取汉字拼音首字母](https://wsafight.github.io/business-util/#/UX/first-letter)
     * [禁止浏览器进行表单填充](https://wsafight.github.io/business-util/#/UX/disable-auto-fill)
+    * [使用服务器时间修正限时工作](https://wsafight.github.io/business-util/#/UX/sync-server-time)
 
 * 开发工具
     * [快速调试编辑器 RunJS](https://wsafight.github.io/business-util/#/develop-tools/runjs)

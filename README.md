@@ -61,6 +61,7 @@
     * [生成唯一 id](https://wsafight.github.io/business-util/#/help/generateUUID)
     * [微任务延迟调度](https://wsafight.github.io/business-util/#/help/next-tick)
     * [根据对象路径安全获取对象值](https://wsafight.github.io/business-util/#/help/get-value-by-key)
+    * [根据复杂对象路径操作对象](https://wsafight.github.io/business-util/#/help/wild-wild-utils)
     * [不变性数据修改辅助类](https://wsafight.github.io/business-util/#/help/immutability-helper)
     * [优秀的不可变状态库 immer](https://wsafight.github.io/business-util/#/help/immer)
     * [前端构建工具配置生成器](https://wsafight.github.io/business-util/#/help/create-app)

@@ -52,6 +52,7 @@
 * * [生成唯一 id](/help/generateUUID.md)
 * * [微任务延迟调度](/help/next-tick.md)
 * * [根据对象路径安全获取对象值](/help/get-value-by-key.md)
+* * [根据复杂对象路径操作对象](/help/wild-wild-utils.md)
 * * [不变性数据修改辅助类](/help/immutability-helper.md)
 * * [优秀的不可变状态库 immer](/help/immer.md)
 * * [前端构建工具配置生成器](/help/create-app.md)

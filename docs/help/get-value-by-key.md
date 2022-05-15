@@ -67,4 +67,6 @@ _.get(object, 'a.b.c', 'default');
 // => 'default'
 ```
 
+如果开发上更加复杂的需求，可以查看 [wild-wild-utils](https://github.com/ehmicky/wild-wild-utils) 符不符合。并且可以看一看我这边的介绍与详细解读 [根据复杂对象路径操作对象](./wild-wild-utils.md)。
+
 <div style="float: right">更新时间: {docsify-updated}</div>

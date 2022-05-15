@@ -2,7 +2,7 @@
 
 对于富文本编辑器产生的内容，我们可以利用 xss 过滤器 DOMPurify 等工具来解决 xss 攻击。
 
-由于 HTML 解析会存在空白折叠的问题，对于展示 textarea 的多行文本我们需要转换成 html 才能够实现换行功能。
+由于 HTML 解析会存在空白折叠的问题，对于使用 input type=textarea 的多行文本我们需要转换成 html 才能够实现换行功能。
 
 由于转换过程可能涉及到 xss 攻击，所以我们需要做一些基础的转换。如此就不会产生此类问题。
 
@@ -29,7 +29,7 @@ export const formatMultilineText = (text: string, fontSize: number = 0.5) => {
         return escape(line.replace(/\s+$/g, ''))
             // 转换制表符为多个空格
             .replace(/\t/g, '        ')
-            // 转换多个空格为 span 避免长度折叠
+            // 转换多个空格为 span 避免空白折叠，一个空格并不影响
             .replace(/\s{2,}/g, (replacement: string) => {
                 return `<span style='display:inline-block;width:${replacement.length * fontSize}em'></span>`
             })
@@ -61,7 +61,7 @@ export const formatMultilineText = (text: string, fontSize: number = 0.5) => {
             // 转换制表符为多个空格
             .replace(/%20/g, ' ')
             .replace(/%09/g, '        ')
-            // 转换多个空格为 span 避免空白折叠
+            // 转换多个空格为 span 避免空白折叠，一个空格并不影响
             .replace(/\s{2,}/g, (replacement: string) => {
                 return `<span style='display:inline-block;width:${replacement.length * fontSize}em'></span>`
             })

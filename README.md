@@ -110,6 +110,7 @@
     * [跳过 v8 pre-Parse 优化代码性能库 optimize-js](https://wsafight.github.io/business-util/#/performance/optimize-js)
     * [AVIF 图片格式](https://wsafight.github.io/business-util/#/performance/AVIF)
     * [利用 "ts" 编译 WebAssembly](https://wsafight.github.io/business-util/#/performance/AssemblyScript)
+    * [通过扁平字符串提升输出性能](https://wsafight.github.io/business-util/#/performance/flatstr)
 
 * 测试
     * [使用 Pollyjs 进行 HTTP 请求测试](https://wsafight.github.io/business-util/#/test/polly-js)

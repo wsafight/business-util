@@ -29,7 +29,7 @@
 * * [获取汉字拼音首字母](/UX/first-letter.md)
 * * [禁止浏览器进行表单填充](/UX/disable-auto-fill.md)
 * * [使用服务器时间修正限时工作](/UX/sync-server-time.md)
-    
+* * [使用凭证优化登录流程](/UX/credential-api.md)
     
 * 开发工具
 * * [快速调试编辑器 RunJS](/develop-tools/runjs.md)

@@ -68,7 +68,9 @@
     * [利用 XState(有限状态机) 编写易于变更的代码](https://wsafight.github.io/business-util/#/help/XState)
     * [使用 better-queue 管理复杂的任务](https://wsafight.github.io/business-util/#/help/better-queue)
     * [Node.js 轻量级调试器 dbgr](https://wsafight.github.io/business-util/#/help/dbgr)
-    * [跳转页面时可靠的发送埋点信息](https://wsafight.github.io/business-util/#/help/navigator-beacon.md)
+    * [跳转页面时可靠的发送埋点信息](https://wsafight.github.io/business-util/#/help/navigator-beacon)
+    * [web 多线程开发工具 comlink](https://wsafight.github.io/business-util/#/help/comlink)
+    * [Service Worker 工具箱 workbox](https://wsafight.github.io/business-util/#/help/workbox)
 
 * 字符串匹配工具
     * [用编程的方式清晰的构建正则表达式](https://wsafight.github.io/business-util/#/regex/super-expressive)

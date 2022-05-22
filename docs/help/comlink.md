@@ -66,9 +66,7 @@ self.addEventListener('message', (e) => {
 
 这时候可以使用 [comlink](https://github.com/GoogleChromeLabs/comlink)
 
-不说过多了，我们可以先看一个简单的例子,
-
-新建 worker.js 文件
+先看一个简单的例子,新建 worker.js 文件
 
 ```js
 // worker 通过 importScripts 加载外部 js
@@ -110,35 +108,7 @@ init();
 当前代码中没有任何关于类似 onmessage 和 postMessage 的代码，主线程就像调用其他模块定义的函数一般使用，以及 obj.counter 会获取一个 Promise 对象，这时候我们无疑就想到了元编程以及 Proxy。我之前也写过基于 Proxy 的缓存 [memoizee-proxy](https://github.com/wsafight/memoizee-proxy),感兴趣的也可以看看，这里就不做太多叙述了。
 
 
-事实上 Comlink 的确使用了 Proxy。后续我们可以解析一下具体代码。这里我们可以继续学习 comlink 的例子。
+事实上 Comlink 的确使用了 Proxy。后续我们可以解析一下具体代码。
 
-```js
-importScripts("https://unpkg.com/comlink/dist/umd/comlink.js");
-
-async function remoteFunction(cb) {
-  await cb("A string from a worker");
-}
-
-Comlink.expose(remoteFunction);
-```
-
-```js
-  import * as Comlink from "https://unpkg.com/comlink/dist/esm/comlink.mjs";
-  // import * as Comlink from "../../../dist/esm/comlink.mjs";
-
-  function callback(value) {
-    alert(`Result: ${value}`);
-  }
-
-  async function init() {
-    const remoteFunction = Comlink.wrap(new Worker("worker.js"));
-    await remoteFunction(Comlink.proxy(callback));
-  }
-
-  init();
-```
-
-
-## 源码解析
 
 

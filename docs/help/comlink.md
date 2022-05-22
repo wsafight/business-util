@@ -4,7 +4,8 @@ Web Worker 为 JavaScript 创造多线程环境。目的是减轻 JavaScript 主
 
 其原理为：在主线程运行的同时，Worker 线程在后台运行，两者互不干扰。等到 Worker 线程完成计算任务，再把结果返回给主线程。
 
-## Web Worker 缺陷于限制
+
+## Web Worker 限制
 
 当然了,能力越大，责任越大。Web Worker 也有许多限制，其中大多数都是为了安全性考虑。
 
@@ -14,8 +15,11 @@ Web Worker 为 JavaScript 创造多线程环境。目的是减轻 JavaScript 主
 - Worker 线程不能执行alert()方法和confirm()方法，但可以使用 XMLHttpRequest 对象发出 AJAX 请求
 - Worker 线程无法读取本地文件，即不能打开本机的文件系统（file://），它所加载的脚本，必须来自网络
 
-在我看来，Web Worker 较大的问题是第三点: Worker 的原语是非常简单的。
+我们可以将复杂计算以及数据传输都放在 web Worker 中去。
 
+浏览器还提供了两个比较特殊的 Web Worker, Shared Worker 和 Service Worker。Service Worker 过于特殊，此处暂时不提。顾名思义 Shared Worker 是分享的 Worker。 它可以从几个浏览上下文中访问，例如几个窗口、iframe 或其他 worker。它们实现一个不同于普通 worker 的接口，具有不同的全局作用域,
+
+也就是说，使用 Shared Worker 可以在所有主线程共享相同的数据，提供跨窗口状态管理。甚至通过数据传递可以跨窗口拖放组件以及CSS 更新。
 
 ## Web Worker 代码
 
@@ -64,7 +68,7 @@ self.addEventListener('message', (e) => {
 
 ## 辅助工具 comlink
 
-这时候可以使用 [comlink](https://github.com/GoogleChromeLabs/comlink)
+这时候可以使用 [comlink](https://github.com/GoogleChromeLabs/comlink)，一个只有 2.5 KB 的微型库。
 
 先看一个简单的例子,新建 worker.js 文件
 
@@ -107,8 +111,6 @@ init();
 
 当前代码中没有任何关于类似 onmessage 和 postMessage 的代码，主线程就像调用其他模块定义的函数一般使用，以及 obj.counter 会获取一个 Promise 对象，这时候我们无疑就想到了元编程以及 Proxy。我之前也写过基于 Proxy 的缓存 [memoizee-proxy](https://github.com/wsafight/memoizee-proxy),感兴趣的也可以看看，这里就不做太多叙述了。
 
-
-事实上 Comlink 的确使用了 Proxy。后续我们可以解析一下具体代码。
-
+事实上 Comlink 的确使用了 Proxy。后续我们可以解析一下具体代码。官方也提供了 comlink 的一系列 [example](https://github.com/GoogleChromeLabs/comlink/tree/main/docs/examples) ，也包括 node、Shared Worker、Service Worker 以及 EventListener 等复杂处理。
 
 

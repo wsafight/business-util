@@ -72,6 +72,7 @@
     * [跳转页面时可靠的发送埋点信息](https://wsafight.github.io/business-util/#/help/navigator-beacon)
     * [web 多线程开发工具 comlink](https://wsafight.github.io/business-util/#/help/comlink)
     * [Service Worker 工具箱 workbox](https://wsafight.github.io/business-util/#/help/workbox)
+    * [确保从列表中获取可用值](https://wsafight.github.io/business-util/#/help/ensure-get-val-list)
 
 * 字符串匹配工具
     * [用编程的方式清晰的构建正则表达式](https://wsafight.github.io/business-util/#/regex/super-expressive)

@@ -14,10 +14,12 @@ interface EnsureGetValFromListParams<ItemType, ValueType> {
     pos?: 'frist' | 'last'
 }
 
-export const ensureGetValFromList = <ItemType, ValueType>({
+// ValueType extends ItemType = ItemType
+// 如果不提供 ValueType, 则 ValueType 默认为 ItemType
+export const ensureGetValFromList = <ItemType, ValueType extends ItemType = ItemType>({
     items,
     value,
-    getVal = item => item as any as ValueType,
+    getVal = item => item as ValueType,
     pos = 'frist'
 }: EnsureGetValFromListParams<ItemType, ValueType>): ValueType | null => {
     // 当前不是数组直接返回 null

@@ -141,5 +141,45 @@ export function contrastTextColor(backgroundColor: string) {
 
 当然了，如果你不需要严格遵循 W3C 准则，当前代码已经足够使用。但是如果你需要严格遵循你可以参考 http://stackoverflow.com/a/3943023/112731 以及 https://www.w3.org/TR/WCAG20/。
 
+
+## css 解决方案
+
+突然发现 css3 有一个 mix-blend-mode。即混合模式。混合模式是 PS 功能之一。目前 CSS 已经原生支持了大部分的混合模式。
+
+```css
+mix-blend-mode: normal;          //正常
+mix-blend-mode: multiply;        //正片叠底
+mix-blend-mode: screen;          //滤色
+mix-blend-mode: overlay;         //叠加
+mix-blend-mode: darken;          //变暗
+mix-blend-mode: lighten;         //变亮
+mix-blend-mode: color-dodge;     //颜色减淡
+mix-blend-mode: color-burn;      //颜色加深
+mix-blend-mode: hard-light;      //强光
+mix-blend-mode: soft-light;      //柔光
+mix-blend-mode: difference;      //差值
+mix-blend-mode: exclusion;       //排除
+mix-blend-mode: hue;             //色相
+mix-blend-mode: saturation;      //饱和度
+mix-blend-mode: color;           //颜色
+mix-blend-mode: luminosity;      //亮度
+```
+
+而解决方案就是 difference，意为差值模式。该混合模式会查看每个通道中的颜色信息，比较底色和绘图色，用较亮的像素点的像素值减去较暗的像素点的像素值。
+
+与白色混合将使底色反相；与黑色混合则不产生变化。
+
+```css
+.tag {
+  background: #XXX;
+}
+
+.content {
+  color: #fff;
+  mix-blend-mode: difference;
+}
+```
+
+
 <div style="float: right">更新时间: {docsify-updated}</div>
 

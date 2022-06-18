@@ -172,7 +172,7 @@ class AbortControllerHelper {
 }
 ```
 
-如此，开发者可以在实现类中放入 signal。然后通过一个 AbortController 中止多个乃至多种不同事件。
+如此，开发者可以添加子类继承 AbortControllerHelper 并放入 signal。然后通过一个 AbortController 中止多个乃至多种不同事件。
 
 ## 参考资料
 

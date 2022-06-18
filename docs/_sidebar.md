@@ -124,7 +124,7 @@
 * * [对比 switch (true) 和 if else 判断](/language/switch-true.md)    
 * * [奇怪的 parseInt(0.0000005)](/language/parseInt(0.0000005).md)
 * * [使用宏扩展 JavaScript 语言](/language/macro.md)   
-* * [取消已经发送的请求 AbortController](/language/AbortController.md)    
+* * [玩转 AbortController 控制器](/language/AbortController.md)    
 * * [ponyfills](/language/ponyfills.md) 
 
 * 工程化工具

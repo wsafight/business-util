@@ -2,11 +2,11 @@
 
 绝大部分情况，网络请求都是先请求先响应。但是某些情况下，由于未知的一些问题，可能会导致先请求的 api 后返回。最简单的解决方案就是添加 loading 状态，在所有请求都完成后才能进行下一次请求。
 
-但不是所有的业务都可以这样完成的。这时候开发者就需要对其进行处理以避免渲染错误数据。
+但不是所有的业务都可以采用这种方式。这时候开发者就需要对其进行处理以避免渲染错误数据。
 
 ## 使用“版本号”
 
-我们可以使用版本号来决策业务处理:
+我们可以使用版本号来决策业务处理以及数据渲染:
 
 ```ts
 const invariant = (condition: boolean, errorMsg: string) => {
@@ -15,13 +15,16 @@ const invariant = (condition: boolean, errorMsg: string) => {
     }
 }
 
-let versionForXXXQuery =  0;
+let versionForXXXQuery = 0;
 
 const checkVersionForXXXQuery = (currentVersion: number) => {
+    // 版本不匹配，就抛出错误
     invariant(currentVersion !== versionForXXXQuery, 'The current version is wrong')
 }
 
 const XXXQuery = async () => {
+    // 此处只能使用 ++versionForXXXQuery 而不能使用 versionForXXXQuery++
+    // 否则版本永远不对应
     const queryVersion = ++versionForXXXQuery;
 
     // 业务请求
@@ -37,7 +40,7 @@ const XXXQuery = async () => {
 }
 ```
 
-如此，先请求的 api 后返回就会被错误中止执行，但最终渲染到界面上的只有最新版本的请求。但是该方案对业务的侵入性太强。虽然我们可以利用 class 和 AOP 来简代码和逻辑。但对于开发来说还是有一定的复杂度。这时候我们可以使用 AbortController。
+如此，先请求的 api 后返回就会被错误中止执行，但最终渲染到界面上的只有最新版本的请求。但是该方案对业务的侵入性太强。虽然我们可以利用 class 和 AOP 来简代码和逻辑。但对于开发来说依旧不友好。这时候我们可以使用 AbortController。
 
 ## 通用的 AbortController
 
@@ -73,20 +76,27 @@ const XXXQuery = async () => {
 虽然代码很简单，但是为什么需要这样添加一个 AbortController 类而不是直接通过添加 api 来进行中止网络请求操作呢？这样不是增加了复杂度吗？笔者开始也是这样认为的。到后面才发现。AbortController 类虽然较为复杂了，但是它是通用的，因此 AbortController 可以被其他 Web 标准和 JavaScript 库使用。
 
 ```ts
-const controller = new AbortController();
-const { signal } = controller;
+const controller = new AbortController()
+const { signal } = controller
 
 // 添加事件并传递 signal
-window.addEventListener('click', () => handleXXX(), { signal });
+window.addEventListener('click', () => {
+    console.log('can abort')
+}, { signal })
+
+window.addEventListener('click', () => {
+    console.log('click')
+});
 
 // 开始请求并且添加 signal
-fetch('xxxA', { signal });
+fetch('xxxA', { signal })
 
-// 移除事件同时中止未完成的请求
+// 移除第一个 click 事件同时中止未完成的请求
 controller.abort()
 ```
 
-既然它是通用的，那我们是不是也可以终止我们的业务方法呢。答案是肯定的。一起来看看 AbortController 到底为啥能够通用呢？
+既然它是通用的，那是不是也可以终止业务方法呢。答案是肯定的。先来看看 AbortController 到底为啥能够通用呢？
+
 AbortController 提供了一个信号量 signal 和中止 abort 方法,通过这个信号量可以获取状态以及绑定事件。
 
 ```ts
@@ -120,7 +130,7 @@ signal.aborted
 controller.abort();
 ```
 
-无疑，fetch 内部添加了 abort 事件的监听。综上，我们可以利用 AbortController 来封装代码。Helper 类如下所示：
+无疑，上述的事件添加了 abort 事件的监听。综上，笔者简单封装了一下 AbortController。Helper 类如下所示：
 
 ```ts
 class AbortControllerHelper {

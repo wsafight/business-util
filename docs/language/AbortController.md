@@ -42,7 +42,9 @@ const XXXQuery = async () => {
 
 如此，先请求的 api 后返回就会被错误中止执行，但最终渲染到界面上的只有最新版本的请求。但是该方案对业务的侵入性太强。虽然我们可以利用 class 和 AOP 来简代码和逻辑。但对于开发来说依旧不友好。这时候我们可以使用 AbortController。
 
-## 通用的 AbortController
+## 使用 AbortController
+
+### AbortController 取消之前请求
 
 话不多说，先使用 AbortController 完成上面相同的功能。
 
@@ -73,6 +75,8 @@ const XXXQuery = async () => {
 
 我们可以看到：代码非常简单，同时得到了性能增强，浏览器将提前停止获取数据（注：服务器依旧会处理多次请求，只能通过 loading 来降低服务器压力）。
 
+### AbortController 移除绑定事件
+
 虽然代码很简单，但是为什么需要这样添加一个 AbortController 类而不是直接通过添加 api 来进行中止网络请求操作呢？这样不是增加了复杂度吗？笔者开始也是这样认为的。到后面才发现。AbortController 类虽然较为复杂了，但是它是通用的，因此 AbortController 可以被其他 Web 标准和 JavaScript 库使用。
 
 ```ts
@@ -94,6 +98,8 @@ fetch('xxxA', { signal })
 // 移除第一个 click 事件同时中止未完成的请求
 controller.abort()
 ```
+
+### 通用的 AbortController 
 
 既然它是通用的，那是不是也可以终止业务方法呢。答案是肯定的。先来看看 AbortController 到底为啥能够通用呢？
 
@@ -167,3 +173,7 @@ class AbortControllerHelper {
 ```
 
 如此，开发者可以在实现类中放入 signal。然后通过一个 AbortController 中止多个乃至多种不同事件。
+
+## 参考资料
+
+[AbortController MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/AbortController)

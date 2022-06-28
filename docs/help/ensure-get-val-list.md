@@ -1,12 +1,11 @@
 # 确保从列表中获取可用值
 
-对于某些项目来说，某些配置项或查询条件是必需的。当用户缺失配置数据或项目下线配置项，都会导致错误，这时候，我们需要一些兜底策略，如当前列表查不到数据时候默认使用第一项的值。
+对于很多项目来说，某些配置项或查询条件是必需的。当用户丢失配置数据或项目下线配置项，都会导致项目发生错误而造成不可用的问题，这时候，开发需要提供一些兜底策略，如当前列表数据查询不到时默认使用第一项。而这些东西写起来又很麻烦，所以这里进行了一次封装，代码如下：
 
 ```ts
 interface EnsureGetValFromListParams<ItemType, ValueType> {
     /** 列表数据 **/
     items: ItemType[]
-    /** 值 **/
     value?: ValueType | undefined
     /** 列表中数据值的提取方法 **/
     getVal?: (item: ItemType) => ValueType
@@ -16,10 +15,10 @@ interface EnsureGetValFromListParams<ItemType, ValueType> {
 
 // ValueType = ItemType
 // 如果不提供 ValueType, 则 ValueType 默认为 ItemType
-export const ensureGetValFromList = <ItemType, ValueType = ItemType>({
+const ensureGetValFromList = <ItemType, ValueType = ItemType>({
     items,
     value,
-    getVal = item => item as ValueType,
+    getVal = item => item as unknown as ValueType,
     pos = 'frist'
 }: EnsureGetValFromListParams<ItemType, ValueType>): ValueType | null => {
     // 当前不是数组直接返回 null
@@ -42,8 +41,11 @@ export const ensureGetValFromList = <ItemType, ValueType = ItemType>({
     if (items.some(item => getVal(item) === value)) {
         return value
     }
+
     // 返回列表第一条还是最后一条数据
     const index = pos === 'frist' ? 0 : count - 1
     return getVal(items[index])
 }
 ```
+
+代码在 [ensure-get-list-val](https://github.com/wsafight/ensure-get-list-val) 中。也可以使用 npm 等工具进行安装和使用。

@@ -67,5 +67,7 @@ export function generateUUID(): string {
 }
 ```
 
+目前还有 [nanoid](https://github.com/ai/nanoid) 随机生成器，该库是利用 crypto 来生成随机 id，代码量小且具备高性能。
+
 
 <div style="float: right">更新时间: {docsify-updated}</div>

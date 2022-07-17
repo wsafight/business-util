@@ -18,3 +18,5 @@
 | | ***Web*** | ❌ | ❌ | ❌ | ❌ | ✔️<sup>2</sup> | ✔️ | ❌ |
 
 需要 mac 电脑调试，后续更新。
+
+<div style="float: right">更新时间: {docsify-updated}</div>

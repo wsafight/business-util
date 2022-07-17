@@ -52,4 +52,4 @@ yalc installations show
 yalc installations clean [my-package]
 ```
 
-
+<div style="float: right">更新时间: {docsify-updated}</div>

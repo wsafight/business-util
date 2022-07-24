@@ -83,7 +83,6 @@
 * 实用工具
     * [文件下载](https://wsafight.github.io/business-util/#/util/down-file)
     * [JSON 的超集 serialize-javascript](https://wsafight.github.io/business-util/#/util/serialize-javascript)
-    * [数据扁平化 normalizr](https://wsafight.github.io/business-util/#/util/normalizr)
     * [微小的 bus 库 mitt.js](https://wsafight.github.io/business-util/#/util/mitt)
     * [检测图像(视频)加载完成 egjs-imready](https://wsafight.github.io/business-util/#/util/egjs-imready)
     * [专业的深拷贝库](https://wsafight.github.io/business-util/#/util/deep-clone)
@@ -93,6 +92,8 @@
     * [启发式缓存库 proxy-memoizee](https://wsafight.github.io/business-util/#/util/proxy-memoizee)
     * [过去（未来）时间格式化](https://wsafight.github.io/business-util/#/util/timeage)
     * [JavaScript 函数响应式开发库 RxJS](https://wsafight.github.io/business-util/#/util/timeage)
+    * [使用 normalizr 进行复杂数据转换](https://wsafight.github.io/business-util/#/util/normalizr)
+
 
 * web 安全
     * [使用一行代码发现前端 js 库漏洞](https://wsafight.github.io/business-util/#/security/is-website-vulnerable)

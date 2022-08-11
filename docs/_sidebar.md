@@ -93,7 +93,7 @@
 * * [csp 内容安全策略](/security/CSP.md)
 * * [超级 cookie](/security/super-cookie.md)
 * * [防御 ReDoS 攻击](/security/regexploit.md)
-* * [有趣的安全补丁](/security/fun.md)
+* * [有趣的安全问题](/security/fun.md)
 * * [使用 HttpOnly 解决 XSS Cookie 劫持](/security/httpOnly.md)
 * * [浏览器文件操作](/security/browser-fs-access.md)
     

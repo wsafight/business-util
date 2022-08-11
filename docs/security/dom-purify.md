@@ -1,6 +1,6 @@
 # xss 过滤器 DOMPurify
 
-在使用富文本编辑器时，用户有可能在里面使用 XSS 存储攻击，这时候就可能需要清洁 DOM 以避免攻击。
+允许开发人员获取不受信任的 HTML 输入并对其进行清理，以便安全地插入到文档的 DOM 节点中，这时候就可能需要清洁 DOM 以避免攻击。
 
 [DOMPurify](https://github.com/cure53/DOMPurify) 用于清理 HTML (防止 XSS 攻击) 。您可以向 DOMPurify 提供充满任意 HTML 的字符串，它将返回一个干净 HTML 的字符串(除非另有配置)。DOMPurify 将去除包含危险的 HTML 内容，从而防止 XSS 攻击和其他污点。该库可以用于 HTML、 MathML 和 SVG。
 

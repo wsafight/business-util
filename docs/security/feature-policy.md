@@ -16,7 +16,7 @@ function downloadUrl(url: string) {
   el.src = url
 }
 ```
-之前下载文件代码也包括下载文件流数据，具体可以直接参考[文件下载](../util/down-file.md)
+之前下载文件代码也包括下载文件流数据，具体可以直接参考[文件下载](../util/down-file)
 
 但很可惜，朋友的一句”并没有形成下载“顿时让我非常受挫。
 

@@ -73,6 +73,14 @@ element.innerHTML = element.innerHTML
 // <u>Some <i>HTML</i></u>
 ```
 
+```html
+<svg></p><style><a id="</style><img src=1 onerror=alert(1)>">
+
+<svg></svg><p></p><style><a id="</style><img src(unknow) onerror="alert(1)">">
+```
+
 不过该 bug 早在 DOMPurify 2.0.1 被修复。
+
+如果是 input textarea 这样的的文本输入。使用 lodash.escape 即可。参考 [使用 escape 解决 HTML 空白折叠](../UX/escape)
 
 <div style="float: right">更新时间: {docsify-updated}</div>

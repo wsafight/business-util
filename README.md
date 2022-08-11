@@ -105,6 +105,7 @@
     * [防御 ReDoS 攻击](https://wsafight.github.io/business-util/#/security/regexploit)
     * [有趣的安全补丁](https://wsafight.github.io/business-util/#/security/fun)
     * [使用 HttpOnly 解决 XSS Cookie 劫持](https://wsafight.github.io/business-util/#/security/httpOnly)
+    * [浏览器原生 xss 过滤器](https://wsafight.github.io/business-util/#/security/sanitizer)
     * [浏览器文件操作](https://wsafight.github.io/business-util/#/security/browser-fs-access)
 
 * 服务端工具

@@ -95,6 +95,7 @@
 * * [防御 ReDoS 攻击](/security/regexploit.md)
 * * [有趣的安全问题](/security/fun.md)
 * * [使用 HttpOnly 解决 XSS Cookie 劫持](/security/httpOnly.md)
+* * [浏览器原生 xss 过滤器](/security/sanitizer.md)
 * * [浏览器文件操作](/security/browser-fs-access.md)
     
 * 服务端工具

@@ -1,7 +1,5 @@
 # 浏览器原生 xss 过滤器
 
-https://web.dev/sanitizer/
-
 ```ts
 // XSS 🧨
 $div.innerHTML = `<em>hello world</em><img src="" onerror=alert(0)>`

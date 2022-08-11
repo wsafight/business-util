@@ -1,5 +1,7 @@
 # xss 过滤器 DOMPurify
 
+在使用富文本编辑器时，用户有可能在里面使用 XSS 存储攻击，这时候就可能需要清洁 DOM 以避免攻击。
+
 [DOMPurify](https://github.com/cure53/DOMPurify) 用于清理 HTML (防止 XSS 攻击) 。您可以向 DOMPurify 提供充满任意 HTML 的字符串，它将返回一个干净 HTML 的字符串(除非另有配置)。DOMPurify 将去除包含危险的 HTML 内容，从而防止 XSS 攻击和其他污点。该库可以用于 HTML、 MathML 和 SVG。
 
 ## 使用方式
@@ -58,7 +60,8 @@ import purify from "dompurify";
 
 可以看到，当前 DOMPurify 不但可以去除 xss 攻击，还可以补全修复 DOM 结构。
 
-## mxss
+## mXSS
+
 关于突变 XSS 的定义，可以追溯于 Mario Heiderich 等人于 2013 年发表的一篇论文 “ mXSS Attacks: Attacking well-secured Web-Applications by using innerHTML Mutations.”
 该 bug 是使用浏览器自动补全 DOM 结构来攻击的一种方案。
 

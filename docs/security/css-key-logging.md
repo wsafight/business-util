@@ -49,4 +49,4 @@ func main() {
 }
 ```
 
-<div style="float: right">更新时间: {docsify-updated}</div>
+阅读 [react issue](https://github.com/facebook/react/issues/11896) 来查看 React 的解决方案。

@@ -86,7 +86,7 @@
 
 
 * web 安全
-* * [使用一行代码发现前端 js 库漏洞](/security/is-website-vulnerable.md)  
+* * [安全三要素](/security/point.md)
 * * [使用 HTTPS](/security/HTTPS.md)
 * * [css 键盘记录器](/security/css-key-logging.md)
 * * [xss 过滤器 DOMPurify](/security/dom-purify.md)

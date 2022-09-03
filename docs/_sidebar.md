@@ -96,7 +96,7 @@
 * * [有趣的安全问题](/security/fun.md)
 * * [使用 HttpOnly 解决 XSS Cookie 劫持](/security/httpOnly.md)
 * * [浏览器原生 xss 过滤器](/security/sanitizer.md)
-* * [浏览器文件操作](/security/browser-fs-access.md)
+
     
 * 服务端工具
 * * [node 速率限制器](/server/node-rate-limiter.md)
@@ -130,6 +130,10 @@
 * * [使用宏扩展 JavaScript 语言](/language/macro.md)   
 * * [玩转 AbortController 控制器](/language/AbortController.md)    
 * * [ponyfills](/language/ponyfills.md) 
+
+* 面向未来的浏览器 API
+* * [浏览器文件操作](/browser/browser-fs-access.md)
+* * [压缩 API Compression Streams](/browser/compression-streams.md)
 
 * 工程化工具
 * * [玩转样板增量构建工具 Preset](/engineering/preset.md)

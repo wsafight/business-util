@@ -73,7 +73,7 @@ async function saveFile() {
 
 需要尝试添加 [browser-fs-access](https://github.com/GoogleChromeLabs/browser-fs-access) 库方便使用。
 
-```
+```js
 import {
   fileOpen,
   directoryOpen,

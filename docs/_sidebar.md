@@ -96,8 +96,8 @@
 * * [有趣的安全问题](/security/fun.md)
 * * [使用 HttpOnly 解决 XSS Cookie 劫持](/security/httpOnly.md)
 * * [浏览器原生 xss 过滤器](/security/sanitizer.md)
+* * [文件名替换非法字符串](/security/normalize-file-name.md)
 
-    
 * 服务端工具
 * * [node 速率限制器](/server/node-rate-limiter.md)
     

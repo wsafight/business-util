@@ -107,6 +107,7 @@
     * [使用 HttpOnly 解决 XSS Cookie 劫持](https://wsafight.github.io/business-util/#/security/httpOnly)
     * [浏览器原生 xss 过滤器](https://wsafight.github.io/business-util/#/security/sanitizer)
     * [浏览器文件操作](https://wsafight.github.io/business-util/#/security/browser-fs-access)
+    * [文件名替换非法字符串](https://wsafight.github.io/business-util/#/security/normalize-file-name)
 
 * 服务端工具
     * [node 速率限制器](https://wsafight.github.io/business-util/#/server/node-rate-limiter)

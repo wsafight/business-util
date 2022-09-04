@@ -73,6 +73,7 @@
     * [web 多线程开发工具 comlink](https://wsafight.github.io/business-util/#/help/comlink)
     * [Service Worker 工具箱 workbox](https://wsafight.github.io/business-util/#/help/workbox)
     * [确保从列表中获取可用值](https://wsafight.github.io/business-util/#/help/ensure-get-val-list)
+    * [前端开发中的依赖注入 awilix](https://wsafight.github.io/business-util/#/help/awilix)
 
 * 字符串匹配工具
     * [用编程的方式清晰的构建正则表达式](https://wsafight.github.io/business-util/#/regex/super-expressive)

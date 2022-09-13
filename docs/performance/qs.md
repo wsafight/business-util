@@ -15,6 +15,8 @@ export function buildGetQueryString (obj: Record<string, any>) {
 }
 ```
 
+// 我们也可以在此处做数据处理
+
 ```ts
 var paramsString = "q=URLUtils.searchParams&topic=api"
 var searchParams = new URLSearchParams(paramsString);
@@ -24,6 +26,9 @@ for (let p of searchParams) {
 }
 ```
 
+
+
+如果我们的代码中需要数组，上述就没办法解析了。此时我们可以利用正则来解析。
 
 ```ts
 export interface ExtractQueryParamsResult {
@@ -91,6 +96,8 @@ const queryStr = qs.stringify(options)
 // 构建 url
 const url = `${queryUrl}${queryUrl.includes('?') ? '&' : '?'}${queryStr}`
 ```
+
+我们还可以用 qs 来决定缓存的参数是否改变。
 
 
 

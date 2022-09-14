@@ -1,12 +1,131 @@
 # 极简 webComponent 库 el
 
-个人想要开发 WebComponent 库很久了，但是很多库都有过多的依赖。不过终于让我发现了轻量的库 [el](https://github.com/frameable/el)。
+个人想要开发 WebComponent 库很久了，但是很多库要么就功能不足，要么就需要编译以及依赖较大的功能。大家可以参考 WebComponent 组件对比博客 [All the Ways to Make a Web Component - Feb 2022 Update](https://webcomponents.dev/blog/all-the-ways-to-make-a-web-component/)。
+
+不过最近我发现了让我心动的库 [el](https://github.com/frameable/el)。
 
 ## WebComponent 使用
 
+我们同样以上述博客作为例子，来看一看如何实现功能
+
+```js
+// 创建需要的模板
+const template = document.createElement('template');
+template.innerHTML = `
+  <style>
+    * {
+      font-size: 200%;
+    }
+
+    span {
+      width: 4rem;
+      display: inline-block;
+      text-align: center;
+    }
+
+    button {
+      width: 4rem;
+      height: 4rem;
+      border: none;
+      border-radius: 10px;
+      background-color: seagreen;
+      color: white;
+    }
+  </style>
+  <button id="dec">-</button>
+  <span id="count"></span>
+  <button id="inc">+</button>`;
+
+class MyCounter extends HTMLElement {
+  constructor() {
+    super();
+    this.count = 0;
+    this.attachShadow({ mode: 'open' });
+  }
+
+  connectedCallback() {
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+    // 获取 dom 节点然后
+    this.shadowRoot.getElementById('inc').onclick = () => this.inc();
+    this.shadowRoot.getElementById('dec').onclick = () => this.dec();
+    this.update(this.count);
+  }
+
+  inc() {
+    this.update(++this.count);
+  }
+
+  dec() {
+    this.update(--this.count);
+  }
+
+  update(count) {
+    this.shadowRoot.getElementById('count').innerHTML = count;
+  }
+}
+
+customElements.define('my-counter', MyCounter);
+```
+
+一方面原生 WebComponent 很原始，开发者需要进行 DOM 操作，同时随着组件状态的增加，connectedCallback 变得非常巨大，难以维护。
 
 
 ## 使用 el 完成开发
+
+如果相同的功能用 el 开发呢？代码如下所示。
+
+```ts
+import { El } from './el.js'
+
+class MyCounter extends El {
+  created() {
+    this.state = this.$observable({ count: 0 });
+  }
+
+  inc() {
+    this.state.count += 1;
+  }
+
+  dec() {
+    this.state.count -= 1;
+  }
+
+
+  render(html) {
+    return html`
+      <button onclick=${this.increment}>-</button>
+      <span>${this.state.count}</span>
+      <button onclick=${this.increment}>+</button>
+    `
+  }
+
+  styles(css) {
+    return css`
+    * {
+      font-size: 200%;
+    }
+
+    span {
+      width: 4rem;
+      display: inline-block;
+      text-align: center;
+    }
+
+    button {
+      width: 4rem;
+      height: 4rem;
+      border: none;
+      border-radius: 10px;
+      background-color: seagreen;
+      color: white;
+    }`
+  }
+}
+
+customElements.define('my-counter', MyCounter);
+```
+
+非常棒，它有着非常好的功能！
 
 
 ## 源代码解析
@@ -197,3 +316,7 @@ export class El extends HTMLElement {
 ```
 
 完美！
+
+## 其他
+
+添加 [es6-string-html](https://marketplace.visualstudio.com/items?itemName=Tobermory.es6-string-html) 方便用户使用即可！

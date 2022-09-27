@@ -87,12 +87,12 @@ function buildTreeOptimize (items) {
     item.children = (treeDataByParentId.get(item.id) || [])
     // 当前节点不具备父节点，插入第一层数组中
     if (!item.parentId) {
-      treeRoots.push({item})
+      treeRoots.push(item)
     }
   })
     
   // 返回树结构
-  return treeData
+  return treeRoots
 }
 
 ```

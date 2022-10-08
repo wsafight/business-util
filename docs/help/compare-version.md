@@ -3,9 +3,19 @@
 对比多个版本时候，可以得出哪个版本较高，以便与进行相应的业务处理
 
 ```ts
-function compareVersion(v1: string, v2: string) {
-  const v1Arr: string[] = v1.split('.')
-  const v2Arr: string[] = v2.split('.')
+const compareVersion = (
+  v1: string = '', 
+  v2: string = '', 
+  separation: string = '.'
+): number => {
+  if (!v1 || typeof v1 !== 'string') {
+    return -1;
+  }
+  if (!v2 || typeof v2 !== 'string') {
+    return 1;
+  }
+  const v1Arr: string[] = v1.split(separation)
+  const v2Arr: string[] = v2.split(separation)
   const len = Math.max(v1Arr.length, v2Arr.length)
   while (v1Arr.length < len) {
     v1Arr.push('0')

@@ -103,6 +103,7 @@
 * * [node 速率限制器](/server/node-rate-limiter.md)
     
 * 性能优化
+* * [单例 Promise 缓存](/performance/single-promise-cache.md)
 * * [图片压缩服务 tiny-png](/performance/tiny-png.md)  
 * * [动态加载脚本与样式](/performance/down-script.md)
 * * [利用 gpu 加速数据运算](/performance/gpu.md) 

@@ -114,6 +114,7 @@
     * [node 速率限制器](https://wsafight.github.io/business-util/#/server/node-rate-limiter)
 
 * 性能优化
+    * [单例 Promise 缓存](https://wsafight.github.io/business-util/#/performance/single-promise-cache)
     * [图片压缩服务 tiny-png](https://wsafight.github.io/business-util/#/performance/tiny-png)
     * [动态加载脚本与样式](https://wsafight.github.io/business-util/#/performance/down-script)
     * [利用 gpu 加速数据运算](https://wsafight.github.io/business-util/#/performance/gpu)

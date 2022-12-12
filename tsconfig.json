@@ -4,6 +4,7 @@
     "module": "esnext",
     "strict": true,
     "esModuleInterop": true,
+    "moduleResolution": "Node16",
     "watch": true,
     "lib": [
       "dom",

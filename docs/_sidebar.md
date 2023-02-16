@@ -64,6 +64,7 @@
 * * [Service Worker 工具箱 workbox](/help/workbox.md)
 * * [确保从列表中获取可用值](/help/ensure-get-val-list.md)
 * * [前端开发中的依赖注入 awilix](/help/awilix.md)
+* * [前端存储工具库 storage-tools](/help/storage-tools.md)
     
 * 字符串匹配工具
 * * [用编程的方式清晰的构建正则表达式](/regex/super-expressive.md)

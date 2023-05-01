@@ -137,6 +137,7 @@
 * 面向未来的浏览器 API
 * * [浏览器文件操作](/browser/browser-fs-access.md)
 * * [压缩 API Compression Streams](/browser/compression-streams.md)
+* * [浏览器中的取色器 API EyeDropper](/browser/eye-dropper.md)
 
 * 工程化工具
 * * [玩转样板增量构建工具 Preset](/engineering/preset.md)

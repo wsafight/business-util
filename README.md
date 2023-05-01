@@ -108,7 +108,6 @@
     * [有趣的安全补丁](https://wsafight.github.io/business-util/#/security/fun)
     * [使用 HttpOnly 解决 XSS Cookie 劫持](https://wsafight.github.io/business-util/#/security/httpOnly)
     * [浏览器原生 xss 过滤器](https://wsafight.github.io/business-util/#/security/sanitizer)
-    * [浏览器文件操作](https://wsafight.github.io/business-util/#/security/browser-fs-access)
     * [文件名替换非法字符串](https://wsafight.github.io/business-util/#/security/normalize-file-name)
 
 * 服务端工具
@@ -144,6 +143,12 @@
     * [使用宏扩展 JavaScript 语言](https://wsafight.github.io/business-util/#/language/macro)
     * [玩转 AbortController 控制器](https://wsafight.github.io/business-util/#/language/AbortController)
     * [ponyfills](https://wsafight.github.io/business-util/#/language/ponyfills) 
+
+* 面向未来的浏览器 API
+    * [浏览器文件操作](https://wsafight.github.io/business-util/#/browser/browser-fs-access.md)
+    * [压缩 API Compression Streams](https://wsafight.github.io/business-util/#/browser/compression-streams.md)
+    * [浏览器中的取色器 API EyeDropper](https://wsafight.github.io/business-util/#/browser/eye-dropper.md)
+
 
 * 工程化工具
     * [利用增量构建工具 Preset 打造自己的样板库](https://wsafight.github.io/business-util/#/engineering/preset)

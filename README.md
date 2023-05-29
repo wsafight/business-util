@@ -66,6 +66,7 @@
     * [不变性数据修改辅助类](https://wsafight.github.io/business-util/#/help/immutability-helper)
     * [优秀的不可变状态库 immer](https://wsafight.github.io/business-util/#/help/immer)
     * [前端构建工具配置生成器](https://wsafight.github.io/business-util/#/help/create-app)
+    * [tsconfig.json 生成器](https://wsafight.github.io/business-util/#/help/tsconfiger)
     * [利用 XState(有限状态机) 编写易于变更的代码](https://wsafight.github.io/business-util/#/help/XState)
     * [使用 better-queue 管理复杂的任务](https://wsafight.github.io/business-util/#/help/better-queue)
     * [Node.js 轻量级调试器 dbgr](https://wsafight.github.io/business-util/#/help/dbgr)

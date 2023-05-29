@@ -170,4 +170,5 @@
     * [并查集](https://wsafight.github.io/business-util/#/data-structure/union-find)
     * [hash-table](https://wsafight.github.io/business-util/#/data-structure/hash-table)
     * [优先队列](https://wsafight.github.io/business-util/#/data-structure/priority-queue)
-    * [跳表](https://wsafight.github.io/business-util/#/data-structure/skip-table) 
+    * [跳表](https://wsafight.github.io/business-util/#/data-structure/skip-table)
+    * [参考 C++ STL 实现的的数据结构库 js-sdsl](https://wsafight.github.io/business-util/#/data-structure/js-sdsl)

@@ -158,4 +158,5 @@
 * * [并查集](/data-structure/union-find.md)
 * * [hash-table](/data-structure/hash-table.md) 
 * * [优先队列](/data-structure/priority-queue.md)
-* * [跳表](/data-structure/skip-table.md) 
+* * [跳表](/data-structure/skip-table.md)
+* * [参考 C++ STL 实现的的数据结构库 js-sdsl](/data-structure/js-sdsl.md)

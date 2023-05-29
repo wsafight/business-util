@@ -24,4 +24,6 @@ keymage('defmod-j', function() { alert("I am fired"); });
 
 https://github.com/madrobby/keymaster
 
+[极简的键盘事件监听库](https://github.com/jamiebuilds/tinykeys)
+
 不过如何设计出让用户用的爽的快捷键则是更加复杂的问题。

@@ -23,6 +23,7 @@
     * [公式排版 KaTex](https://wsafight.github.io/business-util/#/business/KaTeX)
     * [颜色排序算法](https://wsafight.github.io/business-util/#/business/color-sort)
     * [交互式医学图像工具 Cornerstone](https://wsafight.github.io/business-util/#/business/cornerstone)
+    * [快速制作出响应式邮件的框架 Mjml](https://wsafight.github.io/business-util/#/business/mjml)
 
 * 功能扩展
     * [js 手写生成 pdf](https://wsafight.github.io/business-util/#/extends/jspdf)

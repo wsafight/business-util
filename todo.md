@@ -181,3 +181,8 @@ https://github.com/chinanf-boy/didact-explain
 https://github.com/yjhjstz/deep-into-node
 
 https://github.com/xitu/js-stack-from-scratch
+
+
+
+************** 8 月份必读
+http://www.craftinginterpreters.com/contents.html

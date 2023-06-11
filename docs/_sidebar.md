@@ -43,7 +43,7 @@
 
 
 * 效率工具
-* * [搜索和更改代码结构的工具 comby](/efficiency/comby.md)
+* * [搜索和更改代码结构的工具 comby](/efficiency-tools/comby.md)
 
 * 辅助开发 
 * * [开发助力 mermaid 绘制图表](/help/mermaid.md)

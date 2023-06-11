@@ -100,33 +100,7 @@ http://jvns.ca/blog/2021/06/08/reasons-why-bugs-might-feel-impossible/
 这个bug真的很复杂
 
 
-https://comby.dev/
-
-
 https://github.com/Stuk/jszip 压缩文件
-
-
-export default async function limit(tasks, concurrency) {
-  const results = [];
-
-  async function runTasks(tasksIterator) {
-    for (const [index, task] of tasksIterator) {
-      try {
-        results[index] = await task();
-      } catch (error) {
-        results[index] = new Error(`Failed with: ${error.message}`);
-      }
-    }
-  }
-
-  const workers = new Array(concurrency)
-    .fill(tasks.entries())
-    .map(runTasks);
-
-  await Promise.allSettled(workers);
-
-  return results;
-}
 
 时序数据库 https://blog.timescale.com/blog/what-the-heck-is-time-series-data-and-why-do-i-need-a-time-series-database-dcf3b1b18563/?utm_source=status-code-weekly-sponsor&utm_medium=email&utm_campaign=status-code-weekly-sponsor-may-2021&utm_content=wth-blog
 
@@ -136,19 +110,12 @@ https://zhuanlan.zhihu.com/p/58622271
 
 https://bart.degoe.de/building-a-full-text-search-engine-150-lines-of-code/
 
-```ts
-filename = filename.replace(/[\\/|:*?"><]/g, '_')
-```
-
-https://zhuanlan.zhihu.com/p/28907384
 
 Leaflet
 
 https://github.com/rubickCenter/rubick
 
 https://github.com/bitwiseshiftleft/sjcl
-
-https://github.com/Zizzamia/perfume.js
 
 qier-progress
 

@@ -119,6 +119,7 @@
 * * [AVIF 图片格式](/performance/AVIF.md)
 * * [利用 "ts" 编译 WebAssembly](/performance/AssemblyScript.md)
 * * [通过扁平字符串提升输出性能](/performance/flatstr.md)
+* * [网络性能监控库 Perfume](/performance/perfume.md)
 
 * 测试
 * * [使用 Pollyjs 进行 HTTP 请求测试](/test/polly-js.md)

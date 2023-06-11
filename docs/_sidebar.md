@@ -44,6 +44,7 @@
 
 * 效率工具
 * * [搜索和更改代码结构的工具 comby](/efficiency-tools/comby.md)
+* * [大文件版本控制工具 git lfs](/efficiency-tools/git_lfs.md)
 
 * 辅助开发 
 * * [开发助力 mermaid 绘制图表](/help/mermaid.md)
@@ -89,7 +90,6 @@
 * * [过去（未来）时间格式化](/util/timeage.md)
 * * [JavaScript 函数响应式开发库 RxJS](/util/rxjs.md)    
 * * [使用 normalizr 进行复杂数据转换](/util/normalizr.md)
-
 
 * web 安全
 * * [安全三要素](/security/point.md)

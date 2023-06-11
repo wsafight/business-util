@@ -52,6 +52,8 @@
 
 * 效率工具
     * [搜索和更改代码结构的工具 comby](https://wsafight.github.io/business-util/#/efficiency-tools/comby)
+    * [大文件版本控制工具 git lfs](https://wsafight.github.io/business-util/#/efficiency-tools/git_lfs)
+
 
 * 辅助开发
     * [开发助力 mermaid 绘制图表](https://wsafight.github.io/business-util/#/help/mermaid)
@@ -76,7 +78,7 @@
     * [Service Worker 工具箱 workbox](https://wsafight.github.io/business-util/#/help/workbox)
     * [确保从列表中获取可用值](https://wsafight.github.io/business-util/#/help/ensure-get-val-list)
     * [前端开发中的依赖注入 awilix](https://wsafight.github.io/business-util/#/help/awilix)
-    * [前端存储工具库 storage-tools](https://wsafight.github.io/business-util/#/help/storage-tools.md)
+    * [前端存储工具库 storage-tools](https://wsafight.github.io/business-util/#/help/storage-tools)
 
 * 字符串匹配工具
     * [用编程的方式清晰的构建正则表达式](https://wsafight.github.io/business-util/#/regex/super-expressive)
@@ -111,7 +113,7 @@
     * [使用 HttpOnly 解决 XSS Cookie 劫持](https://wsafight.github.io/business-util/#/security/httpOnly)
     * [浏览器原生 xss 过滤器](https://wsafight.github.io/business-util/#/security/sanitizer)
     * [文件名替换非法字符串](https://wsafight.github.io/business-util/#/security/normalize-file-name)
-    * [前端 CORS 工具 XDomain](https://wsafight.github.io/business-util/#/security/x-domain.md)
+    * [前端 CORS 工具 XDomain](https://wsafight.github.io/business-util/#/security/x-domain)
 
 * 服务端工具
     * [node 速率限制器](https://wsafight.github.io/business-util/#/server/node-rate-limiter)
@@ -151,9 +153,9 @@
     * [ponyfills](https://wsafight.github.io/business-util/#/language/ponyfills) 
 
 * 面向未来的浏览器 API
-    * [浏览器文件操作](https://wsafight.github.io/business-util/#/browser/browser-fs-access.md)
-    * [压缩 API Compression Streams](https://wsafight.github.io/business-util/#/browser/compression-streams.md)
-    * [浏览器中的取色器 API EyeDropper](https://wsafight.github.io/business-util/#/browser/eye-dropper.md)
+    * [浏览器文件操作](https://wsafight.github.io/business-util/#/browser/browser-fs-access)
+    * [压缩 API Compression Streams](https://wsafight.github.io/business-util/#/browser/compression-streams)
+    * [浏览器中的取色器 API EyeDropper](https://wsafight.github.io/business-util/#/browser/eye-dropper)
 
 
 * 工程化工具

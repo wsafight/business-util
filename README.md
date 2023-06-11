@@ -51,7 +51,7 @@
     * [开发者的边车辅助工具 DevSidecar](https://wsafight.github.io/business-utils/#/develop-tool/dev-sidecar)
 
 * 效率工具
-
+    * [搜索和更改代码结构的工具 comby](https://wsafight.github.io/business-util/#/efficiency/comby)
 
 * 辅助开发
     * [开发助力 mermaid 绘制图表](https://wsafight.github.io/business-util/#/help/mermaid)

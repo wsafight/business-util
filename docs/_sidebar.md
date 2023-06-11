@@ -38,10 +38,12 @@
 * * [LocalCDN 插件提升网站加载速度](/develop-tools/location-cdn.md)
 * * [静态代码分析工具 Understand](/develop-tools/Understand.md)
 * * [漂亮的专业排版软件 TeXMacs](/develop-tools/TeXMacs.md)
-* * [跨平台的音乐播放器 Listen1](/develop-tools/listen1.md) 
-* * [开发者的边车辅助工具 DevSidecar](/develop-tools/dev-sidecar.md)    
+* * [跨平台的音乐播放器 Listen1](/develop-tools/listen1.md)
+* * [开发者的边车辅助工具 DevSidecar](/develop-tools/dev-sidecar.md)
+
 
 * 效率工具
+* * [搜索和更改代码结构的工具 comby](/efficiency/comby.md)
 
 * 辅助开发 
 * * [开发助力 mermaid 绘制图表](/help/mermaid.md)

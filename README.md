@@ -129,6 +129,7 @@
     * [利用 "ts" 编译 WebAssembly](https://wsafight.github.io/business-util/#/performance/AssemblyScript)
     * [通过扁平字符串提升输出性能](https://wsafight.github.io/business-util/#/performance/flatstr)
     * [网络性能监控库 Perfume](https://wsafight.github.io/business-util/#/performance/perfume)
+    * [加快执行速度的编译缓存工具 v8-compile-cache](https://wsafight.github.io/business-util/#/performance/v8-comiple-cache)
 
 * 测试
     * [使用 Pollyjs 进行 HTTP 请求测试](https://wsafight.github.io/business-util/#/test/polly-js)

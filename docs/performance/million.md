@@ -1,6 +1,6 @@
-# 让 React 更快的虚拟 DOM 替代品 million
+# 让 React 拥有更快的虚拟 DOM
 
-Million.js 是一个非常快速和轻量级的 ( <4kb) 虚拟 DOM。框架可以通过包装 React 组件来提升性能（该框架目前版本只兼容 React 18 及以上版本）。
+[Million.js](https://million.dev/) 是一个非常快速和轻量级的 ( <4kb) 虚拟 DOM。框架可以通过包装 React 组件来提升性能（该框架目前版本只兼容 React 18 及以上版本）。
 
 ```tsx
 import { block as quickBlock } from "million/react";

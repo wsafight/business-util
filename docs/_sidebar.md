@@ -122,7 +122,7 @@
 * * [通过扁平字符串提升输出性能](/performance/flatstr.md)
 * * [网络性能监控库 Perfume](/performance/perfume.md)
 * * [加快执行速度的编译缓存工具 v8-compile-cache](/performance/v8-compile-cache.md)
-* * [让 React 更快的虚拟 DOM 替代品 million](/performance/million.md)
+* * [让 React 拥有更快的虚拟 DOM](/performance/million.md)
 
 * 测试
 * * [使用 Pollyjs 进行 HTTP 请求测试](/test/polly-js.md)

@@ -46,6 +46,7 @@
 * 效率工具
 * * [搜索和更改代码结构的工具 comby](/efficiency-tools/comby.md)
 * * [大文件版本控制工具 git lfs](/efficiency-tools/git_lfs.md)
+* * [计算项目代码行数工具 cloc](/efficiency-tools/cloc.md)
 
 * 辅助开发 
 * * [开发助力 mermaid 绘制图表](/help/mermaid.md)

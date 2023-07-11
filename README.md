@@ -54,6 +54,7 @@
 * 效率工具
     * [搜索和更改代码结构的工具 comby](https://wsafight.github.io/business-util/#/efficiency-tools/comby)
     * [大文件版本控制工具 git lfs](https://wsafight.github.io/business-util/#/efficiency-tools/git_lfs)
+    * [计算项目代码行数工具 cloc](https://wsafight.github.io/business-util/#/efficiency-tools/cloc)
 
 
 * 辅助开发

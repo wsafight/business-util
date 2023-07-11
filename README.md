@@ -28,6 +28,7 @@
 * 功能扩展
     * [js 手写生成 pdf](https://wsafight.github.io/business-util/#/extends/jspdf)
     * [查找解析祖先文件工具 find-up](https://wsafight.github.io/business-util/#/extends/find-up)
+    * [聊聊 Unicode 符号](https://wsafight.github.io/business-util/#/extends/unicode)
 
 * 用户体验
     * [使用 escape 解决 HTML 空白折叠](https://wsafight.github.io/business-util/#/UX/escape)

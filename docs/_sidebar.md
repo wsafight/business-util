@@ -20,6 +20,7 @@
 * 功能扩展
 * * [js 手写生成 pdf](/extends/jspdf.md)
 * * [查找解析祖先文件工具 find-up](/extends/find-up.md)
+* * [聊聊 Unicode 符号](/extends/unicode)
 
 * 用户体验
 * * [使用 escape 解决 HTML 空白折叠](/UX/escape.md)  

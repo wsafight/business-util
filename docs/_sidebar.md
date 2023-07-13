@@ -15,7 +15,7 @@
 * * [颜色排序算法](/business/color-sort.md)  
 * * [交互式医学图像工具 Cornerstone](/business/cornerstone.md)
 * * [快速制作出响应式邮件的框架 Mjml](/business/mjml.md)
-
+* * [超长定时器 long-timeout](/business/long-timeout.md)
 
 * 功能扩展
 * * [js 手写生成 pdf](/extends/jspdf.md)

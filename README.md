@@ -24,6 +24,7 @@
     * [颜色排序算法](https://wsafight.github.io/business-util/#/business/color-sort)
     * [交互式医学图像工具 Cornerstone](https://wsafight.github.io/business-util/#/business/cornerstone)
     * [快速制作出响应式邮件的框架 Mjml](https://wsafight.github.io/business-util/#/business/mjml)
+    * [超长定时器 long-timeout](https://wsafight.github.io/business-util/#/business/long-timeout)
 
 * 功能扩展
     * [js 手写生成 pdf](https://wsafight.github.io/business-util/#/extends/jspdf)

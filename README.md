@@ -156,6 +156,7 @@
     * [使用宏扩展 JavaScript 语言](https://wsafight.github.io/business-util/#/language/macro)
     * [玩转 AbortController 控制器](https://wsafight.github.io/business-util/#/language/AbortController)
     * [ponyfills](https://wsafight.github.io/business-util/#/language/ponyfills) 
+    * [esm 动态引入](https://wsafight.github.io/business-util/#/language/esm-import)
 
 * 面向未来的浏览器 API
     * [浏览器文件操作](https://wsafight.github.io/business-util/#/browser/browser-fs-access)

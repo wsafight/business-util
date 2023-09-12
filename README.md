@@ -123,6 +123,7 @@
     * [node 速率限制器](https://wsafight.github.io/business-util/#/server/node-rate-limiter)
 
 * 性能优化
+    * [使用 Bun 提升代码运行效率](https://wsafight.github.io/business-util/#/performance/bun)
     * [高性能的 JavaScript 运行时 just-js](https://wsafight.github.io/business-util/#/performance/just-js)
     * [单例 Promise 缓存](https://wsafight.github.io/business-util/#/performance/single-promise-cache)
     * [图片压缩服务 tiny-png](https://wsafight.github.io/business-util/#/performance/tiny-png)

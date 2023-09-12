@@ -113,6 +113,7 @@
 
     
 * 性能优化
+* * [使用 Bun 提升代码运行效率](/performance/bun)
 * * [高性能的 JavaScript 运行时 just-js](/performance/just-js.md)
 * * [单例 Promise 缓存](/performance/single-promise-cache.md)
 * * [图片压缩服务 tiny-png](/performance/tiny-png.md)  

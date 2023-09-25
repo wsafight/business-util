@@ -1,6 +1,6 @@
 # 实用工具
 
-本来想记录前端业务类型的算法，但大部分算法问题都不太实用。
+本来想记录前端业务类型的算法，但前端大部分问题都和算法无关。
 
 所以本库修改由记录实用工具。
 
@@ -32,6 +32,7 @@
     * [聊聊 Unicode 符号](https://wsafight.github.io/business-util/#/extends/unicode)
 
 * 用户体验
+    * [自然语言日期解析器 Chrono](https://wsafight.github.io/business-util/#/UX/chrono)
     * [使用 escape 解决 HTML 空白折叠](https://wsafight.github.io/business-util/#/UX/escape)
     * [组合键提升用户体验](https://wsafight.github.io/business-util/#/UX/key-manage)
     * [提升交互体验的 web Observer](https://wsafight.github.io/business-util/#/UX/web-observer)

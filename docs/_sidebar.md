@@ -23,6 +23,7 @@
 * * [聊聊 Unicode 符号](/extends/unicode)
 
 * 用户体验
+* * [自然语言日期解析器 Chrono](/UX/chrono.md)
 * * [使用 escape 解决 HTML 空白折叠](/UX/escape.md)  
 * * [组合键提升用户体验](/UX/key-manage.md)
 * * [提升交互体验的 web Observer](/UX/web-observer.md)

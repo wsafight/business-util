@@ -131,6 +131,8 @@
 * * [让 React 拥有更快的虚拟 DOM](/performance/million.md)
 
 * 测试
+* * [服务端性能测试工具 JMeter](/test/jmeter.md)
+* * [流量复制工具 GoReplay](/test/goreplay.md)
 * * [使用 Pollyjs 进行 HTTP 请求测试](/test/polly-js.md)
 * * [新的端到端测试框架 cypress](/test/cypress.md)
     

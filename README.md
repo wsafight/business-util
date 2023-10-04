@@ -141,8 +141,12 @@
     * [让 React 拥有更快的虚拟 DOM](https://wsafight.github.io/business-util/#/performance/million)
 
 * 测试
+    * [服务端性能测试工具 JMeter](https://wsafight.github.io/business-util/#/test/jmeter)
+    * [流量复制工具 GoReplay](https://wsafight.github.io/business-util/#/test/goreplay)
     * [使用 Pollyjs 进行 HTTP 请求测试](https://wsafight.github.io/business-util/#/test/polly-js)
     * [新的端到端测试框架 cypress](https://wsafight.github.io/business-util/#/test/cypress)
+   
+   
 
 * 调试
     * [修改 window 上的变量](https://wsafight.github.io/business-util/#/debug/win-char-change)

@@ -150,6 +150,7 @@
 
 * 调试
     * [修改 window 上的变量](https://wsafight.github.io/business-util/#/debug/win-char-change)
+    * [使用代理查看对象调用](https://wsafight.github.io/business-util/#/debug/proxy)
     * [查找调试 JS 全局变量](https://wsafight.github.io/business-util/#/debug/global-check)
 
 * js 语言解析

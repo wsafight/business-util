@@ -10,7 +10,7 @@ window.__runtimeGlobalsChecker__ = (function createGlobalsChecker() {
   // 忽略的全局变量，默认为 __runtimeGlobalsChecker__
   const ignoredGlobals = ["__runtimeGlobalsChecker__"];
 
-  // 收集浏览器本省的全局变量，先创建一个干净的 iframe 
+  // 收集浏览器本身的全局变量，先创建一个干净的 iframe 
   function collectBrowserGlobals() {
     const iframe = window.document.createElement("iframe");
     iframe.src = "about:blank";

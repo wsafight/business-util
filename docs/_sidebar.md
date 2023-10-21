@@ -138,6 +138,7 @@
     
 * 调试
 * * [修改 window 上的变量](/debug/win-char-change.md)
+* * [使用代理查看对象调用](/debug/proxy.md)
 * * [查找调试 JS 全局变量](/debug/global-check.md)
 
 * js 语言解析

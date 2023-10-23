@@ -124,6 +124,7 @@
     * [node 速率限制器](https://wsafight.github.io/business-util/#/server/node-rate-limiter)
 
 * 性能优化
+    * [压缩传递对象的 JavaScript 工具库 u-node](https://wsafight.github.io/business-util/#/performance/u-node)
     * [使用 Bun 提升代码运行效率](https://wsafight.github.io/business-util/#/performance/bun)
     * [高性能的 JavaScript 运行时 just-js](https://wsafight.github.io/business-util/#/performance/just-js)
     * [单例 Promise 缓存](https://wsafight.github.io/business-util/#/performance/single-promise-cache)

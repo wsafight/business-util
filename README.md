@@ -17,6 +17,7 @@
     * [树组件查询](https://wsafight.github.io/business-util/#/business/array-tree-filter)
     * [计算博客阅读时长](https://wsafight.github.io/business-util/#/business/reading-time)
     * [根据背景色自适应文本颜色](https://wsafight.github.io/business-util/#/business/contrast-text-color)
+    * [基于内存的全文搜索引擎 MiniSearch](https://wsafight.github.io/business-util/#/business/mini-search)
     * [输入错误提示——模糊集](https://wsafight.github.io/business-util/#/business/fuzzy-set)
     * [快速的模糊搜索](https://wsafight.github.io/business-util/#/business/fuzzy-search)
     * [阿拉伯数字与中文数字的相互转换](https://wsafight.github.io/business-util/#/business/nzh)

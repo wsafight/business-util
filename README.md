@@ -134,6 +134,7 @@
     * [利用 gpu 加速数据运算](https://wsafight.github.io/business-util/#/performance/gpu)
     * [通过批处理避免布局抖动 fastDom](https://wsafight.github.io/business-util/#/performance/fastdom)
     * [提高转化率的预请求库 instant.page](https://wsafight.github.io/business-util/#/performance/instant-page)
+    * [提高转化率的预渲染库 quicklink](https://wsafight.github.io/business-util/#/performance/quicklink)
     * [跳过 v8 pre-Parse 优化代码性能库 optimize-js](https://wsafight.github.io/business-util/#/performance/optimize-js)
     * [AVIF 图片格式](https://wsafight.github.io/business-util/#/performance/AVIF)
     * [利用 "ts" 编译 WebAssembly](https://wsafight.github.io/business-util/#/performance/AssemblyScript)

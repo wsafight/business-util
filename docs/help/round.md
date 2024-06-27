@@ -43,5 +43,14 @@ function round(number: number, precision: number = 2) {
 
 注意该函数会在 number 较小或较大的情况下出现问题，如数字本身就使用了科学计数法。
 
+所以在这里做一个优化:
+
+```ts
+function round  (number: number, precision: number = 2) {
+  const powNum = Math.pow(10, precision);
+  return Math.round(number * powNum) / powNum;
+};
+```
+
 <div style="float: right">更新时间: {docsify-updated}</div>
 

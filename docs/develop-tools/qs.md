@@ -26,9 +26,7 @@ for (let p of searchParams) {
 }
 ```
 
-
-
-如果我们的代码中需要数组，上述就没办法解析了。此时我们可以利用正则来解析。
+如果我们的代码中需要数组，上述代码就没办法解析了。此时我们可以利用正则来解析。
 
 ```ts
 export interface ExtractQueryParamsResult {
@@ -38,9 +36,11 @@ export interface ExtractQueryParamsResult {
 
 
 export default function extractQueryParams(url: string): ExtractQueryParamsResult {
-  if (!url) return {url: '', params: null}
-  const questionIndex = url.indexOf('?')
-  let queryString = url
+  if (typeof url !== 'string' || !url) {
+    return {url: '', params: null}
+  }
+  const questionIndex: number = url.indexOf('?')
+  let queryString: string = url
   if (questionIndex >= 0) {
     queryString = url.substring(questionIndex + 1)
     url = url.substring(0, questionIndex)
@@ -63,19 +63,30 @@ export default function extractQueryParams(url: string): ExtractQueryParamsResul
   }
   return {url, params}
 }
-
 ```
 
-
+如此，我们可以使用上述代码来解析 url 中的数组：
 
 ```ts
-// 解析出对象数据
-var obj = qs.parse('a=c');
-assert.deepEqual(obj, { a: 'c' });
+const { url, params } = extractQueryParams('abc?bb=1&bb=2&cc=3')
 
-// 字符串化对象
-var str = qs.stringify(obj);
-assert.equal(str, 'a=c');
+{
+  url: 'abc',
+  params: {
+    bb: [1, 2],
+    cc: 3
+  }
+}
+```
+
+但是当前的代码仍旧无法解析出对象格式代码，所以我们使用 qs 来进行处理
+
+```ts
+var resultStr = qs.stringify({a: [1,2,3], b: {c: 3}})
+// a%5B0%5D=1&a%5B1%5D=2&a%5B2%5D=3&b%5Bc%5D=3
+
+var resultObj = qs.parse('a%5B0%5D=1&a%5B1%5D=2&a%5B2%5D=3&b%5Bc%5D=3')
+// {a: [1,2,3], b: {c: 3}}
 
 
 // 重点!! qs.parse 可以结构嵌套对象
@@ -97,7 +108,7 @@ const queryStr = qs.stringify(options)
 const url = `${queryUrl}${queryUrl.includes('?') ? '&' : '?'}${queryStr}`
 ```
 
-我们还可以用 qs 来决定缓存的参数是否改变。
+当然，我们还可以用 qs.stringify 来查看缓存函数中的的参数是否发生变化。
 
 
 

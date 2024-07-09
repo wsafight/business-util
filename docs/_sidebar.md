@@ -43,6 +43,7 @@
 * * [漂亮的专业排版软件 TeXMacs](/develop-tools/TeXMacs)
 * * [跨平台的音乐播放器 Listen1](/develop-tools/listen1)
 * * [开发者的边车辅助工具 DevSidecar](/develop-tools/dev-sidecar)
+* * [字符串化对象结构库 qs](/develop-tools/qs)
 
 
 * 效率工具

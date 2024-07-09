@@ -186,4 +186,4 @@
 
 * 开发者工具
 * * [编辑器插件 Vim](/developer-tools/vim)
-* * [基于 Vim 的超可扩展文本编辑器 neovim](/developer-tools/nwovim)
+* * [基于 Vim 的超可扩展文本编辑器 neovim](/developer-tools/neovim)

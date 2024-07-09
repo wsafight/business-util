@@ -53,7 +53,7 @@
     * [漂亮的专业排版软件 TeXMacs](https://wsafight.github.io/business-util/#/develop-tools/TeXMacs)
     * [跨平台的音乐播放器 Listen1](https://wsafight.github.io/business-util/#/develop-tools/listen1)
     * [开发者的边车辅助工具 DevSidecar](https://wsafight.github.io/business-utils/#/develop-tool/dev-sidecar)
-    * [字符串化对象结构库 qs](https://wsafight.github.io/business-utils/#/develop-tool/develop-tools/qs)
+    * [字符串化对象结构库 qs](https://wsafight.github.io/business-utils/#/develop-tools/qs)
 
 * 效率工具
     * [搜索和更改代码结构的工具 comby](https://wsafight.github.io/business-util/#/efficiency-tools/comby)
@@ -196,3 +196,7 @@
 
 * 开源游戏&框架
     * [群侠传，启动！](https://wsafight.github.io/business-util/#/games/jyqxz)
+
+* 开发者工具
+    * [编辑器插件 Vim](https://wsafight.github.io/business-util/#/developer-tools/vim)
+    * [基于 Vim 的超可扩展文本编辑器 neovim](https://wsafight.github.io/business-util/#/developer-tools/neovim)

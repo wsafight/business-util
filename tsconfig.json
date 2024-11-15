@@ -1,14 +1,3 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "module": "esnext",
-    "strict": true,
-    "esModuleInterop": true,
-    "moduleResolution": "Node16",
-    "watch": true,
-    "lib": [
-      "dom",
-      "es2019"
-    ]
-  }
+  "extends": "astro/tsconfigs/strict"
 }

@@ -1,0 +1,11 @@
+{
+  "name": "business-util",
+  "version": "1.0.0",
+  "description": "记录实用工具",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "big.js": "6.2.1"
+  },
+  "moduleResolution": {}
+}

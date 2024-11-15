@@ -7,7 +7,7 @@ export default defineConfig({
   site: "https://wsafight.github.io",
   base: "business-util",
   redirects: {
-    "/": "/business/currency",
+    "/": "/business-util/business/currency",
   },
   integrations: [
     starlight({

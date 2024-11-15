@@ -87,4 +87,4 @@ element.innerHTML = element.innerHTML
 
 不过该 bug 早在 DOMPurify 2.0.1 被修复。
 
-如果是 input textarea 这样的的文本输入。使用 lodash.escape 即可。参考 [使用 escape 解决 HTML 空白折叠](../ux/escape)
+如果是 input textarea 这样的的文本输入。使用 lodash.escape 即可。参考 [使用 escape 解决 HTML 空白折叠](../../ux/escape)

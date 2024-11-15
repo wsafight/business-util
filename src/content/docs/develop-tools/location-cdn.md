@@ -44,5 +44,3 @@ LocalCDN 插件通过劫持注入 CDN 资源以便提升速度。没错，如果
 
 
 玩的开心， ⚠️ 注意安全！
-
-<div style="float: right">更新时间: {docsify-updated}</div>

@@ -3,7 +3,7 @@ title: 文件格式化库 filesize
 description: 辅助文件格式化的工具库
 ---
 
-简单的情况可以直接使用 [format-file-size](../business/format-file-size)
+简单的情况可以直接使用 [format-file-size](../format-file-size)
 
 直接使用开源库 [filesize](https://github.com/avoidwork/filesize.js)
 

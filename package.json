@@ -1,26 +1,25 @@
 {
-    "name": "business-util",
-    "version": "2.0.0",
-    "description": "记录实用工具",
-    "author": "wsafight",
-    "license": "ISC",
-    "packageManager": "pnpm@9.12.3",
-    "scripts": {
-        "dev": "astro dev",
-        "start": "astro dev",
-        "build": "astro check && astro build",
-        "preview": "astro preview",
-        "astro": "astro"
-    },
+  "name": "business-util",
+  "version": "2.0.0",
+  "description": "记录实用工具",
+  "author": "wsafight",
+  "license": "ISC",
+  "packageManager": "pnpm@9.12.3",
+  "scripts": {
+      "dev": "astro dev",
+      "start": "astro dev",
+      "build": "astro check && astro build",
+      "preview": "astro preview",
+      "astro": "astro"
+  },
 
-    "dependencies": {
-      "big.js": "6.2.1",
-      "@astrojs/starlight": "0.29.0",
-      "astro": "4.16.12",
-      "sharp": "0.33.5",
-      "@astrojs/check": "0.9.4",
-      "typescript": "5.6.3"
-    },
-    "moduleResolution": {}
-  }
-  
+  "dependencies": {
+    "big.js": "6.2.1",
+    "@astrojs/starlight": "0.29.2",
+    "astro": "5.0.4",
+    "sharp": "0.33.5",
+    "@astrojs/check": "0.9.4",
+    "typescript": "5.7.2"
+  },
+  "moduleResolution": {}
+}

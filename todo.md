@@ -208,3 +208,6 @@ https://phiresky.github.io/blog/2021/hosting-sqlite-databases-on-github-pages/
 https://github.com/w8r/GreinerHormann/tree/master/src
 
 https://github.com/peggyjs/peggy/blob/main/examples/semver.peggy
+
+
+https://blog.hyperknot.com/p/understanding-round-robin-dns

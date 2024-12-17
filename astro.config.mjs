@@ -412,4 +412,5 @@ export default defineConfig({
       ],
     }),
   ],
+  compressHTML: true
 });

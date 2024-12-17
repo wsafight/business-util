@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-import swup from "@swup/astro";
 
 // https://astro.build/config
 export default defineConfig({
@@ -411,10 +410,10 @@ export default defineConfig({
           ],
         },
       ],
+      customCss: [
+        './src/styles/custom.css',
+      ],
     }),
-    swup({
-      containers: ['main','.sidebar-content', 'aside'],
-    })
   ],
   compressHTML: true,
 });

@@ -19,7 +19,8 @@
     "astro": "5.0.4",
     "sharp": "0.33.5",
     "@astrojs/check": "0.9.4",
-    "typescript": "5.7.2"
+    "typescript": "5.7.2",
+    "@swup/astro": "1.5.0"
   },
   "moduleResolution": {}
 }

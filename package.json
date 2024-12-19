@@ -16,7 +16,7 @@
   "dependencies": {
     "big.js": "6.2.1",
     "@astrojs/starlight": "0.30.2",
-    "astro": "5.0.4",
+    "astro": "5.0.8",
     "sharp": "0.33.5",
     "@astrojs/check": "0.9.4",
     "typescript": "5.7.2"

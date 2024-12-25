@@ -15,6 +15,12 @@ export default defineConfig({
       social: {
         github: "https://github.com/wsafight/business-util",
       },
+      locales: {
+        root: {
+          label: '简体中文',
+          lang: 'zh-CN',
+        },
+      },
       sidebar: [
         {
           label: "业务工具",

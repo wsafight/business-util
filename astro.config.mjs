@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import starlightImageZoom from 'starlight-image-zoom'
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -415,6 +417,9 @@ export default defineConfig({
             { label: "网页端视觉小说引擎 WebGAL", slug: "games/webgal" },
           ],
         },
+      ],
+      plugins: [
+        starlightImageZoom()
       ],
       customCss: [
         './src/styles/custom.css',

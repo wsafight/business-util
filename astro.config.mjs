@@ -92,6 +92,7 @@ export default defineConfig({
           label: "开发工具",
           items: [
             { label: "快速调试编辑器 RunJS", slug: "develop-tools/runjs" },
+            { label: "TypeScript 代码执行工具", slug: "develop-tools/ts-node" },
             { label: "自动切换故障 CDN 工具", slug: "develop-tools/freecdn" },
             {
               label: "LocalCDN 插件提升网站加载速度",

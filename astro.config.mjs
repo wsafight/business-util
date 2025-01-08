@@ -13,7 +13,7 @@ export default defineConfig({
   },
   integrations: [
     starlight({
-      title: "前端实用工具集",
+      title: "实用工具集",
       social: {
         github: "https://github.com/wsafight/business-util",
       },

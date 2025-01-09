@@ -44,6 +44,7 @@
     * [禁止浏览器进行表单填充](https://wsafight.github.io/business-util/ux/disable-auto-fill)
     * [手写一个同步服务端时间的小工具](https://wsafight.github.io/business-util/ux/sync-server-time)
     * [使用凭证优化登录流程](https://wsafight.github.io/business-util/ux/credential-api)
+    * [提取关键路径 CSS 工具 critical](https://wsafight.github.io/business-util/ux/critical)
 
 * 开发工具
     * [快速调试编辑器 RunJS](https://wsafight.github.io/business-util/develop-tools/runjs)

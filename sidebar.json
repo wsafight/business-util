@@ -60,7 +60,8 @@
         "label": "手写一个同步服务端时间的小工具",
         "slug": "ux/sync-server-time"
       },
-      { "label": "使用凭证优化登录流程", "slug": "ux/credential-api" }
+      { "label": "使用凭证优化登录流程", "slug": "ux/credential-api" },
+      { "label": "提取关键路径 CSS 工具 critical", "slug": "ux/critical" }
     ]
   },
   {

@@ -186,6 +186,7 @@ export default defineConfig({
             { label: "小型 js 压缩工具", slug: "help/roadroller" },
             { label: "自动注入关系的依赖注入", slug: "help/ioc-controller" },
             { label: "通用微型状态管理器 nanostores", slug: "help/nanostores" },
+            { label: "更强大的超文本标记语言 htmx", slug: "help/htmx" }
           ],
         },
         {

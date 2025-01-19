@@ -3,6 +3,16 @@ title: TypeScript 代码执行工具
 description: ts-node 是一个用于直接执行 TypeScript 代码的 Node.js 实现
 ---
 
+随着 Node v23.6.0 的发布，我们已经可以在 Node.js 中直接运行 TypeScript 代码。
+
+```
+node yourapp.ts
+```
+
+但是在当前版本中，Node.js 中当前对 TypeScript 的支持是通过类型剥离实现的：Node.js 所做的就是删除与类型相关的所有语法。它从不转译任何东西。
+
+<del> ts-node 现在已经可以结束他的使命了 </del>
+
 ts-node 是一个用于直接执行 TypeScript 代码的 Node.js 实现，它允许开发者在不预先编译的情况下运行 TypeScript 文件。ts-node 结合了 TypeScript 编译器和 Node.js，使得开发和测试 TypeScript 代码更加便捷。
 
 ## 核心功能

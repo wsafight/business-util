@@ -58,6 +58,8 @@
     * [字符串化对象结构库 qs](https://wsafight.github.io/business-util/develop-tools/qs)
     * [使用 Lighthouse 审查网络应用](https://wsafight.github.io/business-util/develop-tools/lighthouse)
     * [sourcemap 可视化工具](https://wsafight.github.io/business-util/develop-tools/source-map-visualization)
+    * [多运行时版本管理器 mise](https://wsafight.github.io/business-util/develop-tools/mise)
+    * [通用命令运行器 Just](https://wsafight.github.io/business-util/develop-tools/just)
 
 * 效率工具
     * [搜索和更改代码结构的工具 comby](https://wsafight.github.io/business-util/efficiency-tools/comby)
@@ -202,3 +204,12 @@
 * 开源游戏&框架
     * [群侠传，启动！](https://wsafight.github.io/business-util/games/jyqxz)
     * [网页端视觉小说引擎 WebGAL](https://wsafight.github.io/business-util/games/webgal)
+
+* 创业技术栈
+    * [vercel](https://wsafight.github.io/business-util/undertaking/vercel)
+    * [supabase](https://wsafight.github.io/business-util/undertaking/supabase)
+    * [stripe](https://wsafight.github.io/business-util/undertaking/stripe)
+
+* 教程工具
+    * [交互式编码工具](https://wsafight.github.io/business-util/tutorial-tools/tutorial-kit)
+    * [演示文稿 Slidev](https://wsafight.github.io/business-util/tutorial-tools/slidev)

@@ -98,6 +98,10 @@
       {
         "label": "sourcemap 可视化工具",
         "slug": "develop-tools/source-map-visualization"
+      },
+      {
+        "label": "多运行时版本管理器 asdf",
+        "slug": "develop-tools/asdf"
       }
     ]
   },
@@ -404,6 +408,13 @@
       { "label": "vercel", "slug": "undertaking/vercel"},
       { "label": "supabase", "slug": "undertaking/supabase"},
       { "label": "stripe", "slug": "undertaking/stripe"}
+    ]
+  },
+  {
+    "label": "教程工具",
+    "items": [
+      { "label": "交互式编码工具", "slug": "tutorial-tools/tutorial-kit" },
+      { "label": "演示文稿 Slidev", "slug": "tutorial-tools/slidev" }
     ]
   }
 ]

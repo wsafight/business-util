@@ -100,8 +100,8 @@
         "slug": "develop-tools/source-map-visualization"
       },
       {
-        "label": "多运行时版本管理器 asdf",
-        "slug": "develop-tools/asdf"
+        "label": "多运行时版本管理器 mise",
+        "slug": "develop-tools/mise"
       }
     ]
   },

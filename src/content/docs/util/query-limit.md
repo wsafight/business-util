@@ -12,7 +12,7 @@ export default async function limit(tasks, concurrency) {
       try {
         results[index] = await task();
       } catch (error) {
-        results[index] = new Error(`Failed with: ${error.message}`);
+        results[index] = new Error(`Failed with: ${error?.message}`);
       }
     }
   }

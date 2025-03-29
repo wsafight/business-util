@@ -26,6 +26,7 @@
     * [超长定时器 long-timeout](https://wsafight.github.io/business-util/business/long-timeout)
     * [基于内存的全文搜索引擎 MiniSearch](https://wsafight.github.io/business-util/business/mini-search)
     * [机器人工具集合](https://wsafight.github.io/business-util/business/robot-tools)
+    * [微小的撤销功能](https://wsafight.github.io/business-util/business/undo)
 
 * 功能扩展
     * [js 手写生成 pdf](https://wsafight.github.io/business-util/extends/jspdf)

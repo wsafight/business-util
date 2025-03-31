@@ -371,7 +371,9 @@
         "label": "构建工具统一插件工具 unplugin",
         "slug": "engineering/unplugin"
       },
-      { "label": "高性能 Web 渲染引擎 kraken", "slug": "engineering/kraken" }
+      { "label": "高性能 Web 渲染引擎 kraken", "slug": "engineering/kraken" },
+      { "label": "使用 Web 开发 Flutter 应用 WebF", "slug": "engineering/webf" },
+      { "label": "助力 Web 构建跨平台应用 Lynx", "slug": "engineering/lynx" }
     ]
   },
   {

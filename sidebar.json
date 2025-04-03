@@ -62,7 +62,8 @@
         "slug": "ux/sync-server-time"
       },
       { "label": "使用凭证优化登录流程", "slug": "ux/credential-api" },
-      { "label": "提取关键路径 CSS 工具 critical", "slug": "ux/critical" }
+      { "label": "提取关键路径 CSS 工具 critical", "slug": "ux/critical" },
+      { "label": "静态网站搜索工具 pagefind", "slug": "ux/pagefind" }
     ]
   },
   {

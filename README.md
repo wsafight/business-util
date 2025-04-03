@@ -46,6 +46,7 @@
     * [手写一个同步服务端时间的小工具](https://wsafight.github.io/business-util/ux/sync-server-time)
     * [使用凭证优化登录流程](https://wsafight.github.io/business-util/ux/credential-api)
     * [提取关键路径 CSS 工具 critical](https://wsafight.github.io/business-util/ux/critical)
+    * [静态网站搜索工具 pagefind](https://wsafight.github.io/business-util/ux/pagefind)
 
 * 开发工具
     * [快速调试编辑器 RunJS](https://wsafight.github.io/business-util/develop-tools/runjs)
@@ -187,6 +188,8 @@
     * [依赖库本地调试 yalc](https://wsafight.github.io/business-util/engineering/yalc)
     * [构建工具统一插件工具 unplugin](https://wsafight.github.io/business-util/engineering/unplugin)
     * [高性能 Web 渲染引擎 kraken](https://wsafight.github.io/business-util/engineering/kraken)
+    * [使用 Web 开发 Flutter 应用 WebF](https://wsafight.github.io/business-util/engineering/webf)
+    * [助力 Web 构建跨平台应用 Lynx](https://wsafight.github.io/business-util/engineering/lynx)
 
 * 脚本工具
     * [使用 JS 编写脚本的工具 zx](https://wsafight.github.io/business-util/script/zx)

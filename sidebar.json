@@ -424,5 +424,11 @@
       { "label": "交互式编码工具", "slug": "tutorial-tools/tutorial-kit" },
       { "label": "演示文稿 Slidev", "slug": "tutorial-tools/slidev" }
     ]
+  },
+  {
+    "label": "可视化工具",
+    "items": [
+      { "label": "手绘风格工具库 rough", "slug": "visualization/rough" }
+    ]
   }
 ]

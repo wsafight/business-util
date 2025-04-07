@@ -220,4 +220,9 @@
 
 * 可视化工具
     * [CSS 数据可视化框架 Charts.css](https://wsafight.github.io/business-util/visualization/charts-css)
+    * [绝佳的 SVG 库 Snap.svg](https://wsafight.github.io/business-util/visualization/snapsvg)
     * [手绘风格工具库 rough](https://wsafight.github.io/business-util/visualization/rough)
+    * [功能强大的 canvas 库 fabric](https://wsafight.github.io/business-util/visualization/fabric)
+    * [最快的 2D WebGL 渲染器 Pixi](https://wsafight.github.io/business-util/visualization/pixi)
+    * [高性能图形系统 SpriteJS](https://wsafight.github.io/business-util/visualization/sprite)
+    * [声明式 JSON 图表库 vega](https://wsafight.github.io/business-util/visualization/vega)

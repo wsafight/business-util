@@ -429,7 +429,12 @@
     "label": "可视化工具",
     "items": [
       { "label": "CSS 数据可视化框架 Charts.css", "slug": "visualization/charts-css" },
-      { "label": "手绘风格工具库 rough", "slug": "visualization/rough" }
+      { "label": "绝佳的 SVG 库 Snap.svg", "slug": "visualization/snapsvg" },
+      { "label": "手绘风格工具库 rough", "slug": "visualization/rough" },
+      { "label": "功能强大的 canvas 库 fabric", "slug": "visualization/fabric" },
+      { "label": "最快的 2D WebGL 渲染器 Pixi", "slug": "visualization/pixi" },
+      { "label": "高性能图形系统 SpriteJS", "slug": "visualization/sprite" },
+      { "label": "声明式 JSON 图表库 vega", "slug": "visualization/vega" }
     ]
   }
 ]

@@ -428,6 +428,7 @@
   {
     "label": "可视化工具",
     "items": [
+      { "label": "CSS 数据可视化框架 Charts.css", "slug": "visualization/charts-css" },
       { "label": "手绘风格工具库 rough", "slug": "visualization/rough" }
     ]
   }

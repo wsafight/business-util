@@ -14,9 +14,9 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "实用工具集",
-      social: {
-        github: "https://github.com/wsafight/business-util",
-      },
+      social: [
+        { icon: 'github', label: 'GitHub', href: 'https://github.com/wsafight/business-util' },
+      ],
       locales: {
         root: {
           label: '简体中文',

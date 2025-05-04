@@ -3,7 +3,6 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import starlightImageZoom from 'starlight-image-zoom'
 import sidebar from './sidebar.json' with { type: "json" };
-import starlightFullViewMode from "starlight-fullview-mode";
 
 // https://astro.build/config
 export default defineConfig({
@@ -26,8 +25,7 @@ export default defineConfig({
       },
       sidebar,
       plugins: [
-        starlightImageZoom(),
-        starlightFullViewMode()
+        starlightImageZoom()
       ],
       customCss: [
         './src/styles/custom.css',

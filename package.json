@@ -6,22 +6,23 @@
   "license": "ISC",
   "packageManager": "pnpm@9.12.3",
   "scripts": {
-      "dev": "astro dev",
-      "start": "astro dev",
-      "build": "astro check && astro build",
-      "preview": "astro preview",
-      "astro": "astro",
-      "gen-readme": "node ./gen-readme.mjs",
-      "pdf": "npm run build && (npm run preview > /dev/null & sleep 5); lsof -ti:4321 > preview.pid; npx starlight-to-pdf http://localhost:4321 -p ./ --filename 实用工具 --contents-links internal --contents-name 实用工具 --pdf-outline; kill $(cat preview.pid) && rm preview.pid && echo 'PDF script finished'"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "gen-readme": "node ./gen-readme.mjs",
+    "pdf": "npm run build && (npm run preview > /dev/null & sleep 5); lsof -ti:4321 > preview.pid; npx starlight-to-pdf http://localhost:4321 -p ./ --filename 实用工具 --contents-links internal --contents-name 实用工具 --pdf-outline; kill $(cat preview.pid) && rm preview.pid && echo 'PDF script finished'"
   },
   "dependencies": {
-    "big.js": "7.0.1",
+    "@astrojs/check": "0.9.4",
     "@astrojs/starlight": "0.34.2",
     "astro": "5.7.10",
+    "big.js": "7.0.1",
     "sharp": "0.34.1",
-    "@astrojs/check": "0.9.4",
-    "typescript": "5.8.3",
-    "starlight-image-zoom": "0.12.0"
+    "starlight-fullview-mode": "0.2.3",
+    "starlight-image-zoom": "0.12.0",
+    "typescript": "5.8.3"
   },
   "devDependencies": {
     "starlight-to-pdf": "1.4.0"

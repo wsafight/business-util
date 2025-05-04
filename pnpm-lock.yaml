@@ -23,6 +23,9 @@ importers:
       sharp:
         specifier: 0.34.1
         version: 0.34.1
+      starlight-fullview-mode:
+        specifier: 0.2.3
+        version: 0.2.3(@astrojs/starlight@0.34.2(astro@5.7.10(jiti@2.4.2)(rollup@4.38.0)(terser@5.37.0)(typescript@5.8.3)(yaml@2.6.0)))
       starlight-image-zoom:
         specifier: 0.12.0
         version: 0.12.0(@astrojs/starlight@0.34.2(astro@5.7.10(jiti@2.4.2)(rollup@4.38.0)(terser@5.37.0)(typescript@5.8.3)(yaml@2.6.0)))
@@ -312,6 +315,12 @@ packages:
 
   '@expressive-code/plugin-text-markers@0.41.1':
     resolution: {integrity: sha512-PFvk91yY+H8KVEcyZSrktLoWzBgLVpowvMxOJooFn74roGxnU4TEBJpWcRnJFtMEwTLzWNnk10MSOApOccvSKg==}
+
+  '@iconify-json/mdi@1.2.3':
+    resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
+
+  '@iconify/types@2.0.0':
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -2117,6 +2126,12 @@ packages:
   sprintf-js@1.1.3:
     resolution: {integrity: sha512-Oo+0REFV59/rz3gfJNKQiBlwfHaSESl1pcGyABQsnnIfWOFt6JNj5gCog2U6MLZ//IGYD+nA8nI+mTShREReaA==}
 
+  starlight-fullview-mode@0.2.3:
+    resolution: {integrity: sha512-8sw/VKhWAtcD5eOUBz4T8U/rEtteOXXyKTp0QwNXlwAW4zgIb6qKsnRXOQearHMp3GTSUH/b+tISHrtz9+/ePQ==}
+    engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
+    peerDependencies:
+      '@astrojs/starlight': '>=0.32'
+
   starlight-image-zoom@0.12.0:
     resolution: {integrity: sha512-Zt9DuqXEw4JBBRc67wL9EP7DE9cSa+o2nyjQU6Xq+gRp388Wcu9C9FPROLuaYXbxpE93bbj5oyrhhMaiEWOZzg==}
     engines: {node: '>=18'}
@@ -2930,6 +2945,12 @@ snapshots:
   '@expressive-code/plugin-text-markers@0.41.1':
     dependencies:
       '@expressive-code/core': 0.41.1
+
+  '@iconify-json/mdi@1.2.3':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify/types@2.0.0': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
@@ -5347,6 +5368,11 @@ snapshots:
   space-separated-tokens@2.0.2: {}
 
   sprintf-js@1.1.3: {}
+
+  starlight-fullview-mode@0.2.3(@astrojs/starlight@0.34.2(astro@5.7.10(jiti@2.4.2)(rollup@4.38.0)(terser@5.37.0)(typescript@5.8.3)(yaml@2.6.0))):
+    dependencies:
+      '@astrojs/starlight': 0.34.2(astro@5.7.10(jiti@2.4.2)(rollup@4.38.0)(terser@5.37.0)(typescript@5.8.3)(yaml@2.6.0))
+      '@iconify-json/mdi': 1.2.3
 
   starlight-image-zoom@0.12.0(@astrojs/starlight@0.34.2(astro@5.7.10(jiti@2.4.2)(rollup@4.38.0)(terser@5.37.0)(typescript@5.8.3)(yaml@2.6.0))):
     dependencies:

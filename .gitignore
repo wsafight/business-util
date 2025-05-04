@@ -23,3 +23,6 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# pdf build
+preview.pid

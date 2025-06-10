@@ -17,7 +17,7 @@
   "dependencies": {
     "@astrojs/check": "0.9.4",
     "@astrojs/starlight": "0.34.3",
-    "astro": "5.8.0",
+    "astro": "5.9.2",
     "big.js": "7.0.1",
     "sharp": "0.34.2",
     "starlight-fullview-mode": "0.2.3",

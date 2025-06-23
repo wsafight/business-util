@@ -4,7 +4,7 @@
   "description": "记录实用工具",
   "author": "wsafight",
   "license": "ISC",
-  "packageManager": "pnpm@9.12.3",
+  "packageManager": "pnpm@10.13.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -16,12 +16,12 @@
   },
   "dependencies": {
     "@astrojs/check": "0.9.4",
-    "@astrojs/starlight": "0.34.3",
-    "astro": "5.9.2",
+    "@astrojs/starlight": "0.35.1",
+    "astro": "5.12.4",
     "big.js": "7.0.1",
-    "sharp": "0.34.2",
+    "sharp": "0.34.3",
     "starlight-fullview-mode": "0.2.3",
-    "starlight-image-zoom": "0.12.0",
+    "starlight-image-zoom": "0.13.0",
     "typescript": "5.8.3"
   },
   "devDependencies": {

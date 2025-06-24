@@ -211,3 +211,61 @@ https://github.com/peggyjs/peggy/blob/main/examples/semver.peggy
 
 
 https://blog.hyperknot.com/p/understanding-round-robin-dns
+
+bun single file
+```ts
+
+const html = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const submit = () => {
+      console.log('zzzz')
+      const inputDom = document.getElementById('input');
+      const val = inputDom.val;
+  
+      fetch('/api/test', {
+        method: 'POST',
+        body: {
+          val
+        }
+      }).then(res => {
+        return res.text();
+      }).then(res => {
+        alert(res);
+      })
+    }
+  </script>
+  <div>
+    <input id="input">
+    <button onclick="submit()">提交测试</button>
+  </div>
+</body>
+</html>
+`
+
+let requestTime = 0;
+
+Bun.serve({
+  port: 19999,
+  routes: {
+    '/': async () => {
+      return new Response(html, {
+        headers: { "Content-Type": "text/html; charset=utf-8" },
+      });
+    },
+    '/api/test': async () => {
+      return new Response(`api result is ${++requestTime}`);
+    },
+    "/api/publish": async () => {
+      return new Response('123');
+    }
+  }
+})
+```

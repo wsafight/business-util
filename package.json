@@ -16,15 +16,15 @@
   },
   "dependencies": {
     "@astrojs/check": "0.9.4",
-    "@astrojs/starlight": "0.35.1",
-    "astro": "5.12.4",
+    "@astrojs/starlight": "0.35.3",
+    "astro": "5.13.7",
     "big.js": "7.0.1",
     "sharp": "0.34.3",
     "starlight-fullview-mode": "0.2.3",
-    "starlight-image-zoom": "0.13.0",
-    "typescript": "5.8.3"
+    "starlight-image-zoom": "0.13.0"
   },
   "devDependencies": {
+    "typescript": "5.9.2",
     "starlight-to-pdf": "1.4.0"
   },
   "moduleResolution": {}

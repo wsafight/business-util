@@ -4,6 +4,18 @@ import starlight from "@astrojs/starlight";
 import starlightImageZoom from 'starlight-image-zoom'
 import sidebar from './sidebar.json' with { type: "json" };
 
+
+/**
+ * 
+ * 
+ * <script type="speculationrules">
+  {
+    "prerender": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }],
+    "prefetch": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }]
+  }
+</script>
+ */
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://wsafight.github.io",

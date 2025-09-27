@@ -96,6 +96,8 @@
     * [自动注入关系的依赖注入](https://wsafight.github.io/business-util/help/ioc-controller)
     * [通用微型状态管理器 nanostores](https://wsafight.github.io/business-util/help/nanostores)
     * [更强大的超文本标记语言 htmx](https://wsafight.github.io/business-util/help/htmx)
+    * [驼峰命名转化工具 camelcase-keys](https://wsafight.github.io/business-util/help/camelcase-keys)
+    * [React 极简状态管理库 unstated-next](https://wsafight.github.io/business-util/help/unstated-next)
 
 * 正则匹配工具
     * [用编程的方式清晰的构建正则表达式](https://wsafight.github.io/business-util/regex/super-expressive)

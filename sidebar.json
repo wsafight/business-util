@@ -13,7 +13,7 @@
       },
       { "label": "文件格式化库 filesize", "slug": "business/filesize" },
       { "label": "根据数组构建树", "slug": "business/build-tree" },
-      { "label": "树组件查询", "slug": "business/array-tree-filter" },
+      { "label": "树形数组过滤工具", "slug": "business/array-tree-filter" },
       { "label": "计算博客阅读时长", "slug": "business/reading-time" },
       {
         "label": "根据背景色自适应文本颜色",
@@ -353,7 +353,7 @@
     "items": [
       { "label": "浏览器文件操作", "slug": "browser/browser-fs-access" },
       {
-        "label": "压缩 API Compression Streams",
+        "label": "浏览器内置压缩流 API",
         "slug": "browser/compression-streams"
       },
       {

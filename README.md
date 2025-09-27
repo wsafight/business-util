@@ -14,7 +14,7 @@
     * [文件大小格式化 (简单版)](https://wsafight.github.io/business-util/business/format-file-size)
     * [文件格式化库 filesize](https://wsafight.github.io/business-util/business/filesize)
     * [根据数组构建树](https://wsafight.github.io/business-util/business/build-tree)
-    * [树组件查询](https://wsafight.github.io/business-util/business/array-tree-filter)
+    * [树形数组过滤工具](https://wsafight.github.io/business-util/business/array-tree-filter)
     * [计算博客阅读时长](https://wsafight.github.io/business-util/business/reading-time)
     * [根据背景色自适应文本颜色](https://wsafight.github.io/business-util/business/contrast-text-color)
     * [输入错误提示 —— 模糊集](https://wsafight.github.io/business-util/business/fuzzy-set)
@@ -182,7 +182,7 @@
 
 * 面向未来的浏览器 API
     * [浏览器文件操作](https://wsafight.github.io/business-util/browser/browser-fs-access)
-    * [压缩 API Compression Streams](https://wsafight.github.io/business-util/browser/compression-streams)
+    * [浏览器内置压缩流 API](https://wsafight.github.io/business-util/browser/compression-streams)
     * [浏览器中的取色器 API EyeDropper](https://wsafight.github.io/business-util/browser/eye-dropper)
 
 * 工程化工具

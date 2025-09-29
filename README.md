@@ -215,6 +215,7 @@
     * [vercel](https://wsafight.github.io/business-util/undertaking/vercel)
     * [supabase](https://wsafight.github.io/business-util/undertaking/supabase)
     * [stripe](https://wsafight.github.io/business-util/undertaking/stripe)
+    * [前端部署工具 PinMe](https://wsafight.github.io/business-util/undertaking/pinme)
 
 * 教程工具
     * [交互式编码工具](https://wsafight.github.io/business-util/tutorial-tools/tutorial-kit)

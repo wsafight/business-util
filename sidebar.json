@@ -417,7 +417,8 @@
     "items": [
       { "label": "vercel", "slug": "undertaking/vercel"},
       { "label": "supabase", "slug": "undertaking/supabase"},
-      { "label": "stripe", "slug": "undertaking/stripe"}
+      { "label": "stripe", "slug": "undertaking/stripe"},
+      { "label": "前端部署工具 PinMe", "slug": "undertaking/pinme"}
     ]
   },
   {

@@ -90,7 +90,7 @@
     * [跳转页面时可靠的发送埋点信息](https://wsafight.github.io/business-util/help/navigator-beacon)
     * [web 多线程开发工具 comlink](https://wsafight.github.io/business-util/help/comlink)
     * [Service Worker 工具箱 workbox](https://wsafight.github.io/business-util/help/workbox)
-    * [前端开发中的依赖注入 awilix](https://wsafight.github.io/business-util/help/awilix)
+    * [JavaScript 依赖注入库 awilix](https://wsafight.github.io/business-util/help/awilix)
     * [前端存储工具库 storage-tools](https://wsafight.github.io/business-util/help/storage-tools)
     * [小型 js 压缩工具](https://wsafight.github.io/business-util/help/roadroller)
     * [自动注入关系的依赖注入](https://wsafight.github.io/business-util/help/ioc-controller)

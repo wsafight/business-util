@@ -164,7 +164,7 @@
       },
       { "label": "web 多线程开发工具 comlink", "slug": "help/comlink" },
       { "label": "Service Worker 工具箱 workbox", "slug": "help/workbox" },
-      { "label": "前端开发中的依赖注入 awilix", "slug": "help/awilix" },
+      { "label": "JavaScript 依赖注入库 awilix", "slug": "help/awilix" },
       {
         "label": "前端存储工具库 storage-tools",
         "slug": "help/storage-tools"

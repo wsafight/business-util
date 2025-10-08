@@ -1,782 +1,439 @@
----
-title: 通用微型状态管理器 nanostores
-description: 适用于React、React Native、Preact、Vue、 Svelte、Solid、Lit、Angular和 vanilla JS 的微型状态管理器。它使用许多原子存储和直接操作。
----
+# 通用微型状态管理器 Nano Stores
 
+Nano Stores 是一个轻量级的状态管理库，专为 React、React Native、Preact、Vue、Svelte、Solid、Lit、Angular 和原生 JavaScript 设计。它通过原子存储和直接操作，提供了一种简洁而高效的状态管理方式。
 
-<img align="right" width="92" height="92" title="Nano Stores logo"
-     src="https://nanostores.github.io/nanostores/logo.svg">
+## 1. 什么是 Nano Stores
 
-A tiny state manager for **React**, **React Native**, **Preact**, **Vue**,
-**Svelte**, **Solid**, **Lit**, **Angular**, and vanilla JS.
-It uses **many atomic stores** and direct manipulation.
+Nano Stores 是一个超轻量级的跨框架状态管理解决方案，其核心理念是通过许多原子化的、可摇树的存储来管理状态，从而减少不必要的代码和性能开销。该库最小化后仅有 286 字节，且没有任何外部依赖，同时提供了完整的 TypeScript 支持。
 
-* **Small.** Between 265 and 803 bytes (minified and brotlied).
-  Zero dependencies. It uses [Size Limit] to control size.
-* **Fast.** With small atomic and derived stores, you do not need to call
-  the selector function for all components on every store change.
-* **Tree Shakable.** A chunk contains only stores used by components
-  in the chunk.
-* Designed to move logic from components to stores.
-* Good **TypeScript** support.
+### 1.1 主要特点
 
-```ts
-// store/users.ts
-import { atom } from 'nanostores'
+- **超轻量级**：压缩后仅 286 字节，几乎不增加应用体积
+- **跨框架兼容**：支持 React、Vue、Svelte、Angular 等多种前端框架
+- **原子化设计**：通过多个小型独立存储管理状态
+- **类型安全**：完全使用 TypeScript 编写，提供良好的类型支持
+- **可摇树优化**：未使用的存储会被打包工具自动移除
+- **无外部依赖**：不依赖任何第三方库
 
-export const $users = atom<User[]>([])
+### 1.2 解决问题
 
-export function addUser(user: User) {
-  $users.set([...$users.get(), user]);
-}
-```
+- 复杂应用中的状态管理混乱
+- 框架特定状态管理库的局限性
+- 大型状态管理库的性能和体积问题
+- 多框架项目中的状态管理一致性
 
-```ts
-// store/admins.ts
-import { computed } from 'nanostores'
-import { $users } from './users.js'
+## 2. 安装与基本用法
 
-export const $admins = computed($users, users => users.filter(i => i.isAdmin))
-```
+### 2.1 安装
 
-```tsx
-// components/admins.tsx
-import { useStore } from '@nanostores/react'
-import { $admins } from '../stores/admins.js'
+使用 npm 或 yarn 安装 Nano Stores：
 
-export const Admins = () => {
-  const admins = useStore($admins)
-  return (
-    <ul>
-      {admins.map(user => <UserItem user={user} />)}
-    </ul>
-  )
-}
-```
-
----
-
-<img src="https://cdn.evilmartians.com/badges/logo-no-label.svg" alt="" width="22" height="16" />  Made at <b><a href="https://evilmartians.com/devtools?utm_source=nanostores&utm_campaign=devtools-button&utm_medium=github">Evil Martians</a></b>, product consulting for <b>developer tools</b>.
-
----
-
-[Size Limit]: https://github.com/ai/size-limit
-
-
-## Table of Contents
-
-- [Table of Contents](#table-of-contents)
-- [Install](#install)
-- [Smart Stores](#smart-stores)
-- [Devtools](#devtools)
-- [Guide](#guide)
-  - [Atoms](#atoms)
-  - [Maps](#maps)
-  - [Deep Maps](#deep-maps)
-  - [Lazy Stores](#lazy-stores)
-  - [Computed Stores](#computed-stores)
-  - [Tasks](#tasks)
-  - [Store Events](#store-events)
-- [Integration](#integration)
-  - [React \& Preact](#react--preact)
-  - [Vue](#vue)
-  - [Svelte](#svelte)
-  - [Solid](#solid)
-  - [Lit](#lit)
-  - [Angular](#angular)
-  - [Vanilla JS](#vanilla-js)
-  - [Server-Side Rendering](#server-side-rendering)
-  - [Tests](#tests)
-- [Best Practices](#best-practices)
-  - [Move Logic from Components to Stores](#move-logic-from-components-to-stores)
-  - [Separate changes and reaction](#separate-changes-and-reaction)
-  - [Reduce `get()` usage outside of tests](#reduce-get-usage-outside-of-tests)
-- [Known Issues](#known-issues)
-  - [ESM](#esm)
-
-
-## Install
-
-```sh
+```bash
 npm install nanostores
+# 或者
+yarn add nanostores
 ```
 
+### 2.2 基本使用示例
 
-## Smart Stores
+下面是一个简单的计数器示例，展示了 Nano Stores 的基本用法：
 
-* [Persistent](https://github.com/nanostores/persistent) store to save data
-  to `localStorage` and synchronize changes between browser tabs.
-* [Router](https://github.com/nanostores/router) store to parse URL
-  and implements SPA navigation.
-* [I18n](https://github.com/nanostores/i18n) library based on stores
-  to make application translatable.
-* [Query](https://github.com/nanostores/query) store that helps you with smart
-  remote data fetching.
-* [Logux Client](https://github.com/logux/client): stores with WebSocket
-  sync and CRDT conflict resolution.
+```javascript
+import { atom } from 'nanostores';
 
+// 创建一个原子存储，初始值为 0
+const $counter = atom<number>(0);
 
-## Devtools
+// 读取当前值
+console.log($counter.get()); // 输出: 0
 
-* [Logger](https://github.com/nanostores/logger) of lifecycles, changes
-  in the browser console.
-* [Vue Devtools](https://github.com/nanostores/vue#devtools) plugin that detects
-  stores and attaches them to devtools inspectors and timeline.
+// 更新值
+$counter.set(1);
+console.log($counter.get()); // 输出: 1
 
+// 订阅状态变化
+const unsub = $counter.subscribe(value => {
+  console.log(`计数器值已更新为: ${value}`);
+});
 
-## Guide
+// 触发更新
+$counter.set(2); // 会触发上面的订阅回调
 
-### Atoms
-
-Atom store can be used to store strings, numbers, arrays.
-
-You can use it for objects too if you want to prohibit key changes
-and allow only replacing the whole object (like we do in [router]).
-
-To create it call `atom(initial)` and pass initial value as a first argument.
-
-```ts
-import { atom } from 'nanostores'
-
-export const $counter = atom(0)
+// 取消订阅
+unsub();
 ```
 
-In TypeScript, you can optionally pass value type as type parameter.
+## 3. 核心概念
 
-```ts
-export type LoadingStateValue = 'empty' | 'loading' | 'loaded'
+### 3.1 原子存储 (Atom)
 
-export const $loadingState = atom<LoadingStateValue>('empty')
+原子存储是 Nano Stores 最基础的构建块，代表一个可以被订阅和修改的单一值：
+
+```javascript
+import { atom } from 'nanostores';
+
+// 创建一个字符串类型的原子存储
+const $username = atom<string>('Guest');
+
+// 创建一个对象类型的原子存储
+const $user = atom<{
+  id: number;
+  name: string;
+  email: string;
+}>({
+  id: 0,
+  name: 'Unknown',
+  email: ''
+});
 ```
 
-Then you can use `StoreValue<Store>` helper to get store’s value type
-in TypeScript:
+### 3.2 计算存储 (Computed Store)
 
-```ts
-import type { StoreValue } from 'nanostores'
+计算存储允许你基于其他存储的值创建派生状态：
 
-type Value = StoreValue<typeof $loadingState> //=> LoadingStateValue
+```javascript
+import { atom, computed } from 'nanostores';
+
+const $firstName = atom<string>('John');
+const $lastName = atom<string>('Doe');
+
+// 创建一个计算存储，基于其他存储的值
+const $fullName = computed([$firstName, $lastName], (first, last) => {
+  return `${first} ${last}`;
+});
+
+// 当依赖的存储更新时，计算存储也会自动更新
+$firstName.set('Jane');
+console.log($fullName.get()); // 输出: Jane Doe
 ```
 
-`store.get()` will return store’s current value.
-`store.set(nextValue)` will change value.
+### 3.3 懒加载
 
-```ts
-$counter.set($counter.get() + 1)
-```
+Nano Stores 支持懒加载，只有在存储被实际使用时才会加载和初始化，这有助于优化应用性能：
 
-`store.subscribe(cb)` and `store.listen(cb)` can be used to subscribe
-for the changes in vanilla JS. For [React](#react--preact)/[Vue](#vue)
-we have extra special helpers `useStore` to re-render the component on
-any store changes.
+```javascript
+// 存储模块
+let $userData;
 
-Listener callbacks will receive the updated value as a first argument
-and the previous value as a second argument.
-
-```ts
-const unbindListener = $counter.subscribe((value, oldValue) => {
-  console.log(`counter value changed from ${oldValue} to ${value}`)
-})
-```
-
-`store.subscribe(cb)` in contrast with `store.listen(cb)` also call listeners
-immediately during the subscription.
-Note that the initial call for `store.subscribe(cb)` will not have any
-previous value and `oldValue` will be `undefined`.
-
-[router]: https://github.com/nanostores/router
-
-
-### Maps
-
-Map store can be used to store objects with one level of depth and change keys
-in this object.
-
-To create map store call `map(initial)` function with initial object.
-
-```ts
-import { map } from 'nanostores'
-
-export const $profile = map({
-  name: 'anonymous'
-})
-```
-
-In TypeScript you can pass type parameter with store’s type:
-
-```ts
-export interface ProfileValue {
-  name: string,
-  email?: string
-}
-
-export const $profile = map<ProfileValue>({
-  name: 'anonymous'
-})
-```
-
-`store.set(object)` or `store.setKey(key, value)` methods will change the store.
-
-```ts
-$profile.setKey('name', 'Kazimir Malevich')
-```
-
-Setting `undefined` will remove optional key:
-
-```ts
-$profile.setKey('email', undefined)
-```
-
-Store’s listeners will receive third argument with changed key.
-
-```ts
-$profile.listen((profile, oldProfile, changed) => {
-  console.log(`${changed} new value ${profile[changed]}`)
-})
-```
-
-You can also listen for specific keys of the store being changed, using
-`listenKeys` and `subscribeKeys`.
-
-```ts
-listenKeys($profile, ['name'], (value, oldValue, changed) => {
-  console.log(`$profile.Name new value ${value.name}`)
-})
-```
-
-`subscribeKeys(store, keys, cb)` in contrast with `listenKeys(store, keys, cb)`
-also call listeners immediately during the subscription.
-Please note that when using subscribe for store changes, the initial evaluation
-of the callback has undefined old value and changed key.
-
-
-### Deep Maps
-
-Deep maps work the same as `map`, but it supports arbitrary nesting of objects
-and arrays that preserve the fine-grained reactivity.
-
-```ts
-import { deepMap, listenKeys } from 'nanostores'
-
-export const $profile = deepMap({
-  hobbies: [
-    {
-      name: 'woodworking',
-      friends: [{ id: 123, name: 'Ron Swanson' }]
-    }
-  ],
-  skills: [
-    [
-      'Carpentry',
-      'Sanding'
-    ],
-    [
-      'Varnishing'
-    ]
-  ]
-})
-
-listenKeys($profile, ['hobbies[0].friends[0].name', 'skills[0][0]'])
-
-// Won't fire subscription
-$profile.setKey('hobbies[0].name', 'Scrapbooking')
-$profile.setKey('skills[0][1]', 'Staining')
-
-// But those will fire subscription
-$profile.setKey('hobbies[0].friends[0].name', 'Leslie Knope')
-$profile.setKey('skills[0][0]', 'Whittling')
-```
-
-Note that `setKey` creates copies as necessary so that no part of the original
-object is mutated (but it does not do a full deep copy -- some sub-objects may
-still be shared between the old value and the new one).
-
-### Lazy Stores
-
-A unique feature of Nano Stores is that every state has two modes:
-
-* **Mount:** when one or more listeners is mounted to the store.
-* **Disabled:** when store has no listeners.
-
-Nano Stores was created to move logic from components to the store.
-Stores can listen for URL changes or establish network connections.
-Mount/disabled modes allow you to create lazy stores, which will use resources
-only if store is really used in the UI.
-
-`onMount` sets callback for mount and disabled states.
-
-```ts
-import { onMount } from 'nanostores'
-
-onMount($profile, () => {
-  // Mount mode
-  return () => {
-    // Disabled mode
+export function getUserData() {
+  if (!$userData) {
+    $userData = atom({ name: '', age: 0 });
+    // 模拟异步数据加载
+    fetchUserData().then(data => {
+      $userData.set(data);
+    });
   }
-})
-```
-
-For performance reasons, store will move to disabled mode with 1 second delay
-after last listener unsubscribing.
-
-Call `keepMount()` to test store’s lazy initializer in tests and `cleanStores`
-to unmount them after test.
-
-```js
-import { cleanStores, keepMount } from 'nanostores'
-import { $profile } from './profile.js'
-
-afterEach(() => {
-  cleanStores($profile)
-})
-
-it('is anonymous from the beginning', () => {
-  keepMount($profile)
-  // Checks
-})
-```
-
-
-### Computed Stores
-
-Computed store is based on other store’s value.
-
-```ts
-import { computed } from 'nanostores'
-import { $users } from './users.js'
-
-export const $admins = computed($users, users => {
-  // This callback will be called on every `users` changes
-  return users.filter(user => user.isAdmin)
-})
-```
-
-An async function can be evaluated by using `task()`.
-
-```js
-import { computed, task } from 'nanostores'
-
-import { $userId } from './users.js'
-
-export const $user = computed($userId, userId => task(async () => {
-  const response = await fetch(`https://my-api/users/${userId}`)
-  return response.json()
-}))
-```
-
-By default, `computed` stores update _each_ time any of their dependencies
-gets updated. If you are fine with waiting until the end of a tick, you can
-use `batched`. The only difference with `computed` is that it will wait until
-the end of a tick to update itself.
-
-```ts
-import { batched } from 'nanostores'
-
-const $sortBy = atom('id')
-const $categoryId = atom('')
-
-export const $link = batched([$sortBy, $categoryId], (sortBy, categoryId) => {
-  return `/api/entities?sortBy=${sortBy}&categoryId=${categoryId}`
-})
-
-// `batched` will update only once even you changed two stores
-export function resetFilters () {
-  $sortBy.set('date')
-  $categoryIdFilter.set('1')
+  return $userData;
 }
+
+// 使用模块
+import { getUserData } from './store';
+
+// 只有在调用 get() 或 subscribe() 时才会初始化和加载数据
+const userData = getUserData();
+userData.subscribe(data => {
+  console.log('用户数据已加载:', data);
+});
 ```
 
-Both `computed` and `batched` can be calculated from multiple stores:
+## 4. 与不同框架集成
 
-```ts
-import { $lastVisit } from './lastVisit.js'
-import { $posts } from './posts.js'
+### 4.1 React 集成
 
-export const $newPosts = computed([$lastVisit, $posts], (lastVisit, posts) => {
-  return posts.filter(post => post.publishedAt > lastVisit)
-})
+对于 React 项目，你需要安装 `@nanostores/react` 包：
+
+```bash
+npm install @nanostores/react
+# 或者
+yarn add @nanostores/react
 ```
 
-
-### Tasks
-
-`startTask()` and `task()` can be used to mark all async operations
-during store initialization.
-
-```ts
-import { task } from 'nanostores'
-
-onMount($post, () => {
-  task(async () => {
-    $post.set(await loadPost())
-  })
-})
-```
-
-You can wait for all ongoing tasks end in tests or SSR with `await allTasks()`.
+使用示例：
 
 ```jsx
-import { allTasks } from 'nanostores'
+import { useStore } from '@nanostores/react';
+import { atom } from 'nanostores';
 
-$post.listen(() => {}) // Move store to active mode to start data loading
-await allTasks()
+const $counter = atom<number>(0);
 
-const html = ReactDOMServer.renderToString(<App />)
-```
+function Counter() {
+  // 使用 useStore 钩子订阅状态变化
+  const counter = useStore($counter);
 
-
-### Store Events
-
-Each store has a few events, which you listen:
-
-* `onMount(store, cb)`: first listener was subscribed with debounce.
-  We recommend to always use `onMount` instead of `onStart + onStop`,
-  because it has a short delay to prevent flickering behavior.
-* `onStart(store, cb)`: first listener was subscribed. Low-level method.
-  It is better to use `onMount` for simple lazy stores.
-* `onStop(store, cb)`: last listener was unsubscribed. Low-level method.
-  It is better to use `onMount` for simple lazy stores.
-* `onSet(store, cb)`: before applying any changes to the store.
-* `onNotify(store, cb)`: before notifying store’s listeners about changes.
-
-`onSet` and `onNotify` events has `abort()` function to prevent changes
-or notification.
-
-```ts
-import { onSet } from 'nanostores'
-
-onSet($store, ({ newValue, abort }) => {
-  if (!validate(newValue)) {
-    abort()
-  }
-})
-```
-
-Event listeners can communicate with `payload.shared` object.
-
-
-## Integration
-
-### React & Preact
-
-Use [`@nanostores/react`] or [`@nanostores/preact`] package
-and `useStore()` hook to get store’s value and re-render component
-on store’s changes.
-
-```tsx
-import { useStore } from '@nanostores/react' // or '@nanostores/preact'
-import { $profile } from '../stores/profile.js'
-
-export const Header = ({ postId }) => {
-  const profile = useStore($profile)
-  return <header>Hi, {profile.name}</header>
+  return (
+    <div>
+      <p>Count: {counter}</p>
+      <button onClick={() => $counter.set(counter + 1)}>
+        Increment
+      </button>
+    </div>
+  );
 }
 ```
 
-[`@nanostores/preact`]: https://github.com/nanostores/preact
-[`@nanostores/react`]: https://github.com/nanostores/react
+### 4.2 Vue 集成
 
+对于 Vue 项目，安装 `@nanostores/vue` 包：
 
-### Vue
+```bash
+npm install @nanostores/vue
+# 或者
+yarn add @nanostores/vue
+```
 
-Use [`@nanostores/vue`] and `useStore()` composable function
-to get store’s value and re-render component on store’s changes.
+使用示例：
 
 ```vue
 <script setup>
-import { useStore } from '@nanostores/vue'
-import { $profile } from '../stores/profile.js'
+import { useStore } from '@nanostores/vue';
+import { atom } from 'nanostores';
 
-const props = defineProps(['postId'])
+const $counter = atom<number>(0);
+// 在 Vue 中使用状态
+const counter = useStore($counter);
 
-const profile = useStore($profile)
+function increment() {
+  $counter.set(counter.value + 1);
+}
 </script>
 
 <template>
-  <header>Hi, {{ profile.name }}</header>
+  <div>
+    <p>Count: {{ counter }}</p>
+    <button @click="increment">Increment</button>
+  </div>
 </template>
 ```
 
-[`@nanostores/vue`]: https://github.com/nanostores/vue
+### 4.3 Svelte 集成
 
-
-### Svelte
-
-Every store implements [Svelte's store contract]. Put `$` before store variable
-to get store’s value and subscribe for store’s changes.
+Nano Stores 对 Svelte 有原生支持，无需额外的适配器：
 
 ```svelte
 <script>
-  import { profile } from '../stores/profile.js'
+  import { atom } from 'nanostores';
+
+  const $counter = atom<number>(0);
+
+  function increment() {
+    $counter.set($counter.get() + 1);
+  }
 </script>
 
-<header>Hi, {$profile.name}</header>
+<div>
+  <p>Count: {$counter}</p>
+  <button on:click={increment}>Increment</button>
+</div>
 ```
 
-In other frameworks, Nano Stores promote code style to use `$` prefixes
-for store’s names. But in Svelte it has a special meaning, so we recommend
-to not follow this code style here.
+## 5. 持久化存储
 
-[Svelte's store contract]: https://svelte.dev/docs/svelte-components#script-4-prefix-stores-with-$-to-access-their-values
+Nano Stores 提供了 `@nanostores/persistent` 扩展，用于在 `localStorage` 中保存状态并同步不同浏览器标签页之间的更改：
 
+### 5.1 安装
 
-### Solid
-
-Use [`@nanostores/solid`] and `useStore()` composable function
-to get store’s value and re-render component on store’s changes.
-
-```js
-import { useStore } from '@nanostores/solid'
-import { $profile } from '../stores/profile.js'
-
-export function Header({ postId }) {
-  const profile = useStore($profile)
-  return <header>Hi, {profile().name}</header>
-}
+```bash
+npm install @nanostores/persistent
+# 或者
+yarn add @nanostores/persistent
 ```
 
-[`@nanostores/solid`]: https://github.com/nanostores/solid
+### 5.2 基本用法
 
+```javascript
+import { persistentAtom, persistentMap } from '@nanostores/persistent';
 
-### Lit
+// 创建一个持久化的原子存储
+const $theme = persistentAtom('theme', 'light');
 
-Use [`@nanostores/lit`] and `StoreController` reactive controller
-to get store’s value and re-render component on store’s changes.
+// 创建一个持久化的映射存储
+const $settings = persistentMap('settings', {
+  notifications: true,
+  language: 'en'
+});
 
-```ts
-import { StoreController } from '@nanostores/lit'
-import { $profile } from '../stores/profile.js'
+// 更新持久化存储
+$theme.set('dark'); // 会自动保存到 localStorage
+$settings.setKey('language', 'zh');
+```
 
-@customElement('my-header')
-class MyElement extends LitElement {
-  @property()
+## 6. 高级用法
 
-  private profileController = new StoreController(this, $profile)
+### 6.1 存储组合
 
-  render() {
-    return html\`<header>Hi, ${profileController.value.name}</header>`
+可以将多个小型存储组合在一起，形成更复杂的状态管理系统：
+
+```javascript
+import { atom, computed } from 'nanostores';
+
+// 基础存储
+const $todos = atom<Array<{
+  id: number;
+  text: string;
+  completed: boolean;
+}>>([]);
+
+// 过滤条件存储
+const $filter = atom<'all' | 'active' | 'completed'>('all');
+
+// 计算派生存储
+const $filteredTodos = computed([$todos, $filter], (todos, filter) => {
+  switch (filter) {
+    case 'active':
+      return todos.filter(todo => !todo.completed);
+    case 'completed':
+      return todos.filter(todo => todo.completed);
+    default:
+      return todos;
+  }
+});
+
+// 计算统计信息
+const $stats = computed($todos, todos => ({
+  total: todos.length,
+  active: todos.filter(todo => !todo.completed).length,
+  completed: todos.filter(todo => todo.completed).length
+}));
+```
+
+### 6.2 异步操作
+
+处理异步数据加载和状态更新：
+
+```javascript
+import { atom } from 'nanostores';
+
+// 定义加载状态
+const $isLoading = atom<boolean>(false);
+const $error = atom<string | null>(null);
+const $userData = atom<any>(null);
+
+// 异步加载函数
+async function loadUserData(userId: number) {
+  $isLoading.set(true);
+  $error.set(null);
+  
+  try {
+    const response = await fetch(`/api/users/${userId}`);
+    const data = await response.json();
+    $userData.set(data);
+  } catch (err) {
+    $error.set('Failed to load user data');
+    console.error(err);
+  } finally {
+    $isLoading.set(false);
   }
 }
 ```
 
-[`@nanostores/lit`]: https://github.com/nanostores/lit
+## 7. 最佳实践
 
+### 7.1 状态组织
 
-### Angular
+- 将相关状态组织在同一个模块中
+- 保持存储原子化，每个存储只负责一个职责
+- 对于复杂状态，使用计算存储派生
 
-Use [`@nanostores/angular`] and `NanostoresService` with `useStore()`
-method to get store’s value and subscribe for store’s changes.
+### 7.2 性能优化
 
-```ts
-// NgModule:
-import { NANOSTORES, NanostoresService } from '@nanostores/angular';
+- 使用懒加载避免不必要的初始化
+- 合理使用计算存储减少重复计算
+- 避免在订阅回调中执行重型计算
 
-@NgModule({
-  providers: [{ provide: NANOSTORES, useClass: NanostoresService }]
-})
+### 7.3 命名约定
+
+- 为存储变量添加 `$` 前缀，方便识别
+- 使用清晰、描述性的名称表示存储内容
+
+## 8. 常见问题与解决方案
+
+### 8.1 状态更新不触发组件重新渲染
+
+**问题描述**：在使用 Nano Stores 时，可能会遇到状态更新后，依赖该状态的组件没有重新渲染的情况。
+
+**解决步骤**：
+
+1. 检查状态更新方式：确保使用了正确的更新方法（如 `set()` 方法）
+
+```javascript
+// 正确方式
+$counter.set(1);
+
+// 错误方式 - 直接修改对象属性不会触发更新
+const user = $user.get();
+user.name = 'New Name'; // 不会触发更新
 ```
 
-```tsx
-// Component:
-import { Component } from '@angular/core'
-import { NanostoresService } from '@nanostores/angular'
-import { Observable, switchMap } from 'rxjs'
+2. 检查组件依赖：确保组件正确地订阅了状态变化
 
-import { profile } from '../stores/profile'
-import { IUser, User } from '../stores/user'
+3. 调试状态变化：使用 `console.log` 或其他调试工具检查状态是否确实发生了变化
 
-@Component({
-  selector: "app-root",
-  template: '<p *ngIf="(currentUser$ | async) as user">{{ user.name }}</p>'
-})
-export class AppComponent {
-  currentUser$: Observable<IUser> = this.nanostores.useStore(profile)
-    .pipe(switchMap(userId => this.nanostores.useStore(User(userId))))
+### 8.2 持久化状态不生效
 
-  constructor(private nanostores: NanostoresService) { }
-}
-```
+**问题描述**：使用 `@nanostores/persistent` 时，状态没有正确保存或读取。
 
-[`@nanostores/angular`]: https://github.com/nanostores/angular
+**解决步骤**：
 
+1. 检查存储键名：确保每个持久化存储使用唯一的键名
+2. 检查 localStorage 可用性：某些环境可能限制或禁用 localStorage
+3. 检查数据序列化：复杂对象需要能够被 JSON.stringify 序列化
 
-### Vanilla JS
+## 9. 应用场景
 
-`Store#subscribe()` calls callback immediately and subscribes to store changes.
-It passes store’s value to callback.
+### 9.1 多语言应用
 
-```js
-import { $profile } from '../stores/profile.js'
+Nano Stores 的轻量级特性使其非常适合实现应用的多语言支持：
 
-$profile.subscribe(profile => {
-  console.log(`Hi, ${profile.name}`)
-})
-```
+```javascript
+import { atom, computed } from 'nanostores';
 
-`Store#listen(cb)` in contrast calls only on next store change. It could be
-useful for a multiple stores listeners.
+// 当前语言
+const $language = atom<string>('en');
 
-```js
-function render () {
-  console.log(`${$post.get().title} for ${$profile.get().name}`)
-}
-
-$profile.listen(render)
-$post.listen(render)
-render()
-```
-
-See also `listenKeys(store, keys, cb)` to listen for specific keys changes
-in the map.
-
-
-### Server-Side Rendering
-
-Nano Stores support SSR. Use standard strategies.
-
-```js
-if (isServer) {
-  $settings.set(initialSettings)
-  $router.open(renderingPageURL)
-}
-```
-
-You can wait for async operations (for instance, data loading
-via isomorphic `fetch()`) before rendering the page:
-
-```jsx
-import { allTasks } from 'nanostores'
-
-$post.listen(() => {}) // Move store to active mode to start data loading
-await allTasks()
-
-const html = ReactDOMServer.renderToString(<App />)
-```
-
-
-### Tests
-
-Adding an empty listener by `keepMount(store)` keeps the store
-in active mode during the test. `cleanStores(store1, store2, …)` cleans
-stores used in the test.
-
-```ts
-import { cleanStores, keepMount } from 'nanostores'
-import { $profile } from './profile.js'
-
-afterEach(() => {
-  cleanStores($profile)
-})
-
-it('is anonymous from the beginning', () => {
-  keepMount($profile)
-  expect($profile.get()).toEqual({ name: 'anonymous' })
-})
-```
-
-You can use `allTasks()` to wait all async operations in stores.
-
-```ts
-import { allTasks } from 'nanostores'
-
-it('saves user', async () => {
-  saveUser()
-  await allTasks()
-  expect(analyticsEvents.get()).toEqual(['user:save'])
-})
-```
-
-
-## Best Practices
-
-### Move Logic from Components to Stores
-
-Stores are not only to keep values. You can use them to track time, to load data
-from server.
-
-```ts
-import { atom, onMount } from 'nanostores'
-
-export const $currentTime = atom<number>(Date.now())
-
-onMount($currentTime, () => {
-  $currentTime.set(Date.now())
-  const updating = setInterval(() => {
-    $currentTime.set(Date.now())
-  }, 1000)
-  return () => {
-    clearInterval(updating)
+// 翻译数据
+const translations = {
+  en: {
+    hello: 'Hello',
+    welcome: 'Welcome'
+  },
+  zh: {
+    hello: '你好',
+    welcome: '欢迎'
   }
-})
+};
+
+// 翻译函数
+function t(key: string): string {
+  const lang = $language.get();
+  return translations[lang as keyof typeof translations]?.[key as keyof typeof translations.en] || key;
+}
 ```
 
-Use derived stores to create chains of reactive computations.
+### 9.2 主题切换
 
-```ts
-import { computed } from 'nanostores'
-import { $currentTime } from './currentTime.js'
+使用 Nano Stores 实现应用主题切换功能：
 
-const appStarted = Date.now()
+```javascript
+import { persistentAtom } from '@nanostores/persistent';
 
-export const $userInApp = computed($currentTime, currentTime => {
-  return currentTime - appStarted
-})
+// 创建持久化的主题存储
+const $theme = persistentAtom<'light' | 'dark'>('app-theme', 'light');
+
+// 应用主题到文档
+function applyTheme(theme: string) {
+  document.documentElement.classList.remove('light', 'dark');
+  document.documentElement.classList.add(theme);
+}
+
+// 初始化和监听主题变化
+applyTheme($theme.get());
+$theme.subscribe(applyTheme);
 ```
 
-We recommend moving all logic, which is not highly related to UI, to the stores.
-Let your stores track URL routing, validation, sending data to a server.
+## 10. 总结
 
-With application logic in the stores, it is much easier to write and run tests.
-It is also easy to change your UI framework. For instance, add React Native
-version of the application.
+Nano Stores 以其轻量、高效和跨框架的特性，为前端开发者提供了一个全新的状态管理解决方案。它特别适合那些需要简单而高效状态管理的项目，尤其是对性能和打包体积有严格要求的应用。
 
+无论你是 React 开发者，还是 Vue、Svelte 的爱好者，Nano Stores 都能为你带来前所未有的开发体验。立即尝试 Nano Stores，让你的应用状态管理更加轻松高效！
 
-### Separate changes and reaction
-
-Use a separated listener to react on new store’s value, not an action function
-where you change this store.
-
-```diff
-  function increase() {
-    $counter.set($counter.get() + 1)
--   printCounter(store.get())
-  }
-
-+ $counter.listen(counter => {
-+   printCounter(counter)
-+ })
-```
-
-An action function is not the only way for store to a get new value.
-For instance, persistent store could get the new value from another browser tab.
-
-With this separation your UI will be ready to any source of store’s changes.
-
-
-### Reduce `get()` usage outside of tests
-
-`get()` returns current value and it is a good solution for tests.
-
-But it is better to use `useStore()`, `$store`, or `Store#subscribe()` in UI
-to subscribe to store changes and always render the actual data.
-
-```diff
-- const { userId } = $profile.get()
-+ const { userId } = useStore($profile)
-```
-
-
-## Known Issues
-
-### ESM
-
-Nano Stores use ESM-only package. You need to use ES modules
-in your application to import Nano Stores.
-
-In Next.js ≥11.1 you can alternatively use the [`esmExternals`] config option.
-
-For old Next.js you need to use [`next-transpile-modules`] to fix
-lack of ESM support in Next.js.
-
-[`next-transpile-modules`]: https://www.npmjs.com/package/next-transpile-modules
-[`esmExternals`]: https://nextjs.org/blog/next-11-1#es-modules-support
+更多信息，请访问 [Nano Stores GitHub 仓库](https://github.com/nanostores/nanostores)。

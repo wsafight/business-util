@@ -1,6 +1,6 @@
 ---
 title: 图像与视频加载检测库 egjs-imready 详解
- description: 深入解析 Naver 开发的 egjs-imready 库，用于检测容器中图像和视频的加载状态，提升页面交互体验
+description: 深入解析 Naver 开发的 egjs-imready 库，用于检测容器中图像和视频的加载状态，提升页面交互体验
 ---
 
 # egjs-imready 库详解与工具实现

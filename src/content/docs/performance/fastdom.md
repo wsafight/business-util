@@ -1,5 +1,5 @@
 ---
-通过批处理避免布局抖动 FastDom
+title: 通过批处理避免布局抖动 FastDom
 ---
 
 # FastDom 技术指南

@@ -1,4 +1,6 @@
-# 通用微型状态管理器 Nano Stores
+---
+title: 通用微型状态管理器 Nano Stores
+---
 
 Nano Stores 是一个轻量级的状态管理库，专为 React、React Native、Preact、Vue、Svelte、Solid、Lit、Angular 和原生 JavaScript 设计。它通过原子存储和直接操作，提供了一种简洁而高效的状态管理方式。
 

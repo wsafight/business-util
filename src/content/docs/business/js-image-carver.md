@@ -1,4 +1,6 @@
-# JS Image Carver - 基于Seam Carving算法的内容感知图像缩放器和对象去除器
+---
+title: JS Image Carver - 基于Seam Carving算法的内容感知图像缩放器和对象去除器
+---
 
 JS Image Carver 是一个基于 Seam Carving 算法的 JavaScript 实现，提供内容感知的图像缩放和对象去除功能。它能够智能地识别并保留图像中的重要内容，同时移除或调整不太重要的区域，实现自然的图像尺寸调整和对象移除。
 

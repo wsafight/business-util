@@ -55,7 +55,7 @@
       { "label": "提升交互体验的 web Observer", "slug": "ux/web-observer" },
       { "label": "切换中文简繁字体", "slug": "ux/font-east" },
       { "label": "使用 gsap 操纵动画序列", "slug": "ux/gsap" },
-      { "label": "获取汉字拼音首字母", "slug": "ux/first-letter" },
+      { "label": "妙用 localeCompare 获取汉字拼音首字母", "slug": "ux/first-letter" },
       { "label": "禁止浏览器进行表单填充", "slug": "ux/disable-auto-fill" },
       {
         "label": "手写一个同步服务端时间的小工具",

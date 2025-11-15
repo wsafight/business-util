@@ -416,6 +416,8 @@
     "label": "创业技术栈",
     "items": [
       { "label": "国外赛博菩萨罗列", "slug": "undertaking/list-of-foreign-cyber-bodhisattvas"},
+      { "label": "国内赛博菩萨罗列", "slug": "undertaking/list-of-cyber-bodhisattvas"},
+      { "label": "aws", "slug": "undertaking/aws"},
       { "label": "vercel", "slug": "undertaking/vercel"},
       { "label": "supabase", "slug": "undertaking/supabase"},
       { "label": "stripe", "slug": "undertaking/stripe"},

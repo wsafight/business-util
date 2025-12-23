@@ -15,16 +15,16 @@
     "pdf": "npm run build && (npm run preview > /dev/null & sleep 5); lsof -ti:4321 > preview.pid; npx starlight-to-pdf http://localhost:4321 -p ./ --filename 实用工具 --contents-links internal --contents-name 实用工具 --pdf-outline; kill $(cat preview.pid) && rm preview.pid && echo 'PDF script finished'"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.4",
-    "@astrojs/starlight": "0.36.0",
-    "astro": "5.14.1",
+    "@astrojs/check": "0.9.6",
+    "@astrojs/starlight": "0.37.1",
+    "astro": "5.16.6",
     "big.js": "7.0.1",
-    "sharp": "0.34.4",
-    "starlight-fullview-mode": "0.2.3",
-    "starlight-image-zoom": "0.13.0"
+    "sharp": "0.34.5",
+    "starlight-fullview-mode": "0.2.6",
+    "starlight-image-zoom": "0.13.2"
   },
   "devDependencies": {
-    "typescript": "5.9.2",
+    "typescript": "5.9.3",
     "starlight-to-pdf": "1.4.0"
   },
   "moduleResolution": {}

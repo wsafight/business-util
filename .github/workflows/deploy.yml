@@ -8,9 +8,25 @@ on:
       - ".github/workflows/deploy.yml"
       - "package.json"
       - "bun.lock"
+      - "README.md"
       - "astro.config.mjs"
+      - "gen-readme.mjs"
       - "tsconfig.json"
       - "sidebar.json"
+      - "scripts/**"
+      - "src/**"
+      - "public/**"
+  pull_request:
+    paths:
+      - ".github/workflows/deploy.yml"
+      - "package.json"
+      - "bun.lock"
+      - "README.md"
+      - "astro.config.mjs"
+      - "gen-readme.mjs"
+      - "tsconfig.json"
+      - "sidebar.json"
+      - "scripts/**"
       - "src/**"
       - "public/**"
   workflow_dispatch:
@@ -36,6 +52,7 @@ jobs:
           package-manager: bun@1.3.13
 
   deploy:
+    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     environment:

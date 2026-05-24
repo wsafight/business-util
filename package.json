@@ -8,12 +8,12 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
-    "build:with-pdf": "astro check && ASTRO_INCLUDE_PDF=1 astro build",
+    "check": "bun run check:content && astro check",
+    "check:content": "bun ./scripts/check-content.mjs",
+    "build": "bun run check:content && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "gen-readme": "bun ./gen-readme.mjs",
-    "pdf": "bun run build && (bun run preview > /dev/null & sleep 5); lsof -ti:4321 > preview.pid; bunx starlight-to-pdf http://localhost:4321 -p ./ --filename 实用工具 --contents-links internal --contents-name 实用工具 --pdf-outline; kill $(cat preview.pid) && rm preview.pid && echo 'PDF script finished'"
+    "gen-readme": "bun ./gen-readme.mjs"
   },
   "dependencies": {
     "@astrojs/check": "0.9.9",
@@ -23,7 +23,6 @@
     "starlight-image-zoom": "0.14.2"
   },
   "devDependencies": {
-    "typescript": "6.0.3",
-    "starlight-to-pdf": "1.4.0"
+    "typescript": "6.0.3"
   }
 }

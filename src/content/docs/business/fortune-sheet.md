@@ -1,7 +1,6 @@
 ---
 draft: true
-title: 根据数组构建树
-description: 根据的数组，通过 js 构建树结构对象
+title: 电子表格组件 Fortune-Sheet
+description: 基于 Fortune-Sheet 构建 Web 电子表格。
 ---
-
 电子表格组件 Fortune-Sheet

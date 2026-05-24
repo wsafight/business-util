@@ -1,4 +1,5 @@
 ---
 draft: true
-title: zeabur
+title: Zeabur
+description: Zeabur 部署平台草稿。
 ---

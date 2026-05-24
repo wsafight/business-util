@@ -1,7 +1,7 @@
 ---
 draft: true
-title: 利用 XState(有限状态机) 编写易于变更的代码
-description: 利用 XState(有限状态机) 编写易于变更的代码
+title: HTML 清理与 XSS 防护
+description: 使用 DOMPurify 和 js-xss 清理不受信任的 HTML。
 ---
 # 使用白名单指定的配置清理不受信任的 HTML
 

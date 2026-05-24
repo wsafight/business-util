@@ -1,9 +1,8 @@
 ---
 draft: true
-title: oha
-description: oha 
+title: HTTP 压测工具 oha
+description: 使用 oha 对 Web 服务进行压测。
 ---
-
 oha 是一个小程序，它将一些负载发送到 Web 应用程序并显示受rakyll/hey启发的实时 tui 。
 
 ```bash

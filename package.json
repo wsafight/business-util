@@ -10,7 +10,8 @@
     "start": "astro dev",
     "check": "bun run check:content && astro check",
     "check:content": "bun ./scripts/check-content.mjs",
-    "build": "bun run check:content && astro check && astro build",
+    "build": "bun run check:content && astro check && astro build && bun run optimize:dist",
+    "optimize:dist": "bun ./scripts/optimize-dist.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "gen-readme": "bun ./gen-readme.mjs"
@@ -23,6 +24,7 @@
     "starlight-image-zoom": "0.14.2"
   },
   "devDependencies": {
+    "esbuild": "0.28.0",
     "typescript": "6.0.3"
   }
 }

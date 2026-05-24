@@ -1,6 +1,6 @@
 ---
 title: AVIF 图片格式
-description: AVIF 图片格式
+description: AVIF 是新一代图片格式，拥有更高压缩率。本文介绍 AVIF 的核心优势、兼容性方案，以及使用 Sharp 生成 AVIF 图片的方法。
 ---
 
 > 文字需要翻译，图片不用。在图片的世界，不管是中国人、印度人、美国人、英国人的笑，全世界的人都能明白那是在笑。图片所承载的情感是全球通明的。
@@ -74,3 +74,9 @@ fs.readFile("xxx.jpeg", (err, inputBuffer) => {
 虽然 AVIF 是面向未来的图片格式，但是就目前来说，在开发需要大量图片的业务时，使用专业的 OSS 服务和 CDN 才是更好的选择。  
 
 由于 OSS 服务支持 jpg、png、bmp、gif、webp、tiff 等格式的转换，以及缩略图、剪裁、水印、缩放等多种操作，这样就可以更简单的根据不同设备 (分辨率) 提供不同的图片。同时 CDN 也可以让用户更快的获取图片。
+
+## 参考资料
+
+- [node-avif](https://www.jameslmilner.com/post/node-avif/)
+- [tinypng](https://tinypng.com/)
+- [Sharp](https://sharp.pixelplumbing.com/)

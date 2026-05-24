@@ -321,7 +321,7 @@
         "slug": "ux/critical"
       },
       {
-        "label": "静态网站搜索工具 pagefind",
+        "label": "Pagefind 静态网站搜索方案",
         "slug": "ux/pagefind"
       },
       {
@@ -360,6 +360,10 @@
       {
         "label": "图片压缩服务 tiny-png",
         "slug": "performance/tiny-png"
+      },
+      {
+        "label": "浏览器端图片转换库 use-squoosh",
+        "slug": "performance/use-squoosh"
       },
       {
         "label": "动态加载脚本与样式！",
@@ -527,6 +531,30 @@
         "slug": "develop-tools/mise"
       },
       {
+        "label": "代码重构工具 Grit",
+        "slug": "develop-tools/grit"
+      },
+      {
+        "label": "AI 工作流自动化平台 n8n",
+        "slug": "develop-tools/n8n"
+      },
+      {
+        "label": "AI 编码代理编排工具 Vibe Kanban",
+        "slug": "develop-tools/vibe-kanban"
+      },
+      {
+        "label": "AI 编码助手输出过滤代理 RTK",
+        "slug": "develop-tools/rtk"
+      },
+      {
+        "label": "前端 Code Review AI Skill",
+        "slug": "develop-tools/ai-code-review-skill"
+      },
+      {
+        "label": "SQL 构建网页工具 SQLPage",
+        "slug": "develop-tools/sqlpage"
+      },
+      {
         "label": "搜索和更改代码结构的工具 comby",
         "slug": "efficiency-tools/comby"
       },
@@ -634,6 +662,39 @@
       {
         "label": "猴子测试工具 gremlins",
         "slug": "test/gremlins"
+      }
+    ]
+  },
+  {
+    "label": "后端与数据服务",
+    "items": [
+      {
+        "label": "Hono 深入使用指南",
+        "slug": "backend/hono"
+      },
+      {
+        "label": "HonoX 全栈框架",
+        "slug": "backend/honox"
+      },
+      {
+        "label": "Hono RegExpRouter 原理",
+        "slug": "backend/hono-router"
+      },
+      {
+        "label": "Drizzle ORM 性能设计",
+        "slug": "backend/drizzle"
+      },
+      {
+        "label": "Go 数据库访问层 sqlc",
+        "slug": "backend/sqlc"
+      },
+      {
+        "label": "Hertz + pgxpool + sqlc 实用组合",
+        "slug": "backend/hertz-pgx-sqlc"
+      },
+      {
+        "label": "Go Context 原理与实践",
+        "slug": "backend/go-context"
       }
     ]
   },
@@ -786,6 +847,26 @@
       {
         "label": "前端部署工具 PinMe",
         "slug": "undertaking/pinme"
+      },
+      {
+        "label": "现代化 Web 服务器 Caddy",
+        "slug": "deployment/caddy"
+      },
+      {
+        "label": "高性能 Web 服务器 H2O",
+        "slug": "deployment/h2o"
+      },
+      {
+        "label": "Web 应用部署工具 Kamal",
+        "slug": "deployment/kamal"
+      },
+      {
+        "label": "Docker Swarm 容器编排",
+        "slug": "deployment/docker-swarm"
+      },
+      {
+        "label": "轻量级 Kubernetes K3s",
+        "slug": "deployment/k3s"
       }
     ]
   }

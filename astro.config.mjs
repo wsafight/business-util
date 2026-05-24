@@ -1,20 +1,20 @@
 // @ts-check
+import { rm } from "node:fs/promises";
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import starlightImageZoom from 'starlight-image-zoom'
 import sidebar from './sidebar.json' with { type: "json" };
 
-
-/**
- * 
- * 
- * <script type="speculationrules">
-  {
-    "prerender": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }],
-    "prefetch": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }]
-  }
-</script>
- */
+/** @returns {import('astro').AstroIntegration} */
+const excludeGeneratedPdf = () => ({
+  name: 'exclude-generated-pdf',
+  hooks: {
+    'astro:build:done': async ({ dir }) => {
+      if (process.env.ASTRO_INCLUDE_PDF === '1') return;
+      await rm(new URL('_pdf', dir), { recursive: true, force: true });
+    },
+  },
+});
 
 // https://astro.build/config
 export default defineConfig({
@@ -43,6 +43,7 @@ export default defineConfig({
         './src/styles/custom.css',
       ],
     }),
+    excludeGeneratedPdf(),
   ],
   compressHTML: true,
 });

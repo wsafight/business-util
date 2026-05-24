@@ -1,5 +1,6 @@
 ---
 title: 更强大的超文本标记语言 htmx
+description: 介绍 htmx 的声明式 HTML 交互模型，以及如何通过属性实现 AJAX、WebSocket、SSE 和局部页面更新。
 ---
 
 # htmx - 重新定义前端开发的无JS革命

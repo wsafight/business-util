@@ -1,5 +1,6 @@
 ---
 title: 通过批处理避免布局抖动 FastDom
+description: 介绍 FastDom 如何批处理 DOM 读写操作，减少布局抖动、回流和渲染性能损耗，提升页面交互流畅度。
 ---
 
 # FastDom 技术指南

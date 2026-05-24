@@ -18,8 +18,10 @@
     * [计算博客阅读时长](https://wsafight.github.io/business-util/business/reading-time)
     * [根据背景色自适应文本颜色](https://wsafight.github.io/business-util/business/contrast-text-color)
     * [输入错误提示 —— 模糊集](https://wsafight.github.io/business-util/business/fuzzy-set)
+    * [轻量级模糊搜索 fuzzysearch](https://wsafight.github.io/business-util/business/fuzzy-search)
     * [阿拉伯数字与中文数字的相互转换](https://wsafight.github.io/business-util/business/nzh)
     * [网页公式排版工具 KaTeX](https://wsafight.github.io/business-util/business/katex)
+    * [内容感知图像缩放 JS Image Carver](https://wsafight.github.io/business-util/business/js-image-carver)
     * [颜色排序算法](https://wsafight.github.io/business-util/business/color-sort)
     * [交互式医学图像工具 Cornerstone](https://wsafight.github.io/business-util/business/cornerstone)
     * [快速制作出响应式邮件的框架 Mjml](https://wsafight.github.io/business-util/business/mjml)
@@ -41,7 +43,7 @@
     * [提升交互体验的 web Observer](https://wsafight.github.io/business-util/ux/web-observer)
     * [切换中文简繁字体](https://wsafight.github.io/business-util/ux/font-east)
     * [使用 gsap 操纵动画序列](https://wsafight.github.io/business-util/ux/gsap)
-    * [获取汉字拼音首字母](https://wsafight.github.io/business-util/ux/first-letter)
+    * [妙用 localeCompare 获取汉字拼音首字母](https://wsafight.github.io/business-util/ux/first-letter)
     * [禁止浏览器进行表单填充](https://wsafight.github.io/business-util/ux/disable-auto-fill)
     * [手写一个同步服务端时间的小工具](https://wsafight.github.io/business-util/ux/sync-server-time)
     * [使用凭证优化登录流程](https://wsafight.github.io/business-util/ux/credential-api)
@@ -61,7 +63,6 @@
     * [使用 Lighthouse 审查网络应用](https://wsafight.github.io/business-util/develop-tools/lighthouse)
     * [sourcemap 可视化工具](https://wsafight.github.io/business-util/develop-tools/source-map-visualization)
     * [多运行时版本管理器 mise](https://wsafight.github.io/business-util/develop-tools/mise)
-    * [通用命令运行器 Just](https://wsafight.github.io/business-util/develop-tools/just)
 
 * 效率工具
     * [搜索和更改代码结构的工具 comby](https://wsafight.github.io/business-util/efficiency-tools/comby)
@@ -80,6 +81,7 @@
     * [生成唯一 id](https://wsafight.github.io/business-util/help/generate-uuid)
     * [微任务延迟调度](https://wsafight.github.io/business-util/help/next-tick)
     * [根据对象路径安全获取对象值](https://wsafight.github.io/business-util/help/get-value-by-key)
+    * [确保从列表中获取可用值](https://wsafight.github.io/business-util/help/ensure-get-val-list)
     * [根据复杂对象路径操作对象](https://wsafight.github.io/business-util/help/wild-wild-utils)
     * [不可变数据工具库](https://wsafight.github.io/business-util/help/immutability-helper)
     * [优秀的不可变状态库 immer](https://wsafight.github.io/business-util/help/immer)
@@ -117,6 +119,7 @@
     * [请求限流](https://wsafight.github.io/business-util/util/query-limit)
     * [强大的异步库 async](https://wsafight.github.io/business-util/util/async)
     * [启发式缓存库 proxy-memoizee](https://wsafight.github.io/business-util/util/proxy-memoizee)
+    * [极简 WebComponent 库 el](https://wsafight.github.io/business-util/util/el)
     * [过去（未来）时间格式化](https://wsafight.github.io/business-util/util/timeago)
     * [函数响应式开发库 RxJS](https://wsafight.github.io/business-util/util/rxjs)
 
@@ -148,6 +151,7 @@
     * [提高转化率的预渲染库 quicklink](https://wsafight.github.io/business-util/performance/quicklink)
     * [跳过 v8 pre-Parse 优化代码性能库 optimize-js](https://wsafight.github.io/business-util/performance/optimize-js)
     * [通过重用减少垃圾回收](https://wsafight.github.io/business-util/performance/reusify)
+    * [生成辅助分析的火焰图工具 0x](https://wsafight.github.io/business-util/performance/0x)
     * [AVIF 图片格式](https://wsafight.github.io/business-util/performance/avif)
     * [利用 'ts' 编译 WebAssembly](https://wsafight.github.io/business-util/performance/assembly-script)
     * [通过扁平字符串提升输出性能](https://wsafight.github.io/business-util/performance/flatstr)
@@ -188,6 +192,8 @@
 * 工程化工具
     * [利用增量构建工具 Preset 打造自己的样板库](https://wsafight.github.io/business-util/engineering/preset)
     * [依赖库本地调试 yalc](https://wsafight.github.io/business-util/engineering/yalc)
+    * [依赖版本更新工具 npm-check-updates](https://wsafight.github.io/business-util/engineering/npm-check-updates)
+    * [使用 pnpm patch 修补依赖库](https://wsafight.github.io/business-util/engineering/pnpm-patch)
     * [构建工具统一插件工具 unplugin](https://wsafight.github.io/business-util/engineering/unplugin)
     * [高性能 Web 渲染引擎 kraken](https://wsafight.github.io/business-util/engineering/kraken)
     * [使用 Web 开发 Flutter 应用 WebF](https://wsafight.github.io/business-util/engineering/webf)
@@ -210,16 +216,15 @@
 * 开源游戏&框架
     * [群侠传，启动！](https://wsafight.github.io/business-util/games/jyqxz)
     * [网页端视觉小说引擎 WebGAL](https://wsafight.github.io/business-util/games/webgal)
+    * [视觉小说游戏引擎 Ren'Py](https://wsafight.github.io/business-util/games/renpy)
 
 * 创业技术栈
-    * [vercel](https://wsafight.github.io/business-util/undertaking/vercel)
-    * [supabase](https://wsafight.github.io/business-util/undertaking/supabase)
-    * [stripe](https://wsafight.github.io/business-util/undertaking/stripe)
+    * [国外赛博菩萨罗列](https://wsafight.github.io/business-util/undertaking/list-of-foreign-cyber-bodhisattvas)
+    * [国内赛博菩萨罗列](https://wsafight.github.io/business-util/undertaking/list-of-cyber-bodhisattvas)
     * [前端部署工具 PinMe](https://wsafight.github.io/business-util/undertaking/pinme)
 
 * 教程工具
     * [交互式编码工具](https://wsafight.github.io/business-util/tutorial-tools/tutorial-kit)
-    * [演示文稿 Slidev](https://wsafight.github.io/business-util/tutorial-tools/slidev)
 
 * 可视化工具
     * [CSS 数据可视化框架 Charts.css](https://wsafight.github.io/business-util/visualization/charts-css)

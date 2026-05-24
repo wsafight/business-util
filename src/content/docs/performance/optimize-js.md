@@ -7,7 +7,7 @@ description: 跳过 v8 pre-Parse 优化代码性能库 optimize-js
 
 ## 用法
 
-```base
+```bash
 optimize-js input.js > output.js
 ```
 
@@ -57,4 +57,3 @@ outer(); // Fully parses and compiles `outer`, but not `inner`.
 ### 缺陷
 
 但是同样的，任何技术都不是银弹，直接完全解析和编译也会造成内存压力，并且该库也不是 js 引擎推荐的用法。相信在不远的未来，该库的收益也会逐渐变小，但是对于某些特殊需求，该库的确会又一定的助力。
-

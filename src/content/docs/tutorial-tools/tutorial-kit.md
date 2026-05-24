@@ -1,5 +1,6 @@
 ---
 title: 交互式编码工具
+description: 介绍 StackBlitz TutorialKit 与 WebContainers 如何在浏览器内运行 Node.js 环境，用于构建交互式编码教程。
 ---
 
 StackBlitz 的 [TutorialKit](https://tutorialkit.dev/) 能够帮助开发者毫不费力地创建交互式编码教程。

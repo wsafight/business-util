@@ -60,7 +60,7 @@ function formatFileSize(fileSize: number, options?: FormatFileSizeOptions) {
 
 当然，我也推荐研究一下 [有史以来复制次数最多的 StackOverflow 片段有缺陷！](https://programming.guide/worlds-most-copied-so-snippet.html) 。
 
-```JAVA
+```java
 // From: https://programming.guide/worlds-most-copied-so-snippet.html
 public static strictfp String humanReadableByteCount(long bytes, boolean si) {
     int unit = si ? 1000 : 1024;

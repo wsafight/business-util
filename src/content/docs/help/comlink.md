@@ -1,5 +1,6 @@
 ---
 title: Comlink - 让 Web Worker 通信变得简单
+description: 介绍 Comlink 如何封装 Web Worker 的 postMessage 通信，通过 RPC 风格 API 简化主线程与 Worker 的协作。
 ---
 
 ## 1. 什么是 Comlink？
@@ -465,5 +466,4 @@ Comlink 是一个强大而轻量的库，它极大地简化了 Web Worker 与主
 - 更高效的前端应用
 
 随着 Web 应用变得越来越复杂，像 Comlink 这样的工具将变得越来越重要，它们帮助开发者充分利用现代浏览器提供的多线程能力，同时保持代码的简洁和可维护性。
-
 

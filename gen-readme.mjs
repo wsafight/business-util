@@ -1,7 +1,7 @@
-import {
-    writeFile
-} from 'node:fs/promises'
+import { writeFile } from 'node:fs/promises'
 import sidebar from './sidebar.json' with { type: "json" };
+
+const siteUrl = 'https://wsafight.github.io/business-util'
 
 const header = `# 实用工具
 
@@ -11,23 +11,20 @@ const header = `# 实用工具
 
 记录的工具源自于工作，生活，开源软件，算法网站，以及他人书籍。
 
-当前网址为: https://wsafight.github.io/business-util/
+当前网址为: ${siteUrl}/
 `
 
 
 const main = async () => {
-    // const astorContents = await readFile('./astro.config.mjs', 'utf-8')
-    console.log(sidebar)
     let content = [header]
     sidebar.forEach(item => {
         content.push(`* ${item.label}`)
         item.items.forEach(subItem => {
-            content.push(`    * [${subItem.label}](https://wsafight.github.io/business-util/${subItem.slug})`)
+            content.push(`    * [${subItem.label}](${siteUrl}/${subItem.slug})`)
         })
         content.push('')
     })
     await writeFile('./README.md', content.join('\n'))
-    console.log(content)
 }
 
 main()

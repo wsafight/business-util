@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 利用 XState(有限状态机) 编写易于变更的代码
 description: 利用 XState(有限状态机) 编写易于变更的代码
 ---

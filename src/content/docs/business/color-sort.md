@@ -12,7 +12,7 @@ description: 颜色也可以排序
 
 代码分析所示:
 
-```HTML
+```html
 <!doctype html>
 <html lang="en">
 <head>

@@ -20,8 +20,13 @@
         "slug": "business/contrast-text-color"
       },
       { "label": "输入错误提示 —— 模糊集", "slug": "business/fuzzy-set" },
+      { "label": "轻量级模糊搜索 fuzzysearch", "slug": "business/fuzzy-search" },
       { "label": "阿拉伯数字与中文数字的相互转换", "slug": "business/nzh" },
       { "label": "网页公式排版工具 KaTeX", "slug": "business/katex" },
+      {
+        "label": "内容感知图像缩放 JS Image Carver",
+        "slug": "business/js-image-carver"
+      },
       { "label": "颜色排序算法", "slug": "business/color-sort" },
       {
         "label": "交互式医学图像工具 Cornerstone",
@@ -104,10 +109,6 @@
       {
         "label": "多运行时版本管理器 mise",
         "slug": "develop-tools/mise"
-      },
-      {
-        "label": "通用命令运行器 Just",
-        "slug": "develop-tools/just"
       }
     ]
   },
@@ -144,6 +145,10 @@
       {
         "label": "根据对象路径安全获取对象值",
         "slug": "help/get-value-by-key"
+      },
+      {
+        "label": "确保从列表中获取可用值",
+        "slug": "help/ensure-get-val-list"
       },
       { "label": "根据复杂对象路径操作对象", "slug": "help/wild-wild-utils" },
       { "label": "不可变数据工具库", "slug": "help/immutability-helper" },
@@ -215,6 +220,7 @@
         "label": "启发式缓存库 proxy-memoizee",
         "slug": "util/proxy-memoizee"
       },
+      { "label": "极简 WebComponent 库 el", "slug": "util/el" },
       { "label": "过去（未来）时间格式化", "slug": "util/timeago" },
       { "label": "函数响应式开发库 RxJS", "slug": "util/rxjs" }
     ]
@@ -282,6 +288,7 @@
         "slug": "performance/optimize-js"
       },
       { "label": "通过重用减少垃圾回收", "slug": "performance/reusify" },
+      { "label": "生成辅助分析的火焰图工具 0x", "slug": "performance/0x" },
       { "label": "AVIF 图片格式", "slug": "performance/avif" },
       {
         "label": "利用 'ts' 编译 WebAssembly",
@@ -371,6 +378,11 @@
       },
       { "label": "依赖库本地调试 yalc", "slug": "engineering/yalc" },
       {
+        "label": "依赖版本更新工具 npm-check-updates",
+        "slug": "engineering/npm-check-updates"
+      },
+      { "label": "使用 pnpm patch 修补依赖库", "slug": "engineering/pnpm-patch" },
+      {
         "label": "构建工具统一插件工具 unplugin",
         "slug": "engineering/unplugin"
       },
@@ -409,7 +421,8 @@
     "label": "开源游戏&框架",
     "items": [
       { "label": "群侠传，启动！", "slug": "games/jyqxz" },
-      { "label": "网页端视觉小说引擎 WebGAL", "slug": "games/webgal" }
+      { "label": "网页端视觉小说引擎 WebGAL", "slug": "games/webgal" },
+      { "label": "视觉小说游戏引擎 Ren'Py", "slug": "games/renpy" }
     ]
   },
   {
@@ -417,17 +430,13 @@
     "items": [
       { "label": "国外赛博菩萨罗列", "slug": "undertaking/list-of-foreign-cyber-bodhisattvas"},
       { "label": "国内赛博菩萨罗列", "slug": "undertaking/list-of-cyber-bodhisattvas"},
-      { "label": "vercel", "slug": "undertaking/vercel"},
-      { "label": "supabase", "slug": "undertaking/supabase"},
-      { "label": "stripe", "slug": "undertaking/stripe"},
       { "label": "前端部署工具 PinMe", "slug": "undertaking/pinme"}
     ]
   },
   {
     "label": "教程工具",
     "items": [
-      { "label": "交互式编码工具", "slug": "tutorial-tools/tutorial-kit" },
-      { "label": "演示文稿 Slidev", "slug": "tutorial-tools/slidev" }
+      { "label": "交互式编码工具", "slug": "tutorial-tools/tutorial-kit" }
     ]
   },
   {

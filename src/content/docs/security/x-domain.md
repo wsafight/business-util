@@ -27,7 +27,7 @@ CORS 是一个通用的解决方案，唯一缺点是低版本浏览器（< IE 9
 
 3. 在您的主域上，任何 XHR 都 http://xyz.example.com 将自动运行：
 
-```JavaScript
+```js
 //do some vanilla XHR
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "http://xyz.example.com/secret/file.txt");
@@ -63,4 +63,3 @@ ToDO
     <script  src="xdomain.js"></script>
 <![endif]-->
 ```
-

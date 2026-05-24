@@ -1,5 +1,6 @@
 ---
 title: 提取关键路径 CSS 工具 Critical
+description: 介绍 Critical 工具如何提取并内联关键路径 CSS，减少首屏渲染阻塞并优化 FCP、LCP 等页面性能指标。
 ---
 
 # Critical 工具技术指南

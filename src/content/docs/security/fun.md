@@ -13,7 +13,7 @@ xxx.action?<script>alert(1)</script>test
 
 官方修补代码:
 
-```JAVA
+```java
 String result = link.toString();
 
 if (result.indexOf("<script>") >= 0) {
@@ -29,7 +29,7 @@ xxx.action?<<script>>alert(1)</script>test
 
 官方修补代码:
 
-```JAVA
+```java
 String result = link.toString();
 
 while (result.indexOf("<script>") > 0) {

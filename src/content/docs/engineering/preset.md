@@ -178,7 +178,7 @@ Preset.extract().withDots();
 
 使用 editJson  可以覆盖和删除 JSON 文件中的内容。
 
-```TS
+```ts
 // 编辑 package.json 深度拷贝数据
 Preset.editJson('package.json')
   .merge({
@@ -197,7 +197,7 @@ Preset.editJson('package.json')
 
 当然，Preset 为 node 项目提供了简单的控制项 editNodePackages 。
 
-```TS
+```ts
 Preset.editNodePackages()
   // 会删除 bootstrap 
   // 无论是 dependencies, devDependencies and peerDependencies
@@ -248,7 +248,7 @@ npx apply C:\re-search\vite-preset vite-demo --useEsbuild
 
 当前数据会被设置到 Preset.options 中。
 
-```TS
+```ts
 // 默认设置 useEsbuild 为 true
 Preset.option('useEsbuild', true);
 // 默认设置 use 为字符串 esbuild
@@ -283,7 +283,7 @@ Preset.extract((preset) => {
 
 Preset 设置配置项很棒。但就用户体验来说，通过交互设置则更好。这样我们无需记忆各个配置项。通过人机交互来输入数据，当前数据会被添加到 Preset.prompt 中。
 
-```TS
+```ts
 // 第一个参数将传入 Preset.prompt
 Preset.input('projectName', 'What is your project name?');
 
@@ -309,13 +309,13 @@ Preset.confirm('useEsLint', 'Install ESLint?', true);
 
 删除生成文件夹中的文件直接使用 delete
 
-```TS
+```ts
 Preset.delete('resources/sass');
 ```
 
 编辑文件
 
-```TS
+```ts
 // 替换文本字符串
 Preset.edit('config/app.php').update((content) => {
 	return content.replace('en_US', 'fr_FR');
@@ -332,7 +332,7 @@ Preset.edit('README.md').replaceVariables(({ prompts }) => ({
 
 如果之前的命令都不能满足你，那只能执行 bash 命令了吧！Preset 也提供了这个功能，结合 hooks 可添加各种参数。
 
-```TS
+```ts
 // 利用钩子将数据存储到 context 中
 Preset.hook(({ context, args, options }) => {
 	const allowedOptions = ['auth', 'extra'];

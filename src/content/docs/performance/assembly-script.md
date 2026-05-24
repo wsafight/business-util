@@ -28,7 +28,7 @@ export function fib(n: i32): i32 {
 
 上述代码会编译结果为:
 
-```wat
+```text
 ;; INFO asc module.ts --textFile module.wat --binaryFile module.wasm -O3 --runtime stub
 (module
  (type $i32_=>_i32 (func (param i32) (result i32)))

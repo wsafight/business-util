@@ -5,7 +5,7 @@ description: 使用 JS 编写脚本的工具 zx
 
 Bash 很棒，但是对于开发者来说，我们需要学习更多的语法，对于前端构建或者 node 服务来说，用 JavaScript 是个不错的选择。[zx](https://github.com/google/zx) 对 child_process 进行了包装并且提供了合适的默认值。
 
-```zx
+```js
 await $`cat package.json | grep name`
 
 let branch = await $`git branch --show-current`

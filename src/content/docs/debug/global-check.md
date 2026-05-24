@@ -5,7 +5,7 @@ description: 查找调试 JS 全局变量
 
 ## 找出全局范围内的 JavaScript 变量
 
-```JS
+```js
 window.__runtimeGlobalsChecker__ = (function createGlobalsChecker() {
   // 浏览器本身的全局变量
   let browserGlobals = [];
@@ -46,7 +46,7 @@ window.__runtimeGlobalsChecker__ = (function createGlobalsChecker() {
 
 ## 调试全局范围内的 JavaScript 变量
 
-```JS
+```js
 window.__globalsDebugger__ = (function createGlobalsDebugger() {
   // 要检查的变量的名称。
   const globalsToInspect = [];

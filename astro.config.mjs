@@ -4,12 +4,19 @@ import starlight from "@astrojs/starlight";
 import starlightImageZoom from 'starlight-image-zoom'
 import sidebar from './sidebar.json' with { type: "json" };
 
+const base = "/business-util";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://wsafight.github.io",
-  base: "business-util",
+  base,
+  output: "static",
+  trailingSlash: "always",
+  build: {
+    format: "directory",
+  },
   redirects: {
-    "/": "/business-util/business/currency",
+    "/": `${base}/business/currency/`,
   },
   integrations: [
     starlight({
